@@ -1,0 +1,13 @@
+mezo:
+  outputs:
+    prod:
+      dataset: dbt
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: EU
+      method: oauth
+      priority: interactive
+      project: mezo-portal-data
+      threads: 10
+      type: bigquery
+  target: prod

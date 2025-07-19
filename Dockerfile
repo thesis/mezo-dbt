@@ -15,7 +15,7 @@ COPY --chown=dbtuser:dbtuser . /app
 # Install the project dependencies
 RUN uv sync --no-dev
 
-WORKDIR /app/dbt
+WORKDIR /app/
 
 # Set the command to run when the Docker container starts
 CMD ["uv", "run", "dbt", "run", "--profiles-dir", "/app", "--project-dir", "/app", "--target", "prod"]

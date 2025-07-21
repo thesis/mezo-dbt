@@ -3,6 +3,8 @@ mezo:
     prod:
       dataset: dbt
       job_execution_timeout_seconds: 300
+      compute_region: europe-west4
+      gcs_bucket: mezo-prod-dp-dwh-dbt-cs-0
       job_retries: 1
       location: EU
       method: oauth

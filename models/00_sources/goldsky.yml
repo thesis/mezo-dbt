@@ -1,0 +1,22 @@
+sources:
+  - name: raw_goldsky
+    database: mezo-portal-data
+    schema: raw_goldsky
+    tables:
+      - name: raw_goldky__musd_trove_manager_2
+        columns:
+          - name: vid
+          - name: block
+          - name: id
+          - name: block_number
+          - name: timestamp
+          - name: transaction_hash
+          - name: contract_id
+          - name: liquidated_principal
+          - name: liquidated_interest
+          - name: liquidated_coll
+          - name: coll_gas_compensation
+          - name: gas_compensation
+          - name: _gs_chain
+          - name: _gs_gid
+          - name: event_type

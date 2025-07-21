@@ -18,4 +18,6 @@ RUN uv sync --no-dev
 WORKDIR /app/
 
 # Set the command to run when the Docker container starts
-CMD ["uv", "run", "dbt", "run", "--profiles-dir", "/app", "--project-dir", "/app", "--target", "prod"]
+# Accept an optional SELECT argument at runtime (default empty)
+ENV SELECT_ARG=""
+CMD ["sh", "-c", "uv run dbt run --profiles-dir /app --project-dir /app --target prod ${SELECT_ARG:+--select $SELECT_ARG}"]

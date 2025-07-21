@@ -8,15 +8,18 @@ on:
 permissions:
   id-token: write
   contents: read
+
+env:
+  PROJECT_ID: mezo-portal-data
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     env:
-      PROJECT_ID: mezo-portal-data
-      REGION: europe-west3
       SERVICE_NAME: dbt-mezo
-      IMAGE: europe-west3-docker.pkg.dev/${{ env.PROJECT_ID }}/dbt-repo/dbt-mezo:${{ github.sha }}
+      REGION: europe-west3
     steps:
+      - name: Set env var for image
+        run: echo "IMAGE=europe-west3-docker.pkg.dev/${{ vars.PROJECT_ID }}/dbt-repo/dbt-mezo:${{ github.sha }}" >> $GITHUB_ENV
       - name: Checkout code
         uses: actions/checkout@v4
 

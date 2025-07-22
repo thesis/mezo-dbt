@@ -23,6 +23,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: 'Debug: Print OIDC Token Subject'
+        id: oidc
+        uses: actions/github-script@v6
+        with:
+          script: |
+            let token = await core.getIDToken()
+            core.setOutput('token_payload', JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString()))
+      - name: Print the subject
+        run: echo "The exact subject is ${{ steps.oidc.outputs.token_payload }}"
       - name: Authenticate to Google Cloud (WIF)
         id: 'auth'
         uses: 'google-github-actions/auth@v2'
@@ -54,4 +63,5 @@ jobs:
             --set-env-vars SLEEP_MS=10000,FAIL_RATE=0.1 \
             --max-retries 5 \
             --region $REGION \
-            --project $PROJECT_ID
+            --project $PROJECT_ID \
+            --memory 1Gi

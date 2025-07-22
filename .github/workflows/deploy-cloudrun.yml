@@ -15,7 +15,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     env:
-      SERVICE_NAME: dbt-mezo
+      SERVICE_NAME: mezo-prod-dp-dwh-dbt-crj-0
       REGION: europe-west3
     steps:
       - name: Set env var for image

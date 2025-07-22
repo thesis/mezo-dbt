@@ -54,4 +54,5 @@ jobs:
             --set-env-vars SLEEP_MS=10000,FAIL_RATE=0.1 \
             --max-retries 5 \
             --region $REGION \
-            --project $PROJECT_ID
+            --project $PROJECT_ID \
+            --memory 1Gi

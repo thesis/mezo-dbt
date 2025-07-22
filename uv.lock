@@ -179,7 +179,7 @@ wheels = [
 
 [[package]]
 name = "dbt-adapters"
-version = "1.16.2"
+version = "1.16.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "agate" },
@@ -190,9 +190,9 @@ dependencies = [
     { name = "pytz" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/53/50/85f5fc8f400f991697fb5bba1f103870e6561abb0c3ff5b413294e569725/dbt_adapters-1.16.2.tar.gz", hash = "sha256:6c219e71b4f65e764fcc7999edc1994536c0a09c265a9a0bc7eaeb22026bb038", size = 129980, upload-time = "2025-07-16T19:27:55.017Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/1d/08/b9a0f15b6311742317bab7c03c955dc3eae58c3d7092c17581e3e5ea1186/dbt_adapters-1.16.3.tar.gz", hash = "sha256:d49d3e57befaba36edf009e6fe001d95dd0c902e5aa6678df0812dcd905259ff", size = 130177, upload-time = "2025-07-21T23:04:17.544Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/a0/d4/4d5d4fbb8d1eb298b4daf5f65e3198b211d311e85b67eb8bbed3490cd6b7/dbt_adapters-1.16.2-py3-none-any.whl", hash = "sha256:b2914baf56edbf4d6ff72b26f907997f8b1ffda434548729b223fcda54e3d16b", size = 166885, upload-time = "2025-07-16T19:27:53.567Z" },
+    { url = "https://files.pythonhosted.org/packages/c0/54/36267e4067d91bbafed68cc2c524cee8532021c880e7df53c396ea0385d8/dbt_adapters-1.16.3-py3-none-any.whl", hash = "sha256:234af35140ce42753d093ff056d4cd40a7d2d80c062ed9030891494dff9a18b7", size = 167004, upload-time = "2025-07-21T23:04:16.079Z" },
 ]
 
 [[package]]
@@ -214,7 +214,7 @@ dependencies = [
 
 [[package]]
 name = "dbt-common"
-version = "1.27.0"
+version = "1.27.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "agate" },
@@ -231,14 +231,14 @@ dependencies = [
     { name = "requests" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/ff/72/05eca5362992e75796d296af28c7e6e40cc553bdc73e43e064c7e6e75b8a/dbt_common-1.27.0.tar.gz", hash = "sha256:39f026c494fabb01548e3673b3c700e5abb9409f7dcbb3d222f4e7175634ed84", size = 83963, upload-time = "2025-07-15T13:36:53.618Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c0/b9/0d0e0463a8a5e0bec09a095e68dcdd641e8f9888dc3c1642547f1f829c47/dbt_common-1.27.1.tar.gz", hash = "sha256:1cc5b0579768a03800d90ecd9b5646c9648c970b8f278d85e1760c836007a4db", size = 83971, upload-time = "2025-07-21T20:46:43.534Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ae/54/564d2497e2f29791c19865818f47a9a96a35d25113585a7b536812e633b6/dbt_common-1.27.0-py3-none-any.whl", hash = "sha256:1138e41c72e43a3c46bb61bdd15507e53be74fff9aa3d8a98fb34304fb930730", size = 86087, upload-time = "2025-07-15T13:36:52.068Z" },
+    { url = "https://files.pythonhosted.org/packages/b7/e7/b504d0814a99c0f33ea5d5735692025469dee01468ac1930c963f215635f/dbt_common-1.27.1-py3-none-any.whl", hash = "sha256:9753e8f79d2d648c7716dd9e07dbbdd518ca3c3d101b6d2ee6e423ea9b6a20b5", size = 86084, upload-time = "2025-07-21T20:46:41.917Z" },
 ]
 
 [[package]]
 name = "dbt-core"
-version = "1.10.4"
+version = "1.10.5"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "agate" },
@@ -264,9 +264,9 @@ dependencies = [
     { name = "sqlparse" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/d4/5a/d1912f088180edc32a4a52dd30d8be81e0187d6b2bfe073cf5ba11d4a678/dbt_core-1.10.4.tar.gz", hash = "sha256:45497e813b6e19e0db97df5cc720cb606ce50489d4825e1d091fc04fa408a283", size = 894213, upload-time = "2025-07-10T20:42:28.99Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/e0/22/1892ad3ba0f8c0e4ba7a01c758696f23ab5aa78dc789f28df05181d0c6f2/dbt_core-1.10.5.tar.gz", hash = "sha256:3ee399a2f1b410c6167bee602f8606cfc2831a9c4ebc368aa991af72c3d6d36f", size = 896878, upload-time = "2025-07-22T13:56:14.815Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/f8/28/f314f540ecaae8c2f9cf861a6349709e98f338d86d07b32a5a713d10d054/dbt_core-1.10.4-py3-none-any.whl", hash = "sha256:461bbd98c77e4ce7ae3f54c8a84aba620516c558deb8ecdc1b2552c3232cca24", size = 979456, upload-time = "2025-07-10T20:42:27.175Z" },
+    { url = "https://files.pythonhosted.org/packages/1c/4d/b5faaba3529c7d0c60711a8e93e301931199f633972773c01bb0d7342949/dbt_core-1.10.5-py3-none-any.whl", hash = "sha256:a40f9204ee0faa28221c25d8d29093853584c1dae46a3a601aa8d5cd92b45fc0", size = 982819, upload-time = "2025-07-22T13:56:12.799Z" },
 ]
 
 [[package]]
@@ -294,14 +294,14 @@ wheels = [
 
 [[package]]
 name = "dbt-protos"
-version = "1.0.345"
+version = "1.0.348"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "protobuf" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/7e/57/9a17ec1fd56a13bacf07f5d361cff018317873f8e76345a133ba1d760cf3/dbt_protos-1.0.345.tar.gz", hash = "sha256:a1e7c654ce8554d47d324de90ec4c839db73c99fd4a0f8f53b16352376dda667", size = 76353, upload-time = "2025-07-18T19:38:46.117Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a0/73/94a28249678aab925824497284f6bbb5f8e740613c10be6bf66042701aa7/dbt_protos-1.0.348.tar.gz", hash = "sha256:d8834c685c323b1533c1c7fdb5db5636cffab2f1a58515caba54b3dc13a3578b", size = 76628, upload-time = "2025-07-21T20:27:10.353Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/40/78/afecfce13afc82848e7b1034b4fe61250be374bcbe9321b518ccd7ecc4c2/dbt_protos-1.0.345-py3-none-any.whl", hash = "sha256:8d99a4ea642cd2845a7e99ce155065b4be4da8a6500f59a4e772cb8587cb2077", size = 93787, upload-time = "2025-07-18T19:38:44.786Z" },
+    { url = "https://files.pythonhosted.org/packages/c1/d1/90bd370d92db997c635412661e0d0088b64d481f1365088842bb4823ccc0/dbt_protos-1.0.348-py3-none-any.whl", hash = "sha256:5d89171b64058170b39a80fc69abbd344170ac637c5dee90e7b3cbd7b1a43fe4", size = 94035, upload-time = "2025-07-21T20:27:09.015Z" },
 ]
 
 [[package]]
@@ -336,7 +336,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "dbt-bigquery", git = "https://github.com/dbt-labs/dbt-adapters.git?subdirectory=dbt-bigquery&rev=main" },
-    { name = "dbt-core", specifier = ">=1.10.4" },
+    { name = "dbt-core" },
 ]
 
 [[package]]

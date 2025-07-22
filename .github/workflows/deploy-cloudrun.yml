@@ -19,7 +19,7 @@ jobs:
       REGION: europe-west3
     steps:
       - name: Set env var for image
-        run: echo "IMAGE=europe-west3-docker.pkg.dev/${{ vars.PROJECT_ID }}/dbt-repo/dbt-mezo:${{ github.sha }}" >> $GITHUB_ENV
+        run: echo "IMAGE=europe-west3-docker.pkg.dev/${{ env.PROJECT_ID }}/dbt-repo/dbt-mezo:${{ github.sha }}" >> $GITHUB_ENV
       - name: Checkout code
         uses: actions/checkout@v4
 

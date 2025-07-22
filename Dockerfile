@@ -1,6 +1,9 @@
 # Use Python 3.11 as the base image
 FROM ghcr.io/astral-sh/uv:python3.11-alpine
 
+# Install build dependencies needed for compiling Python packages with C extensions
+RUN apk add --no-cache build-base gcc musl-dev python3-dev
+
 # Create a new user and switch to that user (Alpine-compatible)
 RUN adduser -D dbtuser
 USER dbtuser

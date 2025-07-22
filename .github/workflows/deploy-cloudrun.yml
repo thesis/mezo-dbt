@@ -49,7 +49,7 @@ jobs:
       - name: Deploy Cloud Run Job
         run: |
           gcloud run jobs deploy $SERVICE_NAME \
-            --image europe-west3-docker.pkg.dev/mezo-portal-data/dbt-repo/dbt-mezo:3a79cd994485772f24f3d70d750c44450d9de3a8 \
+            --image $IMAGE \
             --tasks 1 \
             --set-env-vars SLEEP_MS=10000,FAIL_RATE=0.1 \
             --max-retries 5 \

@@ -1,9 +1,6 @@
 # Use Python 3.11 as the base image
 FROM ghcr.io/astral-sh/uv:python3.11-alpine
 
-# Install git - required for uv to download packages from git repositories
-RUN apk add --no-cache git
-
 # Create a new user and switch to that user (Alpine-compatible)
 RUN adduser -D dbtuser
 USER dbtuser

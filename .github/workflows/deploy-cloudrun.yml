@@ -55,5 +55,5 @@ jobs:
             --max-retries 5 \
             --region $REGION \
             --project $PROJECT_ID \
-            --memory 1Gi
-            --service_account ${{ secrets.DBT_SERVICE_ACCOUNT_EMAIL }} \
+            --memory 1Gi \
+            --service_account ${{ secrets.DBT_SERVICE_ACCOUNT_EMAIL }}

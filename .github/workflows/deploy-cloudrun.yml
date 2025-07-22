@@ -56,4 +56,4 @@ jobs:
             --region $REGION \
             --project $PROJECT_ID \
             --memory 1Gi \
-            --service_account ${{ secrets.DBT_SERVICE_ACCOUNT_EMAIL }}
+            --service-account ${{ secrets.DBT_SERVICE_ACCOUNT_EMAIL }}

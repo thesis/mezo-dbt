@@ -1,0 +1,48 @@
+models:
+  - name: stg_goldsky_musd_trove_manager__liquidation
+    description: Processes raw liquidation data from the Trove Manager system, transforming and calculating key metrics for downstream analysis.
+    columns:
+      - name: vid
+        description: Unique vertex identifier for the liquidation record
+
+      - name: block
+        description: Block data associated with the liquidation transaction
+
+      - name: id
+        description: Unique identifier for the liquidation event
+        data_tests:
+          - not_null
+          - unique
+
+      - name: block_number
+        description: Blockchain block number when the liquidation occurred
+
+      - name: record_timestamp
+        description: Timestamp of when the liquidation was recorded, converted from milliseconds to timestamp format
+
+      - name: transaction_hash
+        description: Hash of the blockchain transaction containing the liquidation
+
+      - name: contract_id
+        description: Identifier of the contract involved in the liquidation
+
+      - name: liquidated_principal
+        description: Amount of principal that was liquidated, formatted as currency
+
+      - name: liquidated_interest
+        description: Amount of interest that was liquidated, formatted as currency
+
+      - name: liquidated_collateral
+        description: Amount of collateral that was liquidated, formatted as currency
+
+      - name: coll_gas_compensation
+        description: Gas compensation related to the collateral in the liquidation process
+
+      - name: gas_compensation
+        description: General gas compensation for the liquidation transaction
+
+      - name: _gs_chain
+        description: Goldsky chain identifier for the blockchain network
+
+      - name: _gs_gid
+        description: Goldsky global identifier for the record

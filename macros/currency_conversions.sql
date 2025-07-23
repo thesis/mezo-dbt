@@ -16,3 +16,14 @@
         END
     )
 {% endmacro %}
+
+{% macro format_musd_currency_columns(columns) %}
+    {% for column in columns %}
+        -- Convert the column to a numeric type, coalesce NULL values to 0
+        -- Then divide by 1e18 to normalize the currency value
+        -- This replicates the Python function that divides by Decimal("1e18")
+        COALESCE(SAFE_CAST({{ column }} AS NUMERIC), 0) / 1e18 AS {{ column }}
+
+        {% if not loop.last %},{% endif %}
+    {% endfor %}
+{% endmacro %}

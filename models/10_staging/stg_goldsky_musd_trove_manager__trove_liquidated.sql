@@ -4,10 +4,9 @@ with source as (
   renamed as (
       select
         vid,
-        `block`,
+        --`block`, --duplicate of block_number
         id,
         block_number,
-        TIMESTAMP_MILLIS(cast(`timestamp` as int)) as record_timestamp,
         transaction_hash,
         contract_id,
         borrower,
@@ -15,7 +14,14 @@ with source as (
         coll as collateral,
         operation,
         _gs_chain,
-        _gs_gid
+        _gs_gid,
+        timestamp_millis(cast(`timestamp` as int)) as record_timestamp
       from source
-  )
-  select * from renamed
+  ),
+
+ transformed_fields as (
+      select * except(debt, collateral),
+        {{ format_musd_currency_columns(['debt', 'collateral']) }}
+      from renamed
+ )
+  select * from  transformed_fields

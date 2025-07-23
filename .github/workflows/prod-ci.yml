@@ -2,7 +2,8 @@ name: CI Run on Pull Request
 env:
   FAST_WIF_PROVIDER: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
   CICD_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT_EMAIL }}
-  DBT_SERVICE_ACCOUNT: ${{ secrets.PROD_DP_ORC_CMP_SA }}
+  DBT_SERVICE_ACCOUNT: ${{ secrets.DBT_SERVICE_ACCOUNT_EMAIL }}
+  TARGET: pr
 on:
   pull_request_target:
     types:

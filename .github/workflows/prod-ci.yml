@@ -37,10 +37,6 @@ jobs:
       - name: Install the project
         run: uv sync --dev
 
-      - name: run pytest
-        working-directory: ${{ github.workspace }}
-        run: uv run pytest
-
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
         with:

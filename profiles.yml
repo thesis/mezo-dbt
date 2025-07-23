@@ -25,5 +25,5 @@ mezo:
       job_execution_timeout_seconds: 1200
       priority: interactive
       location: EU
-      impersonate_service_account: "{{ env('DBT_SERVICE_ACCOUNT') }}"
+      impersonate_service_account: "{{ env_var('DBT_SERVICE_ACCOUNT') }}"
   target: prod

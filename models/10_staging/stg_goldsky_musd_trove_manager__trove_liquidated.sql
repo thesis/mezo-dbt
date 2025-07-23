@@ -1,6 +1,8 @@
 with source as (
-        select * from {{ source('raw_goldsky', 'raw_goldsky_musd_trove_manager__trove_liquidated') }}
+        select * from
+        {{ source('raw_goldsky', 'raw_goldsky_musd_trove_manager__trove_liquidated') }}
   ),
+
   renamed as (
       select
         vid,
@@ -24,4 +26,5 @@ with source as (
         {{ format_musd_currency_columns(['debt', 'collateral']) }}
       from renamed
  )
+
   select * from  transformed_fields

@@ -47,6 +47,9 @@ jobs:
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
 
+      - name: Get Schema ID
+        id: schema_id
+        run: echo "SCHEMA_ID=${{ github.event.pull_request.number }}__${{ github.sha }}" >> $GITHUB_ENV
 
       - name: Run dbt debug
         run: |
@@ -55,11 +58,6 @@ jobs:
       - name: Run dbt deps
         run: |
           uv run dbt deps --target ${{ env.TARGET }}
-
-      - name: Get Schema ID
-        id: schema_id
-        run: echo "SCHEMA_ID=${{ github.event.pull_request.number }}__${{ github.sha }}" >> $GITHUB_ENV
-
       - name: pre-commit
         uses: pre-commit/action@v3.0.1
 

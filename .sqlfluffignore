@@ -1,0 +1,8 @@
+target/
+target-base/
+dbt_modules/
+dbt_packages/
+macros/
+tests/
+.dbt-env/
+.venv/

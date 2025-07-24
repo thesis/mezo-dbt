@@ -9,7 +9,7 @@ CREATE OR REPLACE EXTERNAL TABLE
     `borrower` STRING,
     `debt` BIGNUMERIC,
     `coll` BIGNUMERIC,
-    `operation` BIGNUMERIC,
+    `operation` STRING,
     `_gs_chain` STRING,
     `_gs_gid` STRING)
 WITH PARTITION COLUMNS (`event_date` date)

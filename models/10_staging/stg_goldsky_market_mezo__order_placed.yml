@@ -1,0 +1,51 @@
+models:
+  - name: stg_goldsky_market_mezo__order_placed
+    description: Processes raw order placed data from the market, transforming and normalizing price fields for downstream analysis.
+    columns:
+      - name: block
+        description: Block number in which this event occurred
+
+      - name: block_number
+        description: Block number as a high-precision numeric value
+
+      - name: transaction_hash
+        description: Hash of the transaction that emitted this event
+        data_tests:
+          - not_null
+
+      - name: contract_id
+        description: Address of the contract that emitted the event
+        data_tests:
+          - not_null
+
+      - name: order_id
+        description: Unique identifier for the order
+        data_tests:
+          - not_null
+          - unique
+
+      - name: customer
+        description: Address of the customer who placed the order
+        data_tests:
+          - not_null
+
+      - name: product_id
+        description: Identifier for the product that was ordered
+        data_tests:
+          - not_null
+
+      - name: price
+        description: Price of the order (normalized currency)
+        data_tests:
+          - not_null
+
+      - name: _gs_chain
+        description: Chain where the event originated, e.g., 'mezo'
+
+      - name: _gs_gid
+        description: Unique identifier from Goldsky for the event
+
+      - name: record_timestamp
+        description: Timestamp of the event formatted as a datetime
+        data_tests:
+          - not_null

@@ -1,4 +1,4 @@
-token_address,token_symbol,token_name,token_type
+token_adress,token_symbol,token_name,token_type
 "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599","WBTC","wrapped-bitcoin","bitcoin"
 "0x18084fba666a33d37592fa2633fd49a74dd93a88","tBTC","tbtc","bitcoin"
 "0xc96de26018a54d51c097160568752c4e3bd6c364","FBTC","ignition-fbtc","bitcoin"

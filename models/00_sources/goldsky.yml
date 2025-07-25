@@ -5,3 +5,8 @@ sources:
     tables:
       - name: raw_goldsky_musd_trove_manager__liquidation
       - name: raw_goldsky_musd_trove_manager__trove_liquidated
+      - name: raw_goldsky_borrower_operations_mezo__trove_updated
+      - name: raw_goldsky_market_mezo__donated
+      - name: raw_goldsky_market_mezo__order_placed
+      - name: raw_goldsky_mezo_bridge_mainnet__assets_locked
+      - name: raw_goldsky_mezo_vaults_mezo__transfer

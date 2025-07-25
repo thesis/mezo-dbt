@@ -1,0 +1,60 @@
+models:
+  - name: stg_goldsky_borrower_operations_mezo__trove_updated
+    description: Processes raw trove updated data from borrower operations, transforming and normalizing currency fields for downstream analysis.
+    columns:
+      - name: block
+        description: Block number in which this event occurred
+
+      - name: block_number
+        description: Block number as a high-precision numeric value
+
+      - name: transaction_hash
+        description: Hash of the transaction that emitted this event
+        data_tests:
+          - not_null
+
+      - name: contract_id
+        description: Address of the contract that emitted the event
+        data_tests:
+          - not_null
+
+      - name: borrower
+        description: Address of the borrower
+        data_tests:
+          - not_null
+
+      - name: principal
+        description: Principal debt amount (normalized currency)
+        data_tests:
+          - not_null
+
+      - name: interest
+        description: Interest amount (normalized currency)
+
+      - name: collateral
+        description: Collateral amount (normalized currency)
+        data_tests:
+          - not_null
+
+      - name: stake
+        description: Stake amount (normalized currency)
+
+      - name: interest_rate
+        description: Interest rate for the trove.
+
+      - name: last_interest_update_time
+        description: Timestamp of the last interest update
+
+      - name: operation
+        description: Type of operation performed on the trove
+
+      - name: _gs_chain
+        description: Chain where the event originated, e.g., 'mezo'
+
+      - name: _gs_gid
+        description: Unique identifier from Goldsky for the event
+
+      - name: record_timestamp
+        description: Timestamp of the event formatted as a datetime
+        data_tests:
+          - not_null

@@ -1,0 +1,45 @@
+models:
+  - name: stg_goldsky_mezo_vaults_mezo__transfer
+    description: Processes raw transfer data from Mezo vaults, transforming and normalizing amount fields for downstream analysis.
+    columns:
+      - name: block
+        description: Block number in which this event occurred
+
+      - name: block_number
+        description: Block number as a high-precision numeric value
+
+      - name: transaction_hash
+        description: Hash of the transaction that emitted this event
+        data_tests:
+          - not_null
+
+      - name: contract_id
+        description: Address of the contract that emitted the event
+        data_tests:
+          - not_null
+
+      - name: sender
+        description: Address of the sender (renamed from 'from')
+        data_tests:
+          - not_null
+
+      - name: recipient
+        description: Address of the recipient (renamed from 'to')
+        data_tests:
+          - not_null
+
+      - name: amount
+        description: Amount that was transferred (normalized currency)
+        data_tests:
+          - not_null
+
+      - name: _gs_chain
+        description: Chain where the event originated, e.g., 'mezo'
+
+      - name: _gs_gid
+        description: Unique identifier from Goldsky for the event
+
+      - name: record_timestamp
+        description: Timestamp of the event formatted as a datetime
+        data_tests:
+          - not_null

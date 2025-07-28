@@ -4,5 +4,4 @@ dbt_packages/
 logs/
 .venv/
 dbt_internal_packages/
-.github/
 .DS_Store

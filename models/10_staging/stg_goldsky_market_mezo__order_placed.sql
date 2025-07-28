@@ -18,7 +18,7 @@ with
             _gs_chain,
             _gs_gid,
             lower(product_id) as product_id,
-            timestamp_millis(cast(`timestamp` as int)) as record_timestamp
+            timestamp_seconds(cast(`timestamp` as int)) as record_timestamp
         from source
     ),
 

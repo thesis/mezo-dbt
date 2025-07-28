@@ -36,7 +36,7 @@ with
             {{ categorize_operation("operation") }} as operation,
             {{
                 format_musd_currency_columns(
-                    ["principal", "interest", "collateral", "stake", "interest"]
+                    ["principal", "interest", "collateral", "stake"]
                 )
             }}
         from renamed

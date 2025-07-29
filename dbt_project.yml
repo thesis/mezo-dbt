@@ -39,9 +39,9 @@ models:
     10_staging:
       schema: "staging"
       +materialized: view
-    20_intermediate:
+    50_intermediate:
       schema: "intermediate"
       +materialized: view
-    30_marts:
+    80_marts:
       schema: "marts"
       +materialized: table

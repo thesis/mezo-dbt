@@ -1,0 +1,12 @@
+version: 2
+seeds:
+  - name: token_map
+    columns:
+      - name: token_adress
+        data_type: STRING
+      - name: token_symbol
+        data_type: STRING
+      - name: token_name
+        data_type: STRING
+      - name: token_type
+        data_type: STRING

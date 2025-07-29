@@ -1,0 +1,4 @@
+version: 2
+models:
+  - name: my_python_dbt_model
+    columns: []

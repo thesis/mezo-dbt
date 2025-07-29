@@ -4,9 +4,200 @@ sources:
     schema: raw_goldsky
     tables:
       - name: raw_goldsky_musd_trove_manager__liquidation
+        columns:
+          - name: vid
+            data_type: INT64
+          - name: block
+            data_type: INT64
+          - name: id
+            data_type: STRING
+          - name: block_number
+            data_type: BIGNUMERIC
+          - name: timestamp
+            data_type: BIGNUMERIC
+          - name: transaction_hash
+            data_type: STRING
+          - name: contract_id
+            data_type: STRING
+          - name: liquidated_principal
+            data_type: BIGNUMERIC
+          - name: liquidated_interest
+            data_type: BIGNUMERIC
+          - name: liquidated_coll
+            data_type: BIGNUMERIC
+          - name: coll_gas_compensation
+            data_type: BIGNUMERIC
+          - name: gas_compensation
+            data_type: BIGNUMERIC
+          - name: _gs_chain
+            data_type: STRING
+          - name: _gs_gid
+            data_type: STRING
+          - name: event_date
+            data_type: DATE
       - name: raw_goldsky_musd_trove_manager__trove_liquidated
+        columns:
+          - name: vid
+            data_type: INT64
+          - name: block
+            data_type: INT64
+          - name: id
+            data_type: STRING
+          - name: block_number
+            data_type: BIGNUMERIC
+          - name: timestamp
+            data_type: BIGNUMERIC
+          - name: transaction_hash
+            data_type: STRING
+          - name: contract_id
+            data_type: STRING
+          - name: borrower
+            data_type: STRING
+          - name: debt
+            data_type: BIGNUMERIC
+          - name: coll
+            data_type: BIGNUMERIC
+          - name: operation
+            data_type: STRING
+          - name: _gs_chain
+            data_type: STRING
+          - name: _gs_gid
+            data_type: STRING
+          - name: event_date
+            data_type: DATE
       - name: raw_goldsky_borrower_operations_mezo__trove_updated
+        columns:
+          - name: block
+            data_type: INT64
+          - name: block_number
+            data_type: BIGNUMERIC
+          - name: timestamp
+            data_type: BIGNUMERIC
+          - name: transaction_hash
+            data_type: STRING
+          - name: contract_id
+            data_type: STRING
+          - name: borrower
+            data_type: STRING
+          - name: principal
+            data_type: BIGNUMERIC
+          - name: interest
+            data_type: BIGNUMERIC
+          - name: coll
+            data_type: BIGNUMERIC
+          - name: stake
+            data_type: BIGNUMERIC
+          - name: interest_rate
+            data_type: BIGNUMERIC
+          - name: last_interest_update_time
+            data_type: BIGNUMERIC
+          - name: operation
+            data_type: STRING
+          - name: _gs_chain
+            data_type: STRING
+          - name: _gs_gid
+            data_type: STRING
+          - name: event_date
+            data_type: DATE
       - name: raw_goldsky_market_mezo__donated
+        columns:
+          - name: block
+            data_type: INT64
+          - name: block_number
+            data_type: BIGNUMERIC
+          - name: timestamp
+            data_type: BIGNUMERIC
+          - name: transaction_hash
+            data_type: STRING
+          - name: contract_id
+            data_type: STRING
+          - name: donor
+            data_type: STRING
+          - name: beneficiary_id
+            data_type: STRING
+          - name: recipient
+            data_type: STRING
+          - name: amount
+            data_type: BIGNUMERIC
+          - name: _gs_chain
+            data_type: STRING
+          - name: _gs_gid
+            data_type: STRING
+          - name: event_date
+            data_type: DATE
       - name: raw_goldsky_market_mezo__order_placed
+        columns:
+          - name: block
+            data_type: INT64
+          - name: block_number
+            data_type: BIGNUMERIC
+          - name: timestamp
+            data_type: BIGNUMERIC
+          - name: transaction_hash
+            data_type: STRING
+          - name: contract_id
+            data_type: STRING
+          - name: order_id
+            data_type: STRING
+          - name: customer
+            data_type: STRING
+          - name: product_id
+            data_type: STRING
+          - name: price
+            data_type: BIGNUMERIC
+          - name: _gs_chain
+            data_type: STRING
+          - name: _gs_gid
+            data_type: STRING
+          - name: event_date
+            data_type: DATE
       - name: raw_goldsky_mezo_bridge_mainnet__assets_locked
+        columns:
+          - name: block
+            data_type: INT64
+          - name: block_number
+            data_type: BIGNUMERIC
+          - name: timestamp
+            data_type: BIGNUMERIC
+          - name: transaction_hash
+            data_type: STRING
+          - name: contract_id
+            data_type: STRING
+          - name: sequence_number
+            data_type: BIGNUMERIC
+          - name: recipient
+            data_type: STRING
+          - name: token
+            data_type: STRING
+          - name: amount
+            data_type: BIGNUMERIC
+          - name: _gs_chain
+            data_type: STRING
+          - name: _gs_gid
+            data_type: STRING
+          - name: event_date
+            data_type: DATE
       - name: raw_goldsky_mezo_vaults_mezo__transfer
+        columns:
+          - name: block
+            data_type: INT64
+          - name: block_number
+            data_type: BIGNUMERIC
+          - name: timestamp
+            data_type: BIGNUMERIC
+          - name: transaction_hash
+            data_type: STRING
+          - name: contract_id
+            data_type: STRING
+          - name: from
+            data_type: STRING
+          - name: to
+            data_type: STRING
+          - name: value
+            data_type: BIGNUMERIC
+          - name: _gs_chain
+            data_type: STRING
+          - name: _gs_gid
+            data_type: STRING
+          - name: event_date
+            data_type: DATE

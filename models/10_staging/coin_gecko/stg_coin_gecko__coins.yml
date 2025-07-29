@@ -1,0 +1,16 @@
+version: 2
+models:
+  - name: stg_coin_gecko__coins
+    columns:
+      - name: id
+        data_type: STRING
+      - name: symbol
+        data_type: STRING
+      - name: name
+        data_type: STRING
+      - name: platforms
+        data_type: JSON
+      - name: _dlt_load_id
+        data_type: STRING
+      - name: _dlt_id
+        data_type: STRING

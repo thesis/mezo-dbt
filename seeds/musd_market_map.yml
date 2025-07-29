@@ -1,0 +1,8 @@
+version: 2
+seeds:
+  - name: musd_market_map
+    columns:
+      - name: id
+        data_type: STRING
+      - name: name
+        data_type: STRING

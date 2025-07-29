@@ -3,7 +3,10 @@ with
         select * from {{ ref("stg_goldsky_mezo_bridge_mainnet__assets_locked") }}
     ),
 
-    currency_lookup as (select * from {{ ref("stg_seed_token_map") }}),
+    currency_lookup as (
+        select *, json_value(platforms, '$.ethereum') as ethereum_address
+        from {{ ref("stg_coin_gecko__coins") }}
+    ),
 
     currency_conversion_values as (
         select coin_id, usd_value, last_updated_at
@@ -19,13 +22,15 @@ with
 
     lookup_currency as (
         select
-            assets_locked.*,
-            currency_lookup.token_symbol,
-            currency_lookup.token_type,
-            currency_lookup.token_name
+            assets_locked.* except (amount),
+            currency_lookup.symbol as token_symbol,
+            currency_lookup.id as token_id,
+            currency_lookup.name as token_name,
+            {{ format_currency("amount", "currency_lookup.symbol") }} as amount
         from assets_locked
         left join
-            currency_lookup on assets_locked.token_adress = currency_lookup.token_adress
+            currency_lookup
+            on assets_locked.token_adress = currency_lookup.ethereum_address
     ),
 
     currency_conversion as (
@@ -38,7 +43,7 @@ with
         from lookup_currency
         left join
             most_recent_conversion
-            on lookup_currency.token_name = most_recent_conversion.coin_id
+            on lookup_currency.token_id = most_recent_conversion.coin_id
     )
 
 select *

@@ -25,11 +25,5 @@ with
         from source
     ),
 
-    transformed_fields as (
-        select
-            * except (amount), {{ format_currency("amount", "token_adress") }} as amount
-        from renamed
-    )
-
 select *
-from transformed_fields
+from renamed

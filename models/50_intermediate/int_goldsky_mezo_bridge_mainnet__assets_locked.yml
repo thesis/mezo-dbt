@@ -38,8 +38,7 @@ models:
       - name: token_symbol
         description: The token symbol (e.g. BTC, ETH, USDC)
         data_type: STRING
-      - name: token_type
-        description: The category of the token (e.g. bitcoin, stablecoin, ethereum)
+      - name: token_id
         data_type: STRING
       - name: token_name
         description: The full name of the token

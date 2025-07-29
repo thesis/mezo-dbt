@@ -8,9 +8,9 @@ models:
         data_type: STRING
       - name: name
         data_type: STRING
-      - name: platforms
-        data_type: JSON
       - name: _dlt_load_id
         data_type: STRING
       - name: _dlt_id
         data_type: STRING
+      - name: platforms
+        data_type: JSON

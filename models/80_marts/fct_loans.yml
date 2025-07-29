@@ -1,0 +1,18 @@
+version: 2
+models:
+  - name: fct_loans
+    columns:
+      - name: id
+        data_type: STRING
+      - name: fk_dim1__borrower
+        data_type: STRING
+      - name: collateral_usd_value
+        data_type: FLOAT64
+      - name: record_date
+        data_type: DATE
+      - name: new_loan_count
+        data_type: INT64
+      - name: adjusted_loan_count
+        data_type: INT64
+      - name: closed_loan_count
+        data_type: INT64

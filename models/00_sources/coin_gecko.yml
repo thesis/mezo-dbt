@@ -1,0 +1,7 @@
+sources:
+  - name: raw_coin_gecko
+    database: mezo-portal-data
+    schema: raw_coin_gecko
+    tables:
+      - name: coins
+      - name: prices

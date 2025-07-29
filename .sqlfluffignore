@@ -6,3 +6,4 @@ macros/
 tests/
 .dbt-env/
 .venv/
+dbt_internal_packages/

@@ -9,8 +9,6 @@ with
             }}
     ),
 
-    currency_lookup as (select * from {{ ref("stg_seed_token_map") }}),
-
     renamed as (
         select
             block,
@@ -31,18 +29,7 @@ with
         select
             * except (amount), {{ format_currency("amount", "token_adress") }} as amount
         from renamed
-    ),
-
-    lookup_currency as (
-        select
-            transformed_fields.*,
-            currency_lookup.token_symbol,
-            currency_lookup.token_type
-        from transformed_fields
-        left join
-            currency_lookup
-            on transformed_fields.token_adress = currency_lookup.token_adress
     )
 
 select *
-from lookup_currency
+from transformed_fields

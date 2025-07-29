@@ -37,4 +37,11 @@ models:
     timeout: 3000
     # Config indicated by + and applies to all files under models/example/
     10_staging:
+      schema: "staging"
       +materialized: view
+    20_intermediate:
+      schema: "intermediate"
+      +materialized: view
+    30_marts:
+      schema: "marts"
+      +materialized: table

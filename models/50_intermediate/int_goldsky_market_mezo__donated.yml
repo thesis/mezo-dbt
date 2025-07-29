@@ -1,0 +1,25 @@
+models:
+  - name: int_goldsky_market_mezo__donated
+    columns:
+      - name: block
+        data_type: int64
+      - name: block_number
+        data_type: bignumeric
+      - name: transaction_hash
+        data_type: string
+      - name: contract_id
+        data_type: string
+      - name: donor
+        data_type: string
+      - name: beneficiary_id
+        data_type: string
+      - name: _gs_chain
+        data_type: string
+      - name: _gs_gid
+        data_type: string
+      - name: record_timestamp
+        data_type: timestamp
+      - name: amount
+        data_type: numeric
+      - name: recipient
+        data_type: string

@@ -1,5 +1,5 @@
 models:
-  - name: stg_goldsky_market_mezo__order_placed
+  - name: int_goldsky_market_mezo__order_placed
     description: Processes raw order placed data from the market, transforming and normalizing price fields for downstream analysis.
     columns:
       - name: block
@@ -31,6 +31,11 @@ models:
 
       - name: price
         description: Price of the order (normalized currency)
+        data_tests:
+          - not_null
+
+      - name: product_name
+        description: Name of the product that was ordered.
         data_tests:
           - not_null
 

@@ -12,7 +12,7 @@ token_adress,token_symbol,token_name,token_type
 "0xcdf7028ceab81fa0c6971208e83fa7872994bee5","T","threshold-network-token","ethereum"
 "0xdac17f958d2ee523a2206206994597c13d831ec7","USDT","tether","stablecoin"
 ,"BTC","bitcoin","bitcoin"
-,"LBTC","lombard-staked-btc","bitcoin"
+0xecac9c5f704e954931349da37f60e39f515c11c1,"LBTC","lombard-staked-btc","bitcoin"
 ,"intBTC",,"bitcoin"
 ,"crv-stBTC",,"bitcoin"
 ,"crvUSD",,"stablecoin"

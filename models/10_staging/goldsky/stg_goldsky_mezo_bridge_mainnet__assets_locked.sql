@@ -23,7 +23,7 @@ with
             _gs_gid,
             timestamp_seconds(cast(`timestamp` as int)) as record_timestamp
         from source
-    ),
+    )
 
 select *
 from renamed

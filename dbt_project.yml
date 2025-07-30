@@ -31,10 +31,21 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   mezo:
+    +dbt-osmosis: "{model}.yml"
     submission_method: bigframes
     notebook_template_id: 6574243905263370240
     packages: []
     timeout: 3000
     # Config indicated by + and applies to all files under models/example/
     10_staging:
+      schema: "staging"
       +materialized: view
+    50_intermediate:
+      schema: "intermediate"
+      +materialized: view
+    80_marts:
+      schema: "marts"
+      +materialized: table
+seeds:
+  mezo:
+    +dbt-osmosis: "{model}.yml"

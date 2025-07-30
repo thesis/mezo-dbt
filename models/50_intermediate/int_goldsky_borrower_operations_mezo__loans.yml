@@ -1,0 +1,60 @@
+version: 2
+models:
+  - name: int_goldsky_borrower_operations_mezo__loans
+    columns:
+      - name: block
+        description: Block number in which this event occurred
+        data_type: INT64
+      - name: block_number
+        description: Block number as a high-precision numeric value
+        data_type: BIGNUMERIC
+      - name: transaction_hash
+        description: Hash of the transaction that emitted this event
+        data_type: STRING
+      - name: contract_id
+        description: Address of the contract that emitted the event
+        data_type: STRING
+      - name: borrower
+        description: Address of the borrower
+        data_type: STRING
+      - name: last_interest_update_time
+        description: Timestamp of the last interest update
+        data_type: BIGNUMERIC
+      - name: _gs_chain
+        description: Chain where the event originated, e.g., 'mezo'
+        data_type: STRING
+      - name: _gs_gid
+        description: Unique identifier from Goldsky for the event
+        data_type: STRING
+      - name: record_timestamp
+        description: Timestamp of the event formatted as a datetime
+        data_type: TIMESTAMP
+      - name: operation
+        description: Type of operation performed on the trove
+        data_type: STRING
+      - name: principal
+        description: Principal debt amount (normalized currency)
+        data_type: NUMERIC
+      - name: interest
+        description: Interest amount (normalized currency)
+        data_type: NUMERIC
+      - name: collateral
+        description: Collateral amount (normalized currency)
+        data_type: NUMERIC
+      - name: stake
+        description: Stake amount (normalized currency)
+        data_type: NUMERIC
+      - name: currency_conversion_timestamp
+        data_type: TIMESTAMP
+      - name: collateral_usd_value
+        data_type: FLOAT64
+      - name: collateral_ratio
+        data_type: FLOAT64
+      - name: previous_principal_value
+        data_type: NUMERIC
+      - name: previous_collateral_value
+        data_type: NUMERIC
+      - name: adjustment_type_principal
+        data_type: STRING
+      - name: adjustment_type_collateral
+        data_type: STRING

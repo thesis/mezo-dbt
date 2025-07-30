@@ -1,0 +1,17 @@
+models:
+  - name: stg_seed_musd_market_map
+    description: >-
+      Standardized view of MUSD market mappings used for market identification and reference data.
+    columns:
+      - name: market_id
+        description: The unique identifier for the market (either a blockchain address or a numeric ID)
+        data_tests:
+          - not_null
+          - unique
+
+        data_type: STRING
+      - name: market_name
+        description: The name of the market (e.g., Brink, SheFi, or product identifiers)
+        data_tests:
+          - not_null
+        data_type: STRING

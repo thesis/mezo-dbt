@@ -1,18 +1,18 @@
 {% macro format_currency(column_to_format, asset_column) %}
     (
-        -- Step 1: Safely cast the raw column to a NUMERIC type.
-        -- SAFE_CAST returns NULL if the conversion fails, preventing query errors.
-        -- COALESCE then converts any NULLs (either from source or failed cast) to 0.
-        COALESCE(SAFE_CAST({{ column_to_format }} AS NUMERIC), 0)
-
-        /
-
-        -- Step 2: Determine the correct scaling factor based on the asset symbol.
-        -- This CASE statement mirrors the if/elif/else logic from the Python function.
-        CASE
-            WHEN {{ asset_column }} IN ('USDC', 'USDT') THEN 1e6
-            WHEN {{ asset_column }} IN ('WBTC', 'FBTC', 'cbBTC', 'swBTC') THEN 1e8
-            ELSE 1e18
-        END
+        coalesce(safe_cast({{ column_to_format }} as numeric), 0) / case
+            when {{ asset_column }} in ('usdc', 'usdt')
+            then 1e6
+            when {{ asset_column }} in ('wbtc', 'fbtc', 'cbbtc', 'swbtc')
+            then 1e8
+            else 1e18
+        end
     )
+{% endmacro %}
+
+{% macro format_musd_currency_columns(columns) %}
+    {% for column in columns %}
+        coalesce(safe_cast({{ column }} as numeric), 0) / 1e18 as {{ column }}
+        {% if not loop.last %},{% endif %}
+    {% endfor %}
 {% endmacro %}

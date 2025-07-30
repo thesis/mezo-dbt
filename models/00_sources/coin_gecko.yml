@@ -1,0 +1,33 @@
+sources:
+  - name: raw_coin_gecko
+    database: mezo-portal-data
+    schema: raw_coin_gecko
+    tables:
+      - name: coins
+        columns:
+          - name: id
+            data_type: STRING
+          - name: symbol
+            data_type: STRING
+          - name: name
+            data_type: STRING
+          - name: platforms
+            data_type: JSON
+          - name: _dlt_load_id
+            data_type: STRING
+          - name: _dlt_id
+            data_type: STRING
+      - name: prices
+        columns:
+          - name: id
+            data_type: STRING
+          - name: coin_id
+            data_type: STRING
+          - name: usd_value
+            data_type: FLOAT64
+          - name: last_updated_at
+            data_type: TIMESTAMP
+          - name: _dlt_load_id
+            data_type: STRING
+          - name: _dlt_id
+            data_type: STRING

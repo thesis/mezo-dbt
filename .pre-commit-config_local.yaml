@@ -1,0 +1,37 @@
+repos:
+  - repo: https://github.com/sqlfluff/sqlfluff
+    rev: 3.3.1
+    hooks:
+      - id: sqlfluff-lint
+        additional_dependencies:
+          ["dbt-bigquery==1.9.*", "sqlfluff-templater-dbt==3.3.1"]
+        args: ["--config", ".sqlfluff_dev"]
+        stages: [pre-commit]
+      - id: sqlfluff-fix
+        args: ["--config", ".sqlfluff_dev"]
+        stages: [manual] # this command is available only to run manually
+        additional_dependencies:
+          ["dbt-bigquery==1.8.*", "sqlfluff-templater-dbt==3.3.1"]
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v1.17.0
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0 # Use the latest tag
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.4 # Use the latest ruff tag
+    hooks:
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix] # Auto-fix linting issues
+      - id: ruff-format
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.7.3
+    hooks:
+      - id: uv-lock
+exclude: "target/|dbt_modules/|dbt_packages/|macros/|tests/"

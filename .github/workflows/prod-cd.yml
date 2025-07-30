@@ -1,5 +1,12 @@
 name: Build and Deploy to Cloud Run Job
 
+env:
+  WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+  CICD_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT_EMAIL }}
+  DBT_SERVICE_ACCOUNT: ${{ secrets.DBT_SERVICE_ACCOUNT_EMAIL }}
+  TARGET: prod
+  PROJECT_ID: mezo-portal-data
+
 on:
   push:
     branches: [ main ]
@@ -9,10 +16,41 @@ permissions:
   id-token: write
   contents: read
 
-env:
-  PROJECT_ID: mezo-portal-data
 jobs:
-  build-and-deploy:
+  dbt-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Install the project
+        run: uv sync --dev
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ env.WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ env.CICD_SERVICE_ACCOUNT }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Run dbt debug
+        run: |
+          uv run dbt debug --target ${{ env.TARGET }}
+
+      - name: Run dbt deps
+        run: |
+          uv run dbt deps --target ${{ env.TARGET }}
+
+      - name: Run dbt build
+        run: |
+            uv run dbt build --target ${{ env.TARGET }}
+
+  build-container-and-deploy:
     runs-on: ubuntu-latest
     env:
       SERVICE_NAME: mezo-prod-dp-dwh-dbt-crj-0

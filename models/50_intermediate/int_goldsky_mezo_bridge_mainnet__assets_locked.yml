@@ -1,0 +1,49 @@
+version: 2
+models:
+  - name: int_goldsky_mezo_bridge_mainnet__assets_locked
+    columns:
+      - name: block
+        description: Block number in which this event occurred
+        data_type: INT64
+      - name: block_number
+        description: Block number as a high-precision numeric value
+        data_type: BIGNUMERIC
+      - name: transaction_hash
+        description: Hash of the transaction that emitted this event
+        data_type: STRING
+      - name: contract_id
+        description: Address of the contract that emitted the event
+        data_type: STRING
+      - name: sequence_number
+        description: Sequence number for the lock event
+        data_type: BIGNUMERIC
+      - name: recipient
+        description: Address of the asset recipient
+        data_type: STRING
+      - name: token_adress
+        description: Address of the token
+        data_type: STRING
+      - name: _gs_chain
+        description: Chain where the event originated, e.g., 'mainnet'
+        data_type: STRING
+      - name: _gs_gid
+        description: Unique identifier from Goldsky for the event
+        data_type: STRING
+      - name: record_timestamp
+        description: Timestamp of the event formatted as a datetime
+        data_type: TIMESTAMP
+      - name: amount
+        description: Amount of tokens locked (normalized based on token decimals)
+        data_type: FLOAT64
+      - name: token_symbol
+        description: The token symbol (e.g. BTC, ETH, USDC)
+        data_type: STRING
+      - name: token_id
+        data_type: STRING
+      - name: token_name
+        description: The full name of the token
+        data_type: STRING
+      - name: currency_conversion_timestamp
+        data_type: TIMESTAMP
+      - name: token_usd_value
+        data_type: FLOAT64

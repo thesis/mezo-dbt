@@ -1,0 +1,36 @@
+models:
+  - name: int_goldsky_market_mezo__donated
+    columns:
+      - name: block
+        data_type: int64
+        description: Block number in which this event occurred
+      - name: block_number
+        data_type: bignumeric
+        description: Block number as a high-precision numeric value
+      - name: transaction_hash
+        data_type: string
+        description: Hash of the transaction that emitted this event
+      - name: contract_id
+        data_type: string
+        description: Address of the contract that emitted the event
+      - name: donor
+        data_type: string
+        description: Address of the donor
+      - name: beneficiary_id
+        data_type: string
+        description: ID of the beneficiary
+      - name: _gs_chain
+        data_type: string
+        description: Chain where the event originated, e.g., 'mezo'
+      - name: _gs_gid
+        data_type: string
+        description: Unique identifier from Goldsky for the event
+      - name: record_timestamp
+        data_type: timestamp
+        description: Timestamp of the event formatted as a datetime
+      - name: amount
+        data_type: numeric
+        description: Amount that was donated (normalized currency)
+      - name: recipient
+        data_type: string
+        description: Address of the recipient

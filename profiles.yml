@@ -12,7 +12,7 @@ mezo:
       project: mezo-portal-data
       threads: 10
       type: bigquery
-      impersonate_service_account: "{{ env('DBT_SERVICE_ACCOUNT') }}"
+      impersonate_service_account: "{{ env_var('DBT_SERVICE_ACCOUNT') }}"
     pr:
       type: bigquery
       method: oauth

@@ -54,6 +54,7 @@ jobs:
             uv run dbt build --target ${{ env.TARGET }}
 
   build-container-and-deploy:
+    needs: dbt-build
     runs-on: ubuntu-latest
     env:
       SERVICE_NAME: mezo-prod-dp-dwh-dbt-crj-0

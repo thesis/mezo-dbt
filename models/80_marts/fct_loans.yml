@@ -4,15 +4,43 @@ models:
     columns:
       - name: id
         data_type: STRING
+        description: ''
+        config:
+          meta: {}
+          tags: []
       - name: fk_dim1__borrower
         data_type: STRING
+        description: ''
+        config:
+          meta: {}
+          tags: []
       - name: collateral_usd_value
         data_type: FLOAT64
+        description: ''
+        config:
+          meta: {}
+          tags: []
       - name: record_date
         data_type: DATE
+        description: ''
+        config:
+          meta: {}
+          tags: []
       - name: new_loan_count
         data_type: INT64
+        description: ''
+        config:
+          meta: {}
+          tags: []
       - name: adjusted_loan_count
         data_type: INT64
+        description: ''
+        config:
+          meta: {}
+          tags: []
       - name: closed_loan_count
         data_type: INT64
+        description: ''
+        config:
+          meta: {}
+          tags: []

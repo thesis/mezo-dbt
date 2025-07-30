@@ -1,0 +1,4 @@
+sources:
+  - name: twitter_ads
+    database: mezo-portal-data
+    schema: twitter_ads

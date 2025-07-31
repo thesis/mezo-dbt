@@ -46,6 +46,14 @@ models:
     80_marts:
       schema: "marts"
       +materialized: table
+  twitter_ads:
+    +schema: "intermediate"
+  twitter_ads_source:
+    +schema: "staging"
 seeds:
   mezo:
     +dbt-osmosis: "{model}.yml"
+
+vars:
+    twitter_ads_schema: twitter_ads
+    twitter_ads__using_keywords: False

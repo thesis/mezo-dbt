@@ -22,13 +22,6 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
-
-# Configuring models
-# Full documentation: https://docs.getdbt.com/docs/configuring-models
-
-# In this example config, we tell dbt to build all models in the example/
-# directory as views. These settings can be overridden in the individual model
-# files using the `{{ config(...) }}` macro.
 models:
   mezo:
     +dbt-osmosis: "{model}.yml"
@@ -46,6 +39,15 @@ models:
     80_marts:
       schema: "marts"
       +materialized: table
+  twitter_ads:
+    +schema: "intermediate"
+  twitter_ads_source:
+    +schema: "staging"
 seeds:
   mezo:
     +dbt-osmosis: "{model}.yml"
+
+vars:
+    twitter_ads_schema: raw_paid_twitter_ads
+    twitter_ads_database: mezo-portal-data
+    twitter_ads__using_keywords: False

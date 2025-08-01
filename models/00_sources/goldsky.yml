@@ -7,197 +7,565 @@ sources:
         columns:
           - name: vid
             data_type: INT64
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: block
             data_type: INT64
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: id
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: block_number
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: timestamp
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: transaction_hash
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: contract_id
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: liquidated_principal
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: liquidated_interest
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: liquidated_coll
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: coll_gas_compensation
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: gas_compensation
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: _gs_chain
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: _gs_gid
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: event_date
             data_type: DATE
+            description: ''
+            config:
+              meta: {}
+              tags: []
       - name: raw_goldsky_musd_trove_manager__trove_liquidated
         columns:
           - name: vid
             data_type: INT64
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: block
             data_type: INT64
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: id
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: block_number
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: timestamp
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: transaction_hash
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: contract_id
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: borrower
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: debt
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: coll
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: operation
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: _gs_chain
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: _gs_gid
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: event_date
             data_type: DATE
+            description: ''
+            config:
+              meta: {}
+              tags: []
       - name: raw_goldsky_borrower_operations_mezo__trove_updated
         columns:
           - name: block
             data_type: INT64
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: block_number
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: timestamp
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: transaction_hash
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: contract_id
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: borrower
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: principal
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: interest
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: coll
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: stake
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: interest_rate
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: last_interest_update_time
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: operation
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: _gs_chain
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: _gs_gid
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: event_date
             data_type: DATE
+            description: ''
+            config:
+              meta: {}
+              tags: []
       - name: raw_goldsky_market_mezo__donated
         columns:
           - name: block
             data_type: INT64
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: block_number
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: timestamp
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: transaction_hash
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: contract_id
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: donor
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: beneficiary_id
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: recipient
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: amount
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: _gs_chain
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: _gs_gid
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: event_date
             data_type: DATE
+            description: ''
+            config:
+              meta: {}
+              tags: []
       - name: raw_goldsky_market_mezo__order_placed
         columns:
           - name: block
             data_type: INT64
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: block_number
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: timestamp
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: transaction_hash
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: contract_id
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: order_id
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: customer
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: product_id
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: price
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: _gs_chain
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: _gs_gid
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: event_date
             data_type: DATE
+            description: ''
+            config:
+              meta: {}
+              tags: []
       - name: raw_goldsky_mezo_bridge_mainnet__assets_locked
         columns:
           - name: block
             data_type: INT64
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: block_number
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: timestamp
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: transaction_hash
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: contract_id
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: sequence_number
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: recipient
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: token
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: amount
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: _gs_chain
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: _gs_gid
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: event_date
             data_type: DATE
+            description: ''
+            config:
+              meta: {}
+              tags: []
       - name: raw_goldsky_mezo_vaults_mezo__transfer
         columns:
           - name: block
             data_type: INT64
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: block_number
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: timestamp
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: transaction_hash
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: contract_id
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: from
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: to
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: value
             data_type: BIGNUMERIC
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: _gs_chain
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: _gs_gid
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: event_date
             data_type: DATE
+            description: ''
+            config:
+              meta: {}
+              tags: []

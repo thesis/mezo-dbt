@@ -4,13 +4,37 @@ models:
     columns:
       - name: id
         data_type: STRING
+        description: ''
+        config:
+          meta: {}
+          tags: []
       - name: symbol
         data_type: STRING
+        description: ''
+        config:
+          meta: {}
+          tags: []
       - name: name
         data_type: STRING
+        description: ''
+        config:
+          meta: {}
+          tags: []
       - name: _dlt_load_id
         data_type: STRING
+        description: ''
+        config:
+          meta: {}
+          tags: []
       - name: _dlt_id
         data_type: STRING
+        description: ''
+        config:
+          meta: {}
+          tags: []
       - name: platforms
         data_type: JSON
+        description: ''
+        config:
+          meta: {}
+          tags: []

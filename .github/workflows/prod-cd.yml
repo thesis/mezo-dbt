@@ -4,6 +4,7 @@ env:
   WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
   CICD_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT_EMAIL }}
   DBT_SERVICE_ACCOUNT: ${{ secrets.DBT_SERVICE_ACCOUNT_EMAIL }}
+  MANIFEST_BUCKET: ${{ secrets.GCP_GCS_BUCKET }}
   TARGET: prod
   PROJECT_ID: mezo-portal-data
 
@@ -49,6 +50,10 @@ jobs:
         run: |
           uv run dbt deps --target ${{ env.TARGET }}
 
+      - name: Get Curent Version of manifest.json_array
+        run: |
+          gcloud storage cp gs://${{ env.MANIFEST_BUCKET}}/manifest/manifest.json prod_target/manifest.json || echo "No previous manifest found, starting fresh."
+
       - name: Run dbt build
         run: |
             uv run dbt build --target ${{ env.TARGET }}
@@ -57,7 +62,7 @@ jobs:
         if: always()
         run: |
           if [ -f target/manifest.json ]; then
-            gsutil cp target/manifest.json gs://mezo-prod-dp-dwh-dbt-cs-0/manifest/manifest.json
+            gcloud storage cp target/manifest.json gs://${{ env.MANIFEST_BUCKET}}/manifest/manifest.json
           else
             echo "manifest.json not found, skipping upload."
           fi
@@ -102,7 +107,7 @@ jobs:
           gcloud run jobs deploy $SERVICE_NAME \
             --image $IMAGE \
             --tasks 1 \
-            --set-env-vars SLEEP_MS=10000,FAIL_RATE=0.1,DBT_SERVICE_ACCOUNT=${{ secrets.DBT_SERVICE_ACCOUNT_EMAIL }}   \
+            --set-env-vars SLEEP_MS=10000,FAIL_RATE=0.1,DBT_SERVICE_ACCOUNT=${{ secrets.DBT_SERVICE_ACCOUNT_EMAIL }},GCS_BUCKET=${{ secrets.GCP_GCS_BUCKET }} \
             --max-retries 5 \
             --region $REGION \
             --project $PROJECT_ID \

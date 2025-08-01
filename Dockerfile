@@ -19,8 +19,10 @@ WORKDIR /app
 # Copy the project files into the Docker container
 COPY . /app
 
-# Ensure dbtuser owns all files in /app
-RUN chown -R dbtuser:dbtuser /app
+
+# Ensure dbtuser owns all files in /app and make script.sh executable
+RUN chown -R dbtuser:dbtuser /app \
+    && chmod +x /app/script.sh
 
 # Switch to dbtuser
 USER dbtuser
@@ -31,4 +33,4 @@ RUN uv sync --no-dev
 # Set the command to run when the Docker container starts
 # Accept an optional SELECT argument at runtime (default empty)
 ENV SELECT_ARG=""
-CMD ["sh", "-c", "uv run dbt run --profiles-dir /app --project-dir /app --target prod ${SELECT_ARG:+--select $SELECT_ARG} && /root/google-cloud-sdk/bin/gsutil cp /app/target/manifest.json gs://mezo-prod-dp-dwh-dbt-cs-0/manifest/mainfest.json"]
+CMD ["sh", "-c", "./script.sh"]

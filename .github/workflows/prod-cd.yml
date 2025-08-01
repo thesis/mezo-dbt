@@ -63,7 +63,7 @@ jobs:
 
       - name: Run dbt build
         run: |
-            uv run dbt build --target ${{ env.TARGET }} --defer --state prod_target/manifest.json
+            uv run dbt build --target ${{ env.TARGET }} --defer --state prod_target
 
       - name: Upload manifest to GCS
         if: always()

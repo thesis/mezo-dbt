@@ -93,7 +93,7 @@ jobs:
           gcloud run jobs deploy $SERVICE_NAME \
             --image $IMAGE \
             --tasks 1 \
-            --set-env-vars SLEEP_MS=10000,FAIL_RATE=0.1 \
+            --set-env-vars SLEEP_MS=10000,FAIL_RATE=0.1,DBT_SERVICE_ACCOUNT=${{ secrets.DBT_SERVICE_ACCOUNT_EMAIL }}   \
             --max-retries 5 \
             --region $REGION \
             --project $PROJECT_ID \

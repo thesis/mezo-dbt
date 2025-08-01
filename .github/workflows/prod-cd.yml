@@ -42,6 +42,13 @@ jobs:
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
 
+      - name: Copy manifest.json from Google Cloud Storage
+        id: check-manifest
+        continue-on-error: true
+        run: |
+          mkdir -p target-base
+          gcloud storage cp gs://${{ secrets.GCP_GCS_BUCKET }}/manifest/manifest.json  target-base/
+
       - name: Run dbt debug
         run: |
           uv run dbt debug --target ${{ env.TARGET }}
@@ -56,7 +63,7 @@ jobs:
 
       - name: Run dbt build
         run: |
-            uv run dbt build --target ${{ env.TARGET }}
+            uv run dbt build --target ${{ env.TARGET }} --defer --state prod_target/manifest.json
 
       - name: Upload manifest to GCS
         if: always()

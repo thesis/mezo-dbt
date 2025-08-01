@@ -14,6 +14,6 @@ if [ -z "$GCS_BUCKET" ]; then
   exit 1
 fi
 
-uv run dbt run --profiles-dir /app --project-dir /app --target prod ${SELECT_ARG:+--select $SELECT_ARG}
+uv run dbt run --profiles-dir /app --project-dir /app --target prod ${SELECT_ARG:+--select $SELECT_ARG} --exclude config.materialized:view
 
 /root/google-cloud-sdk/bin/gcloud storage cp /app/target/manifest.json gs://$GCS_BUCKET/manifest/manifest.json

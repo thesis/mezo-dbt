@@ -53,6 +53,15 @@ jobs:
         run: |
             uv run dbt build --target ${{ env.TARGET }}
 
+      - name: Upload manifest to GCS
+        if: always()
+        run: |
+          if [ -f /target/manifest.json ]; then
+            gsutil cp /target/manifest.json gs://mezo-prod-dp-dwh-dbt-cs-0/manifest/manifest.json
+          else
+            echo "manifest.json not found, skipping upload."
+          fi
+
   build-container-and-deploy:
     needs: dbt-build
     runs-on: ubuntu-latest
@@ -93,7 +102,7 @@ jobs:
           gcloud run jobs deploy $SERVICE_NAME \
             --image $IMAGE \
             --tasks 1 \
-            --set-env-vars SLEEP_MS=10000,FAIL_RATE=0.1 \
+            --set-env-vars SLEEP_MS=10000,FAIL_RATE=0.1,DBT_SERVICE_ACCOUNT=${{ secrets.DBT_SERVICE_ACCOUNT_EMAIL }}   \
             --max-retries 5 \
             --region $REGION \
             --project $PROJECT_ID \

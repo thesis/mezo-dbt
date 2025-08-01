@@ -29,6 +29,7 @@ USER dbtuser
 
 # Install the project dependencies as dbtuser
 RUN uv sync --no-dev
+RUN uv run dbt deps
 
 # Set the command to run when the Docker container starts
 # Accept an optional SELECT argument at runtime (default empty)

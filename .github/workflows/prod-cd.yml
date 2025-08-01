@@ -119,4 +119,4 @@ jobs:
             --region $REGION \
             --project $PROJECT_ID \
             --memory 1Gi \
-            --service-account ${{ secrets.DBT_SERVICE_ACCOUNT_EMAIL }}
+            --service-account ${{ secrets.CLOUDRUN_SERVICE_ACCOUNT_EMAIL }}

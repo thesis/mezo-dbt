@@ -14,11 +14,7 @@ if [ -z "$GCS_BUCKET" ]; then
   exit 1
 fi
 
-if [ -n "$GOOGLE_APPLICATION_CREDENTIALS" ]; then
-  echo "Activating service account..."
-  gcloud auth activate-service-account --key-file="$GOOGLE_APPLICATION_CREDENTIALS"
-fi
 
 uv run dbt run --profiles-dir /app --project-dir /app --target prod ${SELECT_ARG:+--select $SELECT_ARG} --exclude config.materialized:view
 
-/root/google-cloud-sdk/bin/gcloud storage cp /app/target/manifest.json gs://$GCS_BUCKET/manifest/manifest.json
+gcloud storage cp /app/target/manifest.json gs://$GCS_BUCKET/manifest/manifest.json

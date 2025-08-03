@@ -57,13 +57,9 @@ jobs:
         run: |
           uv run dbt deps --target ${{ env.TARGET }}
 
-      - name: Get Curent Version of manifest.json
-        run: |
-          gcloud storage cp gs://${{ env.MANIFEST_BUCKET}}/manifest/manifest.json prod_target/manifest.json || echo "No previous manifest found, starting fresh."
-
       - name: Run dbt build
         run: |
-            uv run dbt build --target ${{ env.TARGET }} --defer --state prod_target
+            uv run dbt build --target ${{ env.TARGET }} --defer --state target-base
 
       - name: Upload manifest to GCS
         if: always()

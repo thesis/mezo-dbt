@@ -20,6 +20,8 @@ permissions:
 jobs:
   dbt-build:
     runs-on: ubuntu-latest
+    env:
+      DBT_PROJECT_DIR: .
     steps:
       - name: Install uv
         uses: astral-sh/setup-uv@v6

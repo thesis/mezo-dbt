@@ -73,7 +73,7 @@ jobs:
         id: first_try
         run: |
             uv run dbt run-operation stage_external_sources
-            uv run dbt build --target ${{ env.TARGET }} --vars "schema_id: $SCHEMA_ID" --defer --state target-base
+            uv run dbt build --select state:modified+ --target ${{ env.TARGET }} --vars "schema_id: $SCHEMA_ID" --defer --state target-base
 
       - name: Run dbt build another time to check incremental models
         id: incremental_try

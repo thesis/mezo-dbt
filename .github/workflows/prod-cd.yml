@@ -61,6 +61,7 @@ jobs:
 
       - name: Run dbt build
         run: |
+            uv run dbt run-operation stage_external_sources
             uv run dbt build --target ${{ env.TARGET }} --defer --state target-base --favor-state
 
       - name: Upload manifest to GCS

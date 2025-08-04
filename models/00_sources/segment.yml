@@ -1,0 +1,6 @@
+sources:
+  - name: segment_prod
+    database: mezo-portal-data
+    schema: segment_prod
+    tables:
+      - name: pages_view

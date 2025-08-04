@@ -2,6 +2,9 @@ packages:
   - name: twitter_ads
     package: fivetran/twitter_ads
     version: 0.10.0
+  - name: dbt_external_tables
+    package: dbt-labs/dbt_external_tables
+    version: 0.11.1
   - name: twitter_ads_source
     package: fivetran/twitter_ads_source
     version: 0.10.1
@@ -14,4 +17,4 @@ packages:
   - name: dbt_utils
     package: dbt-labs/dbt_utils
     version: 1.3.0
-sha1_hash: 8d1216d55646015fdc8f11c586576562f8e20aaf
+sha1_hash: 234a010e75f930de36065ebcb3f27f026752fa04

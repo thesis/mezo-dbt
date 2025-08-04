@@ -55,6 +55,13 @@ jobs:
         run: |
           uv run dbt debug --target ${{ env.TARGET }} --vars "schema_id: $SCHEMA_ID"
 
+      - name: Copy manifest.json from Google Cloud Storage
+        id: check-manifest
+        continue-on-error: true
+        run: |
+          mkdir -p target-base
+          gcloud storage cp gs://${{ secrets.GCP_GCS_BUCKET }}/manifest/manifest.json  target-base/
+
       - name: Run dbt deps
         run: |
           uv run dbt deps --target ${{ env.TARGET }} --vars "schema_id: $SCHEMA_ID"
@@ -65,9 +72,10 @@ jobs:
       - name: Run dbt build
         id: first_try
         run: |
-            uv run dbt build --target ${{ env.TARGET }} --vars "schema_id: $SCHEMA_ID"
+            uv run dbt run-operation stage_external_sources
+            uv run dbt build --target ${{ env.TARGET }} --vars "schema_id: $SCHEMA_ID" --defer --state target-base
 
       - name: Run dbt build another time to check incremental models
         id: incremental_try
         run: |
-          uv run dbt build --select config.materialized:incremental --target ${{ env.TARGET }} --vars "schema_id: $SCHEMA_ID"
+          uv run dbt build --select config.materialized:incremental --target ${{ env.TARGET }} --vars "schema_id: $SCHEMA_ID" --defer --state target-base

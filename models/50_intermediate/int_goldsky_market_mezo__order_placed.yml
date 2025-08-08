@@ -58,7 +58,7 @@ models:
           meta: {}
           tags: []
       - name: product_id
-        description: ''
+        description: Product identifier
         config:
           meta: {}
           tags: []

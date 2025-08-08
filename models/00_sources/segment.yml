@@ -4,3 +4,225 @@ sources:
     schema: segment_prod
     tables:
       - name: pages_view
+        columns:
+          - name: anonymous_id
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: context_campaign_content
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: context_campaign_id
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: context_campaign_medium
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: context_campaign_name
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: context_campaign_source
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: context_ip
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: context_library_name
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: context_library_version
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: context_locale
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: context_page_path
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: context_page_referrer
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: context_page_search
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: context_page_title
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: context_page_url
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: context_protocols_source_id
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: context_timezone
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: context_user_agent
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: context_user_agent_data_brands
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: context_user_agent_data_mobile
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: context_user_agent_data_platform
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: id
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: loaded_at
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: original_timestamp
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: path
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: received_at
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: referrer
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: search
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: sent_at
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: timestamp
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: title
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: url
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: user_id
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: uuid_ts
+            description: ''
+            config:
+              meta: {}
+              tags: []
+  - name: raw_segment_profiles
+    database: mezo-portal-data
+    schema: raw_segment_profiles
+    tables:
+      - name: user_identifiers
+        columns:
+          - name: __profile_version
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: canonical_segment_id
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: id
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: loaded_at
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: received_at
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: seq
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: type
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: uuid_ts
+            description: ''
+            config:
+              meta: {}
+              tags: []
+          - name: value
+            description: ''
+            config:
+              meta: {}
+              tags: []

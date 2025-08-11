@@ -5,16 +5,19 @@ packages:
   - name: dbt_external_tables
     package: dbt-labs/dbt_external_tables
     version: 0.11.1
+  - name: dbt_segment
+    package: Fleetio/dbt_segment
+    version: 0.4.0
   - name: twitter_ads_source
     package: fivetran/twitter_ads_source
     version: 0.10.1
+  - name: dbt_utils
+    package: dbt-labs/dbt_utils
+    version: 1.3.0
   - name: fivetran_utils
     package: fivetran/fivetran_utils
     version: 0.4.10
   - name: spark_utils
     package: dbt-labs/spark_utils
     version: 0.3.0
-  - name: dbt_utils
-    package: dbt-labs/dbt_utils
-    version: 1.3.0
-sha1_hash: 234a010e75f930de36065ebcb3f27f026752fa04
+sha1_hash: 489c3da21aa650d4da015259b298ffbb42564ecf

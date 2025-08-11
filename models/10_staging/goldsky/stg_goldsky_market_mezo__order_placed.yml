@@ -67,7 +67,7 @@ models:
           tags: []
       - name: product_id
         data_type: STRING
-        description: ''
+        description: Product identifier
         config:
           meta: {}
           tags: []

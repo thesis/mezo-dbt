@@ -43,6 +43,11 @@ models:
     +schema: "intermediate"
   twitter_ads_source:
     +schema: "staging"
+  dbt_segment:
+    base:
+      +schema: "staging"
+    sessionization:
+      +schema: "intermediate"
 seeds:
   mezo:
     +dbt-osmosis: "{model}.yml"
@@ -51,3 +56,5 @@ vars:
     twitter_ads_schema: raw_paid_twitter_ads
     twitter_ads_database: mezo-portal-data
     twitter_ads__using_keywords: False
+    dbt_segment:
+      segment_page_views_table: "{{ source('segment_prod', 'pages_view') }}"

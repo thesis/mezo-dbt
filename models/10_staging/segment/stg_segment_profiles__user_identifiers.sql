@@ -3,16 +3,15 @@ with
 
     renamed as (
         select
-            __profile_version,
+            __profile_version as _profile_version,
             canonical_segment_id,
             id,
             loaded_at,
             received_at,
-            seq,
-            type,
+            seq as seq_id,
+            type as id_type,
             uuid_ts,
-            value
-
+            value as trait_value
         from source
     )
 

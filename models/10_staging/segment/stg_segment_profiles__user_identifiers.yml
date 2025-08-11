@@ -41,7 +41,7 @@ models:
         config:
           meta: {}
           tags: []
-      - name: type
+      - name: id_type
         description: >-
           The type of external identifier sent in the incoming event, such as user_id or anonymous_id.
           External identifiers become the identities attached to a user profile.
@@ -53,7 +53,7 @@ models:
         config:
           meta: {}
           tags: []
-      - name: value
+      - name: trait_value
         description: The value of the trait provided by the customer’s Identify payload.
         config:
           meta: {}

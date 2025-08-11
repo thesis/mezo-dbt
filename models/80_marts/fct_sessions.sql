@@ -1,0 +1,17 @@
+with
+    segment_sessions as (select * from {{ ref("int_segment__sessions") }}),
+
+    facts as (
+        select
+            session_id as id,
+            canonical_segment_id_with_fallback as fk__dim1_user,
+            utm_campaign as fk_campaign,
+            first_page_url as fk_landingpage__dim1_page,
+            last_page_url as fk_exitpage__dim1_page,
+            page_views,
+            duration_in_s as session_duration_in_seconds
+        from segment_sessions
+    )
+
+select *
+from facts

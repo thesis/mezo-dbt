@@ -10,6 +10,10 @@ with
     sessions_user_enriched as (
         select
             segment_sessions.*,
+            {{ url_without_query_strings("segment_sessions.first_page_url") }}
+            as landing_page_url_without_query_string,
+            {{ url_without_query_strings("segment_sessions.last_page_url") }}
+            as exit_page_url_without_query_string,
             coalesce(
                 segment_graph.canonical_segment_id, segment_sessions.anonymous_id
             ) as canonical_segment_id_with_fallback

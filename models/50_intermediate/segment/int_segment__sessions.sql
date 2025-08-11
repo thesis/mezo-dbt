@@ -1,6 +1,10 @@
 with
     segment_sessions as (select * from {{ ref("segment_web_sessions") }}),
 
+    -- twitter_campaigns as (
+    -- select *
+    -- from {{ ref("twitter_ads_source", "stg_twitter_ads__campaign_history") }}
+    -- ),
     segment_graph as (
         select trait_value as anonymous_id, canonical_segment_id
         from {{ ref("stg_segment_profiles__user_identifiers") }}
@@ -14,12 +18,14 @@ with
             as landing_page_url_without_query_string,
             {{ url_without_query_strings("segment_sessions.last_page_url") }}
             as exit_page_url_without_query_string,
+            cast(segment_sessions.session_start_tstamp as date) as session_start_date,
             coalesce(
                 segment_graph.canonical_segment_id, segment_sessions.anonymous_id
             ) as canonical_segment_id_with_fallback
         from segment_sessions
         left join
             segment_graph on segment_sessions.anonymous_id = segment_graph.anonymous_id
+
     )
 
 select *

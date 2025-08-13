@@ -1,10 +1,11 @@
 with
     segment_sessions as (select * from {{ ref("segment_web_sessions") }}),
 
-    -- twitter_campaigns as (
-    -- select *
-    -- from {{ ref("twitter_ads_source", "stg_twitter_ads__campaign_history") }}
-    -- ),
+    twitter_campaigns as (
+        select distinct campaign_name, concat('twitter_', campaign_id) as campaign_id
+        from {{ ref("twitter_ads_source", "stg_twitter_ads__campaign_history") }}
+    ),
+
     segment_graph as (
         select trait_value as anonymous_id, canonical_segment_id
         from {{ ref("stg_segment_profiles__user_identifiers") }}
@@ -26,7 +27,17 @@ with
         left join
             segment_graph on segment_sessions.anonymous_id = segment_graph.anonymous_id
 
+    ),
+
+    add_campaign_id_twitter as (
+        select sessions_user_enriched.*, twitter_campaigns.campaign_id
+        from sessions_user_enriched
+        left join
+            twitter_campaigns
+            on sessions_user_enriched.utm_campaign = twitter_campaigns.campaign_name
+            and sessions_user_enriched.utm_source = 'twitter'
+            and sessions_user_enriched.utm_medium = 'paid_social'
     )
 
 select *
-from sessions_user_enriched
+from add_campaign_id_twitter

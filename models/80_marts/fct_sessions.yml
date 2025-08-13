@@ -22,6 +22,10 @@ models:
           tags: []
       - name: fk_campaign
         description: Foreign key to the campaign dimension
+        data_tests:
+          - relationships:
+              field: id
+              to: ref('dim1_campaign')
         config:
           meta: {}
           tags: []

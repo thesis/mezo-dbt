@@ -2,7 +2,7 @@ with
     segment_sessions as (select * from {{ ref("segment_web_sessions") }}),
 
     twitter_campaigns as (
-        select distinct campaign_id, campaign_name
+        select distinct campaign_name, concat('twitter_', campaign_id) as campaign_id
         from {{ ref("twitter_ads_source", "stg_twitter_ads__campaign_history") }}
     ),
 

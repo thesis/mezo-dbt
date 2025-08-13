@@ -182,7 +182,7 @@ models:
           meta: {}
           tags: []
       - name: id
-        description: The ID of the campaign.
+        description: The Unique identifier for the record.
         config:
           meta: {}
           tags: []

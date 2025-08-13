@@ -6,7 +6,7 @@ models:
       The user_identifiers table contains all external ID values that map to a profile, which is represented
       by the canonical_segment_id.
     columns:
-      - name: __profile_version
+      - name: _profile_version
         description: ''
         config:
           meta: {}
@@ -34,10 +34,8 @@ models:
         config:
           meta: {}
           tags: []
-      - name: seq
-        description: >-
-          A sequential value derived from the timestamp. Enables ordering/sorting within a given unique
-          trait.
+      - name: seq_id
+        description: ''
         config:
           meta: {}
           tags: []

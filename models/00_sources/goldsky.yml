@@ -4,375 +4,625 @@ sources:
     schema: raw_goldsky
     tables:
       - name: raw_goldsky_musd_trove_manager__liquidation
-        description: "Liquidation events from the MUSD Trove Manager"
+        description: Liquidation events from the MUSD Trove Manager
         external:
-          location: "gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/musd_trove_manager/event_type=liquidation/"
+          location:
+            gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/musd_trove_manager/event_type=liquidation/
           options:
-            format: 'PARQUET'
-            hive_partition_uri_prefix: 'gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/musd_trove_manager/event_type=liquidation'
-            uris: ["gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/musd_trove_manager/event_type=liquidation/*"]
+            format: PARQUET
+            hive_partition_uri_prefix:
+              gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/musd_trove_manager/event_type=liquidation
+            uris:
+              - gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/musd_trove_manager/event_type=liquidation/*
           partitions:
             - name: event_date
               data_type: date
-              description: "The date of the event"
+              description: The date of the event
         columns:
           - name: vid
             data_type: INT64
-            description: "Version ID"
+            description: Version ID
+            config:
+              meta: {}
+              tags: []
           - name: block
             data_type: INT64
-            description: "Block number"
+            description: Block number
+            config:
+              meta: {}
+              tags: []
           - name: id
             data_type: STRING
-            description: "Unique identifier"
+            description: Unique identifier
+            config:
+              meta: {}
+              tags: []
           - name: block_number
             data_type: BIGNUMERIC
-            description: "Block number as BIGNUMERIC"
+            description: Block number as BIGNUMERIC
+            config:
+              meta: {}
+              tags: []
           - name: timestamp
             data_type: BIGNUMERIC
-            description: "Timestamp of the event"
+            description: Timestamp of the event
+            config:
+              meta: {}
+              tags: []
           - name: transaction_hash
             data_type: STRING
-            description: "Transaction hash"
+            description: Transaction hash
+            config:
+              meta: {}
+              tags: []
           - name: contract_id
             data_type: STRING
-            description: "Contract identifier"
+            description: Contract identifier
+            config:
+              meta: {}
+              tags: []
           - name: liquidated_principal
             data_type: BIGNUMERIC
-            description: "Liquidated principal amount"
+            description: Liquidated principal amount
+            config:
+              meta: {}
+              tags: []
           - name: liquidated_interest
             data_type: BIGNUMERIC
-            description: "Liquidated interest amount"
+            description: Liquidated interest amount
+            config:
+              meta: {}
+              tags: []
           - name: liquidated_coll
             data_type: BIGNUMERIC
-            description: "Liquidated collateral amount"
+            description: Liquidated collateral amount
+            config:
+              meta: {}
+              tags: []
           - name: coll_gas_compensation
             data_type: BIGNUMERIC
-            description: "Collateral gas compensation"
+            description: Collateral gas compensation
+            config:
+              meta: {}
+              tags: []
           - name: gas_compensation
             data_type: BIGNUMERIC
-            description: "Gas compensation"
+            description: Gas compensation
+            config:
+              meta: {}
+              tags: []
           - name: _gs_chain
             data_type: STRING
-            description: "Chain identifier"
+            description: Chain identifier
+            config:
+              meta: {}
+              tags: []
           - name: _gs_gid
             data_type: STRING
-            description: "Global identifier"
+            description: Global identifier
+            config:
+              meta: {}
+              tags: []
           - name: event_date
             data_type: DATE
-            description: "Date of the event"
-
+            description: Date of the event
+            config:
+              meta: {}
+              tags: []
       - name: raw_goldsky_musd_trove_manager__trove_liquidated
-        description: "Trove liquidated events from the MUSD Trove Manager"
+        description: Trove liquidated events from the MUSD Trove Manager
         external:
-          location: "gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/musd_trove_manager/event_type=trove_liquidated/"
+          location: >-
+            gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/musd_trove_manager/event_type=trove_liquidated/
           options:
-            format: 'PARQUET'
-            hive_partition_uri_prefix: 'gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/musd_trove_manager/event_type=trove_liquidated'
+            format: PARQUET
+            hive_partition_uri_prefix: >-
+              gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/musd_trove_manager/event_type=trove_liquidated
             uris: ["gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/musd_trove_manager/event_type=trove_liquidated/*"]
           partitions:
             - name: event_date
               data_type: date
-              description: "The date of the event"
+              description: The date of the event
         columns:
           - name: vid
             data_type: INT64
-            description: "Version ID"
+            description: Version ID
+            config:
+              meta: {}
+              tags: []
           - name: block
             data_type: INT64
-            description: "Block number"
+            description: Block number
+            config:
+              meta: {}
+              tags: []
           - name: id
             data_type: STRING
-            description: "Unique identifier"
+            description: Unique identifier
+            config:
+              meta: {}
+              tags: []
           - name: block_number
             data_type: BIGNUMERIC
-            description: "Block number as BIGNUMERIC"
+            description: Block number as BIGNUMERIC
+            config:
+              meta: {}
+              tags: []
           - name: timestamp
             data_type: BIGNUMERIC
-            description: "Timestamp of the event"
+            description: Timestamp of the event
+            config:
+              meta: {}
+              tags: []
           - name: transaction_hash
             data_type: STRING
-            description: "Transaction hash"
+            description: Transaction hash
+            config:
+              meta: {}
+              tags: []
           - name: contract_id
             data_type: STRING
-            description: "Contract identifier"
+            description: Contract identifier
+            config:
+              meta: {}
+              tags: []
           - name: borrower
             data_type: STRING
-            description: "Borrower address"
+            description: Borrower address
+            config:
+              meta: {}
+              tags: []
           - name: debt
             data_type: BIGNUMERIC
-            description: "Debt amount"
+            description: Debt amount
+            config:
+              meta: {}
+              tags: []
           - name: coll
             data_type: BIGNUMERIC
-            description: "Collateral amount"
+            description: Collateral amount
+            config:
+              meta: {}
+              tags: []
           - name: operation
             data_type: STRING
-            description: "Operation type"
+            description: Operation type
+            config:
+              meta: {}
+              tags: []
           - name: _gs_chain
             data_type: STRING
-            description: "Chain identifier"
+            description: Chain identifier
+            config:
+              meta: {}
+              tags: []
           - name: _gs_gid
             data_type: STRING
-            description: "Global identifier"
+            description: Global identifier
+            config:
+              meta: {}
+              tags: []
           - name: event_date
             data_type: DATE
-            description: "Date of the event"
-
+            description: Date of the event
+            config:
+              meta: {}
+              tags: []
       - name: raw_goldsky_borrower_operations_mezo__trove_updated
-        description: "Trove updated events from Borrower Operations"
+        description: Trove updated events from Borrower Operations
         external:
-          location: "gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/borrower_operations_mezo/event_type=trove_updated/"
+          location: >-
+            gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/borrower_operations_mezo/event_type=trove_updated/
           options:
-            format: 'PARQUET'
-            hive_partition_uri_prefix: 'gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/borrower_operations_mezo/event_type=trove_updated'
+            format: PARQUET
+            hive_partition_uri_prefix: >-
+              gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/borrower_operations_mezo/event_type=trove_updated
             uris: ["gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/borrower_operations_mezo/event_type=trove_updated/*"]
           partitions:
             - name: event_date
               data_type: date
-              description: "The date of the event"
+              description: The date of the event
         columns:
           - name: block
             data_type: INT64
-            description: "Block number"
+            description: Block number
+            config:
+              meta: {}
+              tags: []
           - name: block_number
             data_type: BIGNUMERIC
-            description: "Block number as BIGNUMERIC"
+            description: Block number as BIGNUMERIC
+            config:
+              meta: {}
+              tags: []
           - name: timestamp
             data_type: BIGNUMERIC
-            description: "Timestamp of the event"
+            description: Timestamp of the event
+            config:
+              meta: {}
+              tags: []
           - name: transaction_hash
             data_type: STRING
-            description: "Transaction hash"
+            description: Transaction hash
+            config:
+              meta: {}
+              tags: []
           - name: contract_id
             data_type: STRING
-            description: "Contract identifier"
+            description: Contract identifier
+            config:
+              meta: {}
+              tags: []
           - name: borrower
             data_type: STRING
-            description: "Borrower address"
+            description: Borrower address
+            config:
+              meta: {}
+              tags: []
           - name: principal
             data_type: BIGNUMERIC
-            description: "Principal amount"
+            description: Principal amount
+            config:
+              meta: {}
+              tags: []
           - name: interest
             data_type: BIGNUMERIC
-            description: "Interest amount"
+            description: Interest amount
+            config:
+              meta: {}
+              tags: []
           - name: coll
             data_type: BIGNUMERIC
-            description: "Collateral amount"
+            description: Collateral amount
+            config:
+              meta: {}
+              tags: []
           - name: stake
             data_type: BIGNUMERIC
-            description: "Stake amount"
+            description: Stake amount
+            config:
+              meta: {}
+              tags: []
           - name: interest_rate
             data_type: BIGNUMERIC
-            description: "Interest rate"
+            description: Interest rate
+            config:
+              meta: {}
+              tags: []
           - name: last_interest_update_time
             data_type: BIGNUMERIC
-            description: "Last interest update time"
+            description: Last interest update time
+            config:
+              meta: {}
+              tags: []
           - name: operation
             data_type: STRING
-            description: "Operation type"
+            description: Operation type
+            config:
+              meta: {}
+              tags: []
           - name: _gs_chain
             data_type: STRING
-            description: "Chain identifier"
+            description: Chain identifier
+            config:
+              meta: {}
+              tags: []
           - name: _gs_gid
             data_type: STRING
-            description: "Global identifier"
+            description: Global identifier
+            config:
+              meta: {}
+              tags: []
           - name: event_date
             data_type: DATE
-            description: "Date of the event"
-
+            description: Date of the event
+            config:
+              meta: {}
+              tags: []
       - name: raw_goldsky_market_mezo__donated
-        description: "Donation events from Market"
+        description: Donation events from Market
         external:
-          location: "gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=donated/"
+          location: gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=donated/
           options:
-            format: 'PARQUET'
-            hive_partition_uri_prefix: 'gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=donated'
-            uris: ["gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=donated/*"]
+            format: PARQUET
+            hive_partition_uri_prefix:
+              gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=donated
+            uris:
+              - gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=donated/*
           partitions:
             - name: event_date
               data_type: date
-              description: "The date of the event"
+              description: The date of the event
         columns:
           - name: block
             data_type: INT64
-            description: "Block number"
+            description: Block number
+            config:
+              meta: {}
+              tags: []
           - name: block_number
             data_type: BIGNUMERIC
-            description: "Block number as BIGNUMERIC"
+            description: Block number as BIGNUMERIC
+            config:
+              meta: {}
+              tags: []
           - name: timestamp
             data_type: BIGNUMERIC
-            description: "Timestamp of the event"
+            description: Timestamp of the event
+            config:
+              meta: {}
+              tags: []
           - name: transaction_hash
             data_type: STRING
-            description: "Transaction hash"
+            description: Transaction hash
+            config:
+              meta: {}
+              tags: []
           - name: contract_id
             data_type: STRING
-            description: "Contract identifier"
+            description: Contract identifier
+            config:
+              meta: {}
+              tags: []
           - name: donor
             data_type: STRING
-            description: "Donor address"
+            description: Donor address
+            config:
+              meta: {}
+              tags: []
           - name: beneficiary_id
             data_type: STRING
-            description: "Beneficiary identifier"
+            description: Beneficiary identifier
+            config:
+              meta: {}
+              tags: []
           - name: recipient
             data_type: STRING
-            description: "Recipient address"
+            description: Recipient address
+            config:
+              meta: {}
+              tags: []
           - name: amount
             data_type: BIGNUMERIC
-            description: "Donation amount"
+            description: Donation amount
+            config:
+              meta: {}
+              tags: []
           - name: _gs_chain
             data_type: STRING
-            description: "Chain identifier"
+            description: Chain identifier
+            config:
+              meta: {}
+              tags: []
           - name: _gs_gid
             data_type: STRING
-            description: "Global identifier"
+            description: Global identifier
+            config:
+              meta: {}
+              tags: []
           - name: event_date
             data_type: DATE
-            description: "Date of the event"
-
+            description: Date of the event
+            config:
+              meta: {}
+              tags: []
       - name: raw_goldsky_market_mezo__order_placed
-        description: "Order placed events from Market"
+        description: Order placed events from Market
         external:
-          location: "gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=order_placed/"
+          location: gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=order_placed/
           options:
-            format: 'PARQUET'
-            hive_partition_uri_prefix: 'gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=order_placed'
-            uris: ["gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=order_placed/*"]
+            format: PARQUET
+            hive_partition_uri_prefix:
+              gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=order_placed
+            uris:
+              - gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=order_placed/*
           partitions:
             - name: event_date
               data_type: date
-              description: "The date of the event"
+              description: The date of the event
         columns:
           - name: block
             data_type: INT64
-            description: "Block number"
+            description: Block number
           - name: block_number
             data_type: BIGNUMERIC
-            description: "Block number as BIGNUMERIC"
+            description: Block number as BIGNUMERIC
           - name: timestamp
             data_type: BIGNUMERIC
-            description: "Timestamp of the event"
+            description: Timestamp of the event
           - name: transaction_hash
             data_type: STRING
-            description: "Transaction hash"
+            description: Transaction hash
           - name: contract_id
             data_type: STRING
-            description: "Contract identifier"
+            description: Contract identifier
           - name: order_id
             data_type: STRING
-            description: "Order identifier"
+            description: Order identifier
           - name: customer
             data_type: STRING
-            description: "Customer address"
+            description: Customer address
           - name: product_id
             data_type: STRING
-            description: "Product identifier"
+            description: Product identifier
           - name: price
             data_type: BIGNUMERIC
-            description: "Price amount"
+            description: Price amount
           - name: _gs_chain
             data_type: STRING
-            description: "Chain identifier"
+            description: Chain identifier
           - name: _gs_gid
             data_type: STRING
-            description: "Global identifier"
+            description: Global identifier
           - name: event_date
             data_type: DATE
-            description: "Date of the event"
+            description: Date of the event
 
       - name: raw_goldsky_mezo_bridge_mainnet__assets_locked
-        description: "Assets locked events from Mezo Bridge"
+        description: Assets locked events from Mezo Bridge
         external:
-          location: "gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_bridge_mainnet/event_type=assets_locked/"
+          location: >-
+            gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_bridge_mainnet/event_type=assets_locked/
           options:
-            format: 'PARQUET'
-            hive_partition_uri_prefix: 'gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_bridge_mainnet/event_type=assets_locked'
+            format: PARQUET
+            hive_partition_uri_prefix:
+              gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_bridge_mainnet/event_type=assets_locked
             uris: ["gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_bridge_mainnet/event_type=assets_locked/*"]
           partitions:
             - name: event_date
               data_type: date
-              description: "The date of the event"
+              description: The date of the event
         columns:
           - name: block
             data_type: INT64
-            description: "Block number"
+            description: Block number
+            config:
+              meta: {}
+              tags: []
           - name: block_number
             data_type: BIGNUMERIC
-            description: "Block number as BIGNUMERIC"
+            description: Block number as BIGNUMERIC
+            config:
+              meta: {}
+              tags: []
           - name: timestamp
             data_type: BIGNUMERIC
-            description: "Timestamp of the event"
+            description: Timestamp of the event
+            config:
+              meta: {}
+              tags: []
           - name: transaction_hash
             data_type: STRING
-            description: "Transaction hash"
+            description: Transaction hash
+            config:
+              meta: {}
+              tags: []
           - name: contract_id
             data_type: STRING
-            description: "Contract identifier"
+            description: Contract identifier
+            config:
+              meta: {}
+              tags: []
           - name: sequence_number
             data_type: BIGNUMERIC
-            description: "Sequence number"
+            description: Sequence number
+            config:
+              meta: {}
+              tags: []
           - name: recipient
             data_type: STRING
-            description: "Recipient address"
+            description: Recipient address
+            config:
+              meta: {}
+              tags: []
           - name: token
             data_type: STRING
-            description: "Token address"
+            description: Token address
+            config:
+              meta: {}
+              tags: []
           - name: amount
             data_type: BIGNUMERIC
-            description: "Amount locked"
+            description: Amount locked
+            config:
+              meta: {}
+              tags: []
           - name: _gs_chain
             data_type: STRING
-            description: "Chain identifier"
+            description: Chain identifier
+            config:
+              meta: {}
+              tags: []
           - name: _gs_gid
             data_type: STRING
-            description: "Global identifier"
+            description: Global identifier
+            config:
+              meta: {}
+              tags: []
           - name: event_date
             data_type: DATE
-            description: "Date of the event"
-
+            description: Date of the event
+            config:
+              meta: {}
+              tags: []
       - name: raw_goldsky_mezo_vaults_mezo__transfer
-        description: "Transfer events from Mezo Vaults"
+        description: Transfer events from Mezo Vaults
         external:
-          location: "gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_vaults_mezo/event_type=transfer/"
+          location: gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_vaults_mezo/event_type=transfer/
           options:
-            format: 'PARQUET'
-            hive_partition_uri_prefix: 'gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_vaults_mezo/event_type=transfer'
-            uris: ["gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_vaults_mezo/event_type=transfer/*"]
+            format: PARQUET
+            hive_partition_uri_prefix:
+              gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_vaults_mezo/event_type=transfer
+            uris:
+              - gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_vaults_mezo/event_type=transfer/*
           partitions:
             - name: event_date
               data_type: date
-              description: "The date of the event"
+              description: The date of the event
         columns:
           - name: block
             data_type: INT64
-            description: "Block number"
+            description: Block number
+            config:
+              meta: {}
+              tags: []
           - name: block_number
             data_type: BIGNUMERIC
-            description: "Block number as BIGNUMERIC"
+            description: Block number as BIGNUMERIC
+            config:
+              meta: {}
+              tags: []
           - name: timestamp
             data_type: BIGNUMERIC
-            description: "Timestamp of the event"
+            description: Timestamp of the event
+            config:
+              meta: {}
+              tags: []
           - name: transaction_hash
             data_type: STRING
-            description: "Transaction hash"
+            description: Transaction hash
+            config:
+              meta: {}
+              tags: []
           - name: contract_id
             data_type: STRING
-            description: "Contract identifier"
+            description: Contract identifier
+            config:
+              meta: {}
+              tags: []
           - name: from
             data_type: STRING
-            description: "Sender address"
+            description: Sender address
+            config:
+              meta: {}
+              tags: []
           - name: to
             data_type: STRING
-            description: "Recipient address"
+            description: Recipient address
+            config:
+              meta: {}
+              tags: []
           - name: value
             data_type: BIGNUMERIC
-            description: "Transfer amount"
+            description: Transfer amount
+            config:
+              meta: {}
+              tags: []
           - name: _gs_chain
             data_type: STRING
-            description: "Chain identifier"
+            description: Chain identifier
+            config:
+              meta: {}
+              tags: []
           - name: _gs_gid
             data_type: STRING
-            description: "Global identifier"
+            description: Global identifier
+            config:
+              meta: {}
+              tags: []
           - name: event_date
             data_type: DATE
-            description: "Date of the event"
+            description: Date of the event
+            config:
+              meta: {}
+              tags: []

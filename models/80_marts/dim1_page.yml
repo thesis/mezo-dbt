@@ -1,10 +1,13 @@
 version: 2
 models:
   - name: dim1_page
-    description: "Dimension table for pages."
+    description: Dimension table for pages.
     columns:
       - name: id
-        description: "The unique identifier for the page"
+        description: The unique identifier for the page
         tests:
           - not_null
           - unique
+        config:
+          meta: {}
+          tags: []

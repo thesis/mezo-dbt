@@ -1,0 +1,33 @@
+version: 2
+models:
+  - name: dim1_paid_campaign
+    columns:
+      - name: id
+        description: The ID of the campaign.
+        config:
+          meta: {}
+          tags: []
+      - name: fk_campaign
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: spend
+        description: The amount of spend on that date.
+        config:
+          meta: {}
+          tags: []
+      - name: impressions
+        description: >-
+          The number of impressions on that date.  This is the number of users who see a Promoted Ad either
+          in their home timeline or search results.
+        config:
+          meta: {}
+          tags: []
+      - name: clicks
+        description: >-
+          The number of clicks on that date. Includes clicks on the URL (shortened or regular links),
+          profile pic, screen name, username, detail, hashtags, and likes.
+        config:
+          meta: {}
+          tags: []

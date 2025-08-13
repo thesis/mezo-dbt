@@ -3,19 +3,45 @@ models:
   - name: fct_sessions
     columns:
       - name: id
-        description: "The unique identifier for the session"
+        description: The unique identifier for the session
         tests:
           - not_null
           - unique
+        config:
+          meta: {}
+          tags: []
       - name: fk__dim1_user
-        description: "Foreign key to the user dimension"
+        description: Foreign key to the user dimension
+        config:
+          meta: {}
+          tags: []
+      - name: fk__dim1_date
+        description: ''
+        config:
+          meta: {}
+          tags: []
       - name: fk_campaign
-        description: "Foreign key to the campaign dimension"
+        description: Foreign key to the campaign dimension
+        config:
+          meta: {}
+          tags: []
       - name: fk_landingpage__dim1_page
-        description: "Foreign key to the landing page dimension"
+        description: Foreign key to the landing page dimension
+        config:
+          meta: {}
+          tags: []
       - name: fk_exitpage__dim1_page
-        description: "Foreign key to the exit page dimension"
+        description: Foreign key to the exit page dimension
+        config:
+          meta: {}
+          tags: []
       - name: page_views
-        description: "The number of pages viewed during the session"
+        description: The number of pages viewed during the session
+        config:
+          meta: {}
+          tags: []
       - name: session_duration_in_seconds
-        description: "The duration of the session in seconds"
+        description: The duration of the session in seconds
+        config:
+          meta: {}
+          tags: []

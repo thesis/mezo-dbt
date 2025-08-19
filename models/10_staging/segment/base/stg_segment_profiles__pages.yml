@@ -1,0 +1,8 @@
+version: 2
+models:
+  - name: stg_segment_profiles__pages
+    columns:
+      - name: id
+        data_tests:
+          - unique
+          - not_null

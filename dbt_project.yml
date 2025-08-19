@@ -57,4 +57,4 @@ vars:
     twitter_ads_database: mezo-portal-data
     twitter_ads__using_keywords: False
     dbt_segment:
-      segment_page_views_table: "{{ source('segment_prod', 'pages_view') }}"
+      segment_page_views_table: "{{ ref('stg_segment__events') }}"

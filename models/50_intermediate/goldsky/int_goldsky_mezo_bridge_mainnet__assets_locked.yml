@@ -70,7 +70,6 @@ models:
           tags: []
       - name: token_id
         data_type: STRING
-        description: ''
         config:
           meta: {}
           tags: []
@@ -88,13 +87,11 @@ models:
           tags: []
       - name: currency_conversion_timestamp
         data_type: TIMESTAMP
-        description: ''
         config:
           meta: {}
           tags: []
       - name: token_usd_value
         data_type: FLOAT64
-        description: ''
         config:
           meta: {}
           tags: []

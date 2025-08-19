@@ -9,11 +9,13 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: INT64
       - name: block_number
         description: Block number as a high-precision numeric value
         config:
           meta: {}
           tags: []
+        data_type: BIGNUMERIC
       - name: transaction_hash
         description: Hash of the transaction that emitted this event
         data_tests:
@@ -22,6 +24,7 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: contract_id
         description: Address of the contract that emitted the event
         data_tests:
@@ -30,6 +33,7 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: order_id
         description: Unique identifier for the order
         data_tests:
@@ -39,6 +43,7 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: customer
         description: Address of the customer who placed the order
         data_tests:
@@ -47,21 +52,25 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: _gs_chain
         description: Chain where the event originated, e.g., 'mezo'
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: _gs_gid
         description: Unique identifier from Goldsky for the event
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: product_id
         description: Product identifier
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: record_timestamp
         description: Timestamp of the event formatted as a datetime
         data_tests:
@@ -69,6 +78,7 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: TIMESTAMP
       - name: price
         description: Price of the order (normalized currency)
         data_tests:
@@ -77,6 +87,7 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: NUMERIC
       - name: product_name
         description: Name of the product that was ordered.
         data_tests:
@@ -85,3 +96,4 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: STRING

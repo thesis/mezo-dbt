@@ -6,12 +6,10 @@ sources:
       - name: raw_goldsky_musd_trove_manager__liquidation
         description: Liquidation events from the MUSD Trove Manager
         external:
-          location:
-            gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/musd_trove_manager/event_type=liquidation/
+          location: gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/musd_trove_manager/event_type=liquidation/
           options:
             format: PARQUET
-            hive_partition_uri_prefix:
-              gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/musd_trove_manager/event_type=liquidation
+            hive_partition_uri_prefix: gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/musd_trove_manager/event_type=liquidation
             uris:
               - gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/musd_trove_manager/event_type=liquidation/*
           partitions:
@@ -325,8 +323,7 @@ sources:
           location: gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=donated/
           options:
             format: PARQUET
-            hive_partition_uri_prefix:
-              gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=donated
+            hive_partition_uri_prefix: gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=donated
             uris:
               - gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=donated/*
           partitions:
@@ -412,8 +409,7 @@ sources:
           location: gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=order_placed/
           options:
             format: PARQUET
-            hive_partition_uri_prefix:
-              gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=order_placed
+            hive_partition_uri_prefix: gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=order_placed
             uris:
               - gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=order_placed/*
           partitions:
@@ -457,7 +453,6 @@ sources:
           - name: event_date
             data_type: DATE
             description: Date of the event
-
       - name: raw_goldsky_mezo_bridge_mainnet__assets_locked
         description: Assets locked events from Mezo Bridge
         external:
@@ -465,8 +460,7 @@ sources:
             gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_bridge_mainnet/event_type=assets_locked/
           options:
             format: PARQUET
-            hive_partition_uri_prefix:
-              gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_bridge_mainnet/event_type=assets_locked
+            hive_partition_uri_prefix: gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_bridge_mainnet/event_type=assets_locked
             uris: ["gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_bridge_mainnet/event_type=assets_locked/*"]
           partitions:
             - name: event_date
@@ -551,8 +545,7 @@ sources:
           location: gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_vaults_mezo/event_type=transfer/
           options:
             format: PARQUET
-            hive_partition_uri_prefix:
-              gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_vaults_mezo/event_type=transfer
+            hive_partition_uri_prefix: gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_vaults_mezo/event_type=transfer
             uris:
               - gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_vaults_mezo/event_type=transfer/*
           partitions:

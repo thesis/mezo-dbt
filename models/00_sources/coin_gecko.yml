@@ -7,37 +7,31 @@ sources:
         columns:
           - name: id
             data_type: STRING
-            description: ''
             config:
               meta: {}
               tags: []
           - name: symbol
             data_type: STRING
-            description: ''
             config:
               meta: {}
               tags: []
           - name: name
             data_type: STRING
-            description: ''
             config:
               meta: {}
               tags: []
           - name: platforms
             data_type: JSON
-            description: ''
             config:
               meta: {}
               tags: []
           - name: _dlt_load_id
             data_type: STRING
-            description: ''
             config:
               meta: {}
               tags: []
           - name: _dlt_id
             data_type: STRING
-            description: ''
             config:
               meta: {}
               tags: []
@@ -45,37 +39,31 @@ sources:
         columns:
           - name: id
             data_type: STRING
-            description: ''
             config:
               meta: {}
               tags: []
           - name: coin_id
             data_type: STRING
-            description: ''
             config:
               meta: {}
               tags: []
           - name: usd_value
             data_type: FLOAT64
-            description: ''
             config:
               meta: {}
               tags: []
           - name: last_updated_at
             data_type: TIMESTAMP
-            description: ''
             config:
               meta: {}
               tags: []
           - name: _dlt_load_id
             data_type: STRING
-            description: ''
             config:
               meta: {}
               tags: []
           - name: _dlt_id
             data_type: STRING
-            description: ''
             config:
               meta: {}
               tags: []

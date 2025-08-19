@@ -3,202 +3,174 @@ models:
     columns:
       - name: source_name
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: session_id
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: anonymous_id
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: session_start_tstamp
         data_type: timestamp
-        description: ''
         config:
           meta: {}
           tags: []
       - name: session_end_tstamp
         data_type: timestamp
-        description: ''
         config:
           meta: {}
           tags: []
       - name: page_views
         data_type: int64
-        description: ''
         config:
           meta: {}
           tags: []
       - name: utm_source
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: utm_content
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: utm_medium
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: utm_campaign
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: utm_term
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: gclid
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: first_page_url
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: first_page_url_host
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: first_page_url_path
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: first_page_url_query
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: referrer
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: referrer_host
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: device
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: device_category
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: last_page_url
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: last_page_url_host
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: last_page_url_path
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: last_page_url_query
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: duration_in_s
         data_type: int64
-        description: ''
         config:
           meta: {}
           tags: []
       - name: duration_in_s_tier
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: referrer_medium
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: referrer_source
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: blended_user_id
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
       - name: session_number
         data_type: int64
-        description: ''
         config:
           meta: {}
           tags: []
       - name: landing_page_url_without_query_string
-        description: ''
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: exit_page_url_without_query_string
-        description: ''
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: session_start_date
-        description: ''
         config:
           meta: {}
           tags: []
+        data_type: DATE
       - name: canonical_segment_id_with_fallback
         data_type: string
-        description: ''
         config:
           meta: {}
           tags: []
+      - name: campaign_id
+        description: The ID of the campaign.
+        data_type: STRING

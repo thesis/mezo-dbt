@@ -9,11 +9,13 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: date_day
         description: The date of the performance.
         config:
           meta: {}
           tags: []
+        data_type: TIMESTAMP
       - name: placement
         description: >-
           Where on Twitter the ad is being displayed. Possible values include 'ALL_ON_TWITTER', 'PUBLISHER_NETWORK',
@@ -22,81 +24,91 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: account_id
         description: The ID of the related account.
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: account_name
         description: The name of the related account.
         config:
           meta: {}
           tags: []
-      - name: campaign_id
-        description: The ID of the campaign.
-        config:
-          meta: {}
-          tags: []
+        data_type: STRING
       - name: campaign_name
         description: The name of the campaign.
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: is_deleted
         description: Whether the record has been deleted or not.
         config:
           meta: {}
           tags: []
+        data_type: BOOLEAN
       - name: campaign_status
         description: The status of the campaign.
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: currency
         description: The currency all metrics for the account are set to.
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: is_servable
         description: Whether the campaign is in a state to be actively served to users.
         config:
           meta: {}
           tags: []
+        data_type: BOOLEAN
       - name: is_standard_delivery
         description: Whether standard delivery is enabled (vs accelerated delivery).
         config:
           meta: {}
           tags: []
+        data_type: BOOLEAN
       - name: frequency_cap
         description: The maximum number of times an ad could be delivered to a user.
         config:
           meta: {}
           tags: []
+        data_type: INT64
       - name: start_timestamp
         description: The time the campaign will start.
         config:
           meta: {}
           tags: []
+        data_type: TIMESTAMP
       - name: end_timestamp
         description: The time the campaign will end
         config:
           meta: {}
           tags: []
+        data_type: TIMESTAMP
       - name: created_timestamp
         description: The timestamp the account was created.
         config:
           meta: {}
           tags: []
+        data_type: TIMESTAMP
       - name: updated_timestamp
         description: The timestamp the account was last updated.
         config:
           meta: {}
           tags: []
+        data_type: TIMESTAMP
       - name: funding_instrument_id
         description: Reference to the funding instrument.
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: daily_budget_amount
         description: >-
           The daily budget amount to be allocated to the campaign. The currency associated with the specified
@@ -104,11 +116,13 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: FLOAT64
       - name: total_budget_amount
         description: The total budget amount to be allocated to the campaign.
         config:
           meta: {}
           tags: []
+        data_type: FLOAT64
       - name: clicks
         description: >-
           The number of clicks on that date. Includes clicks on the URL (shortened or regular links),
@@ -116,6 +130,7 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: INT64
       - name: impressions
         description: >-
           The number of impressions on that date.  This is the number of users who see a Promoted Ad either
@@ -123,21 +138,25 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: INT64
       - name: spend
         description: The amount of spend on that date.
         config:
           meta: {}
           tags: []
+        data_type: FLOAT64
       - name: spend_micro
         description: The amount of spend, in micros, on that date.
         config:
           meta: {}
           tags: []
+        data_type: INT64
       - name: url_clicks
         description: The number of URL clicks on that date.
         config:
           meta: {}
           tags: []
+        data_type: INT64
       - name: total_conversions
         description: >-
           Sum of all fields included in `twitter_ads__conversion_fields` variable (default = conversion_purchases_metric
@@ -145,6 +164,7 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: INT64
       - name: total_conversions_sale_amount
         description: >-
           Sum of all fields included in `twitter_ads__conversion_sale_amount_fields` variable (default
@@ -152,6 +172,7 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: FLOAT64
       - name: conversion_purchases_metric
         description: >-
           Total number of purchases. The sum of post view, post engagement, and assisted purchases for
@@ -160,6 +181,7 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: INT64
       - name: conversion_custom_metric
         description: >-
           The number of conversions of type CUSTOM. Included by the `twitter_ads__conversion_fields` variable
@@ -167,6 +189,7 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: INT64
       - name: conversion_purchases_sale_amount
         description: >-
           The sale amount corresponding to PURCHASE conversion events. Included by the `twitter_ads__conversion_sale_amount_fields`
@@ -174,6 +197,7 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: FLOAT64
       - name: conversion_custom_sale_amount
         description: >-
           The sale amount corresponding to PURCHASE conversion events. Included by the `twitter_ads__conversion_sale_amount_fields`
@@ -181,8 +205,16 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: FLOAT64
       - name: id
-        description: The Unique identifier for the record.
+        description: The ID of the campaign.
         config:
           meta: {}
           tags: []
+        data_type: STRING
+      - name: campaign_id
+        description: The ID of the campaign.
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING

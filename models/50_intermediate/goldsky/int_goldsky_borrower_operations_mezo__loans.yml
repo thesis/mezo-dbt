@@ -88,43 +88,36 @@ models:
           tags: []
       - name: currency_conversion_timestamp
         data_type: TIMESTAMP
-        description: ''
         config:
           meta: {}
           tags: []
       - name: collateral_usd_value
         data_type: FLOAT64
-        description: ''
         config:
           meta: {}
           tags: []
       - name: collateral_ratio
         data_type: FLOAT64
-        description: ''
         config:
           meta: {}
           tags: []
       - name: previous_principal_value
         data_type: NUMERIC
-        description: ''
         config:
           meta: {}
           tags: []
       - name: previous_collateral_value
         data_type: NUMERIC
-        description: ''
         config:
           meta: {}
           tags: []
       - name: adjustment_type_principal
         data_type: STRING
-        description: ''
         config:
           meta: {}
           tags: []
       - name: adjustment_type_collateral
         data_type: STRING
-        description: ''
         config:
           meta: {}
           tags: []

@@ -11,3 +11,4 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: STRING

@@ -4,13 +4,11 @@ seeds:
     columns:
       - name: id
         data_type: STRING
-        description: ''
         config:
           meta: {}
           tags: []
       - name: name
         data_type: STRING
-        description: ''
         config:
           meta: {}
           tags: []

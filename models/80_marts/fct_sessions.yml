@@ -10,16 +10,18 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: fk__dim1_user
         description: Foreign key to the user dimension
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: fk__dim1_date
-        description: ''
         config:
           meta: {}
           tags: []
+        data_type: DATE
       - name: fk_campaign
         description: Foreign key to the campaign dimension
         data_tests:
@@ -29,23 +31,28 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: fk_landingpage__dim1_page
         description: Foreign key to the landing page dimension
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: fk_exitpage__dim1_page
         description: Foreign key to the exit page dimension
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: page_views
         description: The number of pages viewed during the session
         config:
           meta: {}
           tags: []
+        data_type: INT64
       - name: session_duration_in_seconds
         description: The duration of the session in seconds
         config:
           meta: {}
           tags: []
+        data_type: INT64

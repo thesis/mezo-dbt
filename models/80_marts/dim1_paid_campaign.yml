@@ -7,16 +7,18 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: fk_campaign
-        description: ''
         config:
           meta: {}
           tags: []
+        data_type: STRING
       - name: spend
         description: The amount of spend on that date.
         config:
           meta: {}
           tags: []
+        data_type: FLOAT64
       - name: impressions
         description: >-
           The number of impressions on that date.  This is the number of users who see a Promoted Ad either
@@ -24,6 +26,7 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: INT64
       - name: clicks
         description: >-
           The number of clicks on that date. Includes clicks on the URL (shortened or regular links),
@@ -31,3 +34,4 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: INT64

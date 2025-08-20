@@ -22,7 +22,7 @@ page view history, but we only want to grab that for users who have page view
 events we need to calculate.
 #}
 with
-    pageviews as (
+    events as (
 
         select *
         from {{ ref("stg_segment__events") }} as event_data
@@ -55,9 +55,9 @@ with
 
             row_number() over (
                 partition by source_name, anonymous_id order by tstamp
-            ) as page_view_number
+            ) as event_number
 
-        from pageviews
+        from events
 
     ),
 
@@ -71,7 +71,7 @@ with
             *,
 
             lag(tstamp) over (
-                partition by source_name, anonymous_id order by page_view_number
+                partition by source_name, anonymous_id order by event_number
             ) as previous_tstamp
 
         from numbered
@@ -116,7 +116,7 @@ with
 
             sum(new_session) over (
                 partition by source_name, anonymous_id
-                order by page_view_number
+                order by event_number
                 rows between unbounded preceding and current row
             ) as session_number
 
@@ -131,7 +131,7 @@ with
         select
 
             {{ dbt_utils.star(ref("stg_segment__events")) }},
-            page_view_number,
+            event_number,
             {{
                 dbt_utils.generate_surrogate_key(
                     ["anonymous_id", "session_number", "source_name"]

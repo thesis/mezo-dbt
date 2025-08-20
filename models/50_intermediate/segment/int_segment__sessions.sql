@@ -1,5 +1,5 @@
 with
-    segment_sessions as (select * from {{ ref("segment_web_sessions") }}),
+    segment_sessions as (select * from {{ ref("int_segment_web_sessions") }}),
 
     twitter_campaigns as (
         select distinct campaign_name, concat('twitter_', campaign_id) as campaign_id

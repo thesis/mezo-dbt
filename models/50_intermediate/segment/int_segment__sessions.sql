@@ -3,7 +3,7 @@ with
 
     twitter_campaigns as (
         select distinct campaign_name, concat('twitter_', campaign_id) as campaign_id
-        from {{ ref("twitter_ads_source", "stg_twitter_ads__campaign_history") }}
+        from {{ ref("twitter_ads", "stg_twitter_ads__campaign_history") }}
     ),
 
     segment_graph as (

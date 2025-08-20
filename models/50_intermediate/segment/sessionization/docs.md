@@ -1,11 +1,5 @@
 ### segment_web_user_stitching
 
-{% docs segment_web_user_stitching %}
-
-This model performs "user stitching" on top of web event data. User stitching is the process of tying all events associated with a cookie to the same user_id, and solves a common problem in event analytics that users are only identified part way through their activity stream. This model returns a single user_id for every anonymous_id, and is later joined in to build a `blended_user_id` field, that acts as the primary user identifier for all sessions.
-
-{% enddocs %}
-
 
 ### segment_web_page_views__sessionized
 
@@ -28,14 +22,6 @@ This model performs the aggregation of page views into sessions. The `session_id
 
 
 ### segment_web_sessions__stitched
-
-{% docs segment_web_sessions__stitched %}
-
-This model joins initial session data with user stitching to get the field `blended_user_id`, the id for a user across all devices that they can be identified on. This logic is broken out from other models because, while incremental, it will frequently need to be rebuilt from scratch: this is because the user stitching process can change the `blended_user_id` values for historical sessions.
-
-It is recommended to typically run this model in its default configuration (incrementally) but on some regular basis to do a `dbt run --full-refresh --models segment_web_sessions__stitched+` so that this model and downstream models get rebuilt.
-
-{% enddocs %}
 
 
 ### segment_web_sessions

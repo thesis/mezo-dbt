@@ -55,7 +55,7 @@ with
 
         select *
         from
-            {{ ref("int_segment_web_page_views__sessionized") }}
+            {{ ref("int_segment_web_events__sessionized") }}
 
             {% if is_incremental() %}
                 {{
@@ -78,8 +78,11 @@ with
             anonymous_id,
             min(tstamp) over ({{ partition_by }}) as session_start_tstamp,
             max(tstamp) over ({{ partition_by }}) as session_end_tstamp,
-            countif(event_name = 'page_view') over ({{ partition_by }}) as page_views,
-
+            {% for metric in var("session_metrics") %}
+                countif(event_name = '{{ metric.event_name }}') over (
+                    {{ partition_by }}
+                ) as {{ metric.metric_name }},
+            {% endfor %}
             {% for (key, value) in first_values.items() %}
                 first_value({{ key }}) over ({{ window_clause }}) as {{ value }},
             {% endfor %}

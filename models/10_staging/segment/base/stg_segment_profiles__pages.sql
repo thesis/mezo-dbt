@@ -46,24 +46,7 @@ with
             context_actions_amplitude_session_id,
             net.host(context_page_url) as page_url_host,
             net.host(referrer) as referrer_host,
-            net.reg_domain(context_page_url) as registered_domain,
-            {{ dbt_utils.get_url_parameter("url", "gclid") }} as gclid,
-            case
-                when lower(context_user_agent) like '%android%'
-                then 'Android'
-                else
-                    replace(
-                        {{
-                            dbt.split_part(
-                                dbt.split_part("context_user_agent", "'('", 2),
-                                "' '",
-                                1,
-                            )
-                        }},
-                        ';',
-                        ''
-                    )
-            end as device
+            net.reg_domain(context_page_url) as registered_domain
         from source
     ),
 
@@ -76,24 +59,7 @@ with
                 partition by source_name, id order by received_at_tstamp asc
             )
             = 1
-    ),
-
-    final as (
-        select
-            *,
-            case
-                when device = 'iPhone'
-                then 'iPhone'
-                when device = 'Android'
-                then 'Android'
-                when device in ('iPad', 'iPod')
-                then 'Tablet'
-                when device in ('Windows', 'Macintosh', 'X11')
-                then 'Desktop'
-                else 'Uncategorized'
-            end as device_category
-        from filter_irrelevant_data
     )
 
 select *
-from final
+from filter_irrelevant_data

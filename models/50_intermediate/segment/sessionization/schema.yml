@@ -1,15 +1,8 @@
 version: 2
 
 models:
-  - name: int_segment_web_user_stitching
-    description: "{{doc('segment_web_user_stitching')}}"
-    columns:
-      - name: anonymous_id
-        data_tests:
-          - unique
-          - not_null
 
-  - name: int_segment_web_page_views__sessionized
+  - name: int_segment_web_events__sessionized
     description: "{{doc('segment_web_page_views__sessionized')}}"
     columns:
       - name: id
@@ -25,14 +18,6 @@ models:
           - unique
           - not_null
 
-  - name: int_segment_web_sessions__stitched
-    description: "{{doc('segment_web_sessions__stitched')}}"
-    columns:
-      - name: session_id
-        description: ''
-        data_tests:
-          - unique
-          - not_null
 
   - name: int_segment_web_sessions
     description: "{{doc('segment_web_sessions')}}"

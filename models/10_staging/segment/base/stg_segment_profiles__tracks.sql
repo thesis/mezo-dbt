@@ -13,10 +13,10 @@ with
             context_library_version,
             context_locale,
             context_page_path as page_url_path,
-            context_page_referrer,
-            context_page_search,
+            context_page_referrer as referrer,
+            context_page_search as page_url_query,
             context_page_title,
-            context_page_url,
+            context_page_url as page_url,
             context_protocols_source_id,
             context_protocols_violations,
             context_timezone,
@@ -42,7 +42,8 @@ with
             context_event_transformed,
             context_transforms_beta,
             net.host(context_page_url) as page_url_host,
-            net.reg_domain(context_page_url) as registered_domain
+            net.reg_domain(context_page_url) as registered_domain,
+            net.host(context_page_referrer) as referrer_host
         from source
     ),
 

@@ -25,14 +25,14 @@ with
     events as (
 
         select *
-        from {{ ref("stg_segment__events") }}
+        from {{ ref("stg_segment__events") }} as event_data
 
         {% if is_incremental() %}
             where
                 event_data.anonymous_id in (
                     select distinct events.anonymous_id
                     from
-                        {{ ref("stg_segment__events") }} as events
+                        {{ ref("stg_segment__events") }}
                         {{
                             generate_sessionization_incremental_filter(
                                 this, "tstamp", "tstamp", ">"

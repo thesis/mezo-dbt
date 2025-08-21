@@ -1,0 +1,4 @@
+version: 2
+models:
+  - name: int_goldsky_mezo_bridge_mainnet__assets_locked_graph
+    columns: []

@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.11"
 resolution-markers = [
     "python_full_version >= '3.13'",
@@ -220,7 +220,7 @@ wheels = [
 
 [[package]]
 name = "dbt-bigquery"
-version = "1.10.0"
+version = "1.10.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "dbt-adapters" },
@@ -234,9 +234,9 @@ dependencies = [
     { name = "google-cloud-storage" },
     { name = "nbformat" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/66/18/f7d90bb756e82f6dc4a5612a22f21f1177890993e2695c7918c851b0ae97/dbt_bigquery-1.10.0.tar.gz", hash = "sha256:a13f788884100943e578676d9dce63e7fd3934a6b4f2ea69698d8496cb5adbe6", size = 144719, upload-time = "2025-07-10T19:51:02.141Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/71/6f/217d251402aa1c390612eb9592f8408eed0d7716ceab810de31d3fffcd47/dbt_bigquery-1.10.1.tar.gz", hash = "sha256:57be18e06ed87490068f1686e7bee6f9b1587f89b69e2d5756a7e3209ec2ea62", size = 150008, upload-time = "2025-07-30T14:51:51.112Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/af/c0/b9249a968d673488ff5cd831bc1f27fb8077367c2907492d8b60c505913c/dbt_bigquery-1.10.0-py3-none-any.whl", hash = "sha256:72558d0cada22ae26edfadcb832c1cb3a6329b394b1c657095c9427c411c7ad2", size = 92071, upload-time = "2025-07-10T19:51:00.572Z" },
+    { url = "https://files.pythonhosted.org/packages/27/f3/e06e334990c4a2fd9cc55c2f18ae851f8040aa56a773e82bfa1acf81ef30/dbt_bigquery-1.10.1-py3-none-any.whl", hash = "sha256:97d39be4225ffb9ac4150cb764e4347a09485bfd6dcef8041f90167b233e060f", size = 93622, upload-time = "2025-07-30T14:51:49.54Z" },
 ]
 
 [[package]]
@@ -388,7 +388,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "dbt-bigquery", specifier = ">=1.10" },
+    { name = "dbt-bigquery", specifier = ">=1.10.1" },
     { name = "dbt-core", specifier = ">=1.10" },
     { name = "rpds-py", specifier = ">=0.26.0" },
 ]

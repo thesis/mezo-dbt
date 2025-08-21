@@ -1,11 +1,6 @@
 version: 2
 models:
-  - name: stg_segment_profiles__pages
-    description: >
-      This is a base model for Segment's web page views table. It does some straightforward renaming and
-      parsing of Segment raw data in this table.
-      If a page view id has multiple entries in the source table then deduplication is done to keep the
-      row with the earliest `received_at` timestamp.
+  - name: stg_segment_profiles__tracks
     columns:
       - name: utm_source
         description: ''
@@ -28,11 +23,6 @@ models:
           meta: {}
           tags: []
       - name: utm_content
-        description: ''
-        config:
-          meta: {}
-          tags: []
-      - name: utm_id
         description: ''
         config:
           meta: {}
@@ -62,12 +52,12 @@ models:
         config:
           meta: {}
           tags: []
-      - name: context_page_referrer
+      - name: referrer
         description: ''
         config:
           meta: {}
           tags: []
-      - name: context_page_search
+      - name: page_url_query
         description: ''
         config:
           meta: {}
@@ -77,12 +67,17 @@ models:
         config:
           meta: {}
           tags: []
-      - name: context_page_url
+      - name: page_url
         description: ''
         config:
           meta: {}
           tags: []
       - name: context_protocols_source_id
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: context_protocols_violations
         description: ''
         config:
           meta: {}
@@ -112,6 +107,11 @@ models:
         config:
           meta: {}
           tags: []
+      - name: event_name
+        description: ''
+        config:
+          meta: {}
+          tags: []
       - name: event_source_id
         description: ''
         config:
@@ -127,10 +127,12 @@ models:
         config:
           meta: {}
           tags: []
+      - name: event_text
+        description: ''
+        config:
+          meta: {}
+          tags: []
       - name: id
-        data_tests:
-          - unique
-          - not_null
         description: ''
         config:
           meta: {}
@@ -145,27 +147,7 @@ models:
         config:
           meta: {}
           tags: []
-      - name: event_name
-        description: ''
-        config:
-          meta: {}
-          tags: []
-      - name: page_path
-        description: ''
-        config:
-          meta: {}
-          tags: []
       - name: received_at_tstamp
-        description: ''
-        config:
-          meta: {}
-          tags: []
-      - name: referrer
-        description: ''
-        config:
-          meta: {}
-          tags: []
-      - name: page_url_query
         description: ''
         config:
           meta: {}
@@ -185,16 +167,6 @@ models:
         config:
           meta: {}
           tags: []
-      - name: page_title
-        description: ''
-        config:
-          meta: {}
-          tags: []
-      - name: page_url
-        description: ''
-        config:
-          meta: {}
-          tags: []
       - name: user_id
         description: ''
         config:
@@ -210,7 +182,12 @@ models:
         config:
           meta: {}
           tags: []
-      - name: context_actions_amplitude_session_id
+      - name: context_event_transformed
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: context_transforms_beta
         description: ''
         config:
           meta: {}
@@ -220,12 +197,12 @@ models:
         config:
           meta: {}
           tags: []
-      - name: referrer_host
+      - name: registered_domain
         description: ''
         config:
           meta: {}
           tags: []
-      - name: registered_domain
+      - name: referrer_host
         description: ''
         config:
           meta: {}

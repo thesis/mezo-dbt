@@ -1,0 +1,4 @@
+version: 2
+models:
+  - name: int_goldsky_borrower_operations_mezo__loans_graph
+    columns: []

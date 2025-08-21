@@ -22,6 +22,7 @@ models:
           meta: {}
           tags: []
         data_type: DATE
+        description: ''
       - name: fk_campaign
         description: Foreign key to the campaign dimension
         data_tests:

@@ -1,0 +1,4 @@
+version: 2
+models:
+  - name: int_goldsky_market_mezo__order_placed_graph
+    columns: []

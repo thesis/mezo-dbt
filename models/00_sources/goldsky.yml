@@ -6,10 +6,12 @@ sources:
       - name: raw_goldsky_musd_trove_manager__liquidation
         description: Liquidation events from the MUSD Trove Manager
         external:
-          location: gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/musd_trove_manager/event_type=liquidation/
+          location:
+            gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/musd_trove_manager/event_type=liquidation/
           options:
             format: PARQUET
-            hive_partition_uri_prefix: gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/musd_trove_manager/event_type=liquidation
+            hive_partition_uri_prefix:
+              gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/musd_trove_manager/event_type=liquidation
             uris:
               - gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/musd_trove_manager/event_type=liquidation/*
           partitions:
@@ -323,7 +325,8 @@ sources:
           location: gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=donated/
           options:
             format: PARQUET
-            hive_partition_uri_prefix: gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=donated
+            hive_partition_uri_prefix:
+              gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=donated
             uris:
               - gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=donated/*
           partitions:
@@ -409,7 +412,8 @@ sources:
           location: gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=order_placed/
           options:
             format: PARQUET
-            hive_partition_uri_prefix: gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=order_placed
+            hive_partition_uri_prefix:
+              gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=order_placed
             uris:
               - gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/market_mezo/event_type=order_placed/*
           partitions:
@@ -420,39 +424,75 @@ sources:
           - name: block
             data_type: INT64
             description: Block number
+            config:
+              meta: {}
+              tags: []
           - name: block_number
             data_type: BIGNUMERIC
             description: Block number as BIGNUMERIC
+            config:
+              meta: {}
+              tags: []
           - name: timestamp
             data_type: BIGNUMERIC
             description: Timestamp of the event
+            config:
+              meta: {}
+              tags: []
           - name: transaction_hash
             data_type: STRING
             description: Transaction hash
+            config:
+              meta: {}
+              tags: []
           - name: contract_id
             data_type: STRING
             description: Contract identifier
+            config:
+              meta: {}
+              tags: []
           - name: order_id
             data_type: STRING
             description: Order identifier
+            config:
+              meta: {}
+              tags: []
           - name: customer
             data_type: STRING
             description: Customer address
+            config:
+              meta: {}
+              tags: []
           - name: product_id
             data_type: STRING
             description: Product identifier
+            config:
+              meta: {}
+              tags: []
           - name: price
             data_type: BIGNUMERIC
             description: Price amount
+            config:
+              meta: {}
+              tags: []
           - name: _gs_chain
             data_type: STRING
             description: Chain identifier
+            config:
+              meta: {}
+              tags: []
           - name: _gs_gid
             data_type: STRING
             description: Global identifier
+            config:
+              meta: {}
+              tags: []
           - name: event_date
             data_type: DATE
             description: Date of the event
+            config:
+              meta: {}
+              tags: []
       - name: raw_goldsky_mezo_bridge_mainnet__assets_locked
         description: Assets locked events from Mezo Bridge
         external:
@@ -460,7 +500,8 @@ sources:
             gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_bridge_mainnet/event_type=assets_locked/
           options:
             format: PARQUET
-            hive_partition_uri_prefix: gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_bridge_mainnet/event_type=assets_locked
+            hive_partition_uri_prefix:
+              gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_bridge_mainnet/event_type=assets_locked
             uris: ["gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_bridge_mainnet/event_type=assets_locked/*"]
           partitions:
             - name: event_date
@@ -545,7 +586,8 @@ sources:
           location: gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_vaults_mezo/event_type=transfer/
           options:
             format: PARQUET
-            hive_partition_uri_prefix: gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_vaults_mezo/event_type=transfer
+            hive_partition_uri_prefix:
+              gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_vaults_mezo/event_type=transfer
             uris:
               - gs://mezo-prod-dp-dwh-lnd-goldsky-cs-0/mezo_vaults_mezo/event_type=transfer/*
           partitions:

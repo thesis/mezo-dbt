@@ -7,28 +7,34 @@ models:
         config:
           meta: {}
           tags: []
+        description: ''
       - name: symbol
         data_type: STRING
         config:
           meta: {}
           tags: []
+        description: ''
       - name: name
         data_type: STRING
         config:
           meta: {}
           tags: []
+        description: ''
       - name: _dlt_load_id
         data_type: STRING
         config:
           meta: {}
           tags: []
+        description: ''
       - name: _dlt_id
         data_type: STRING
         config:
           meta: {}
           tags: []
+        description: ''
       - name: platforms
         data_type: JSON
         config:
           meta: {}
           tags: []
+        description: ''

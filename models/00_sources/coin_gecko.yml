@@ -10,31 +10,37 @@ sources:
             config:
               meta: {}
               tags: []
+            description: ''
           - name: symbol
             data_type: STRING
             config:
               meta: {}
               tags: []
+            description: ''
           - name: name
             data_type: STRING
             config:
               meta: {}
               tags: []
+            description: ''
           - name: platforms
             data_type: JSON
             config:
               meta: {}
               tags: []
+            description: ''
           - name: _dlt_load_id
             data_type: STRING
             config:
               meta: {}
               tags: []
+            description: ''
           - name: _dlt_id
             data_type: STRING
             config:
               meta: {}
               tags: []
+            description: ''
       - name: prices
         columns:
           - name: id
@@ -42,28 +48,34 @@ sources:
             config:
               meta: {}
               tags: []
+            description: ''
           - name: coin_id
             data_type: STRING
             config:
               meta: {}
               tags: []
+            description: ''
           - name: usd_value
             data_type: FLOAT64
             config:
               meta: {}
               tags: []
+            description: ''
           - name: last_updated_at
             data_type: TIMESTAMP
             config:
               meta: {}
               tags: []
+            description: ''
           - name: _dlt_load_id
             data_type: STRING
             config:
               meta: {}
               tags: []
+            description: ''
           - name: _dlt_id
             data_type: STRING
             config:
               meta: {}
               tags: []
+            description: ''

@@ -32,7 +32,7 @@ with
                 event_data.anonymous_id in (
                     select distinct events.anonymous_id
                     from
-                        {{ ref("stg_segment__events") }}
+                        {{ ref("stg_segment__events") }} as events
                         {{
                             generate_sessionization_incremental_filter(
                                 this, "tstamp", "tstamp", ">"

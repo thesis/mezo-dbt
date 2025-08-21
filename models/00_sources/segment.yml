@@ -10,171 +10,205 @@ sources:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: context_campaign_content
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: context_campaign_id
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: context_campaign_medium
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: context_campaign_name
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: context_campaign_source
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: context_ip
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: context_library_name
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: context_library_version
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: context_locale
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: context_page_path
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: context_page_referrer
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: context_page_search
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: context_page_title
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: context_page_url
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: context_protocols_source_id
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: context_timezone
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: context_user_agent
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: context_user_agent_data_brands
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: context_user_agent_data_mobile
             config:
               meta: {}
               tags: []
             data_type: BOOLEAN
+            description: ''
           - name: context_user_agent_data_platform
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: id
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: loaded_at
             config:
               meta: {}
               tags: []
             data_type: TIMESTAMP
+            description: ''
           - name: original_timestamp
             config:
               meta: {}
               tags: []
             data_type: TIMESTAMP
+            description: ''
           - name: path
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: received_at
             config:
               meta: {}
               tags: []
             data_type: TIMESTAMP
+            description: ''
           - name: referrer
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: search
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: sent_at
             config:
               meta: {}
               tags: []
             data_type: TIMESTAMP
+            description: ''
           - name: timestamp
             config:
               meta: {}
               tags: []
             data_type: TIMESTAMP
+            description: ''
           - name: title
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: url
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: user_id
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: uuid_ts
             config:
               meta: {}
               tags: []
             data_type: TIMESTAMP
+            description: ''
   - name: raw_segment_profiles
     database: mezo-portal-data
     schema: raw_segment_profiles
@@ -183,162 +217,396 @@ sources:
         columns:
           - name: context_ip
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_library_name
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_library_version
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_locale
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_page_path
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_page_referrer
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_page_search
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_page_title
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_page_url
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_protocols_source_id
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_protocols_violations
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_timezone
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_user_agent
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_user_agent_data_brands
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_user_agent_data_mobile
             data_type: BOOLEAN
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_user_agent_data_platform
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: event
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: event_source_id
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: event_source_name
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: event_source_slug
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: event_text
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: id
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: loaded_at
             data_type: TIMESTAMP
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: original_timestamp
             data_type: TIMESTAMP
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: received_at
             data_type: TIMESTAMP
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: segment_id
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: sent_at
             data_type: TIMESTAMP
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: timestamp
             data_type: TIMESTAMP
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: user_id
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: uuid_ts
             data_type: TIMESTAMP
-          - name: anonymous_id
-            data_type: STRING
-          - name: context_campaign_content
-            data_type: STRING
-          - name: context_campaign_medium
-            data_type: STRING
-          - name: context_campaign_name
-            data_type: STRING
-          - name: context_campaign_source
-            data_type: STRING
-          - name: context_campaign_term
-            data_type: STRING
-          - name: context_event_transformed
-            data_type: STRING
-          - name: context_transforms_beta
-            data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
       - name: pages_view
         columns:
           - name: context_campaign_medium
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_campaign_name
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_campaign_source
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_ip
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_library_name
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_library_version
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_locale
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_page_path
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_page_referrer
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_page_search
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_page_title
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_page_url
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_protocols_source_id
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_timezone
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_user_agent
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_user_agent_data_brands
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_user_agent_data_mobile
             data_type: BOOLEAN
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: context_user_agent_data_platform
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: event_source_id
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: event_source_name
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: event_source_slug
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: id
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: loaded_at
             data_type: TIMESTAMP
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: original_timestamp
             data_type: TIMESTAMP
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: path
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: received_at
             data_type: TIMESTAMP
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: referrer
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: search
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: segment_id
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: sent_at
             data_type: TIMESTAMP
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: timestamp
             data_type: TIMESTAMP
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: title
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: url
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: user_id
             data_type: STRING
+            description: ''
+            config:
+              meta: {}
+              tags: []
           - name: uuid_ts
             data_type: TIMESTAMP
-          - name: anonymous_id
-            data_type: STRING
-          - name: context_campaign_content
-            data_type: STRING
-          - name: context_campaign_term
-            data_type: STRING
-          - name: context_campaign_id
-            data_type: STRING
-          - name: context_actions_amplitude_session_id
-            data_type: INT64
+            description: ''
+            config:
+              meta: {}
+              tags: []
       - name: identify
         columns: []
       - name: user_identifiers
@@ -348,43 +616,52 @@ sources:
               meta: {}
               tags: []
             data_type: INT64
+            description: ''
           - name: canonical_segment_id
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: id
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: loaded_at
             config:
               meta: {}
               tags: []
             data_type: TIMESTAMP
+            description: ''
           - name: received_at
             config:
               meta: {}
               tags: []
             data_type: TIMESTAMP
+            description: ''
           - name: seq
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: type
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''
           - name: uuid_ts
             config:
               meta: {}
               tags: []
             data_type: TIMESTAMP
+            description: ''
           - name: value
             config:
               meta: {}
               tags: []
             data_type: STRING
+            description: ''

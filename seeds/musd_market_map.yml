@@ -7,8 +7,10 @@ seeds:
         config:
           meta: {}
           tags: []
+        description: ''
       - name: name
         data_type: STRING
         config:
           meta: {}
           tags: []
+        description: ''

@@ -24,7 +24,7 @@ events we need to calculate.
 with
     events as (
 
-        select *
+        select event_data.*
         from {{ ref("stg_segment__events") }} as event_data
 
         {% if is_incremental() %}

@@ -73,6 +73,7 @@ models:
         config:
           meta: {}
           tags: []
+        description: ''
       - name: token_name
         description: The full name of the token
         data_type: STRING
@@ -90,8 +91,10 @@ models:
         config:
           meta: {}
           tags: []
+        description: ''
       - name: token_usd_value
         data_type: FLOAT64
         config:
           meta: {}
           tags: []
+        description: ''

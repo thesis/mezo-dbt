@@ -1,0 +1,14 @@
+version: 2
+models:
+  - name: dim1_campaign
+    columns:
+      - name: id
+        description: The ID of the campaign.
+        config:
+          meta: {}
+          tags: []
+      - name: campaign_name
+        description: The name of the campaign.
+        config:
+          meta: {}
+          tags: []

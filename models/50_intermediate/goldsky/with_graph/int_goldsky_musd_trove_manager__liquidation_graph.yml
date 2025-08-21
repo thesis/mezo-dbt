@@ -1,0 +1,4 @@
+version: 2
+models:
+  - name: int_goldsky_musd_trove_manager__liquidation_graph
+    columns: []

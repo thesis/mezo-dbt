@@ -17,7 +17,7 @@
 
 {% set window_clause = (
     "partition by source_name, session_id"
-    ~ " order by page_view_number"
+    ~ " order by event_number"
     ~ " rows between unbounded preceding and unbounded following"
 ) %}
 

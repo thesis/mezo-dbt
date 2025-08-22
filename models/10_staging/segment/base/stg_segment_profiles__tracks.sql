@@ -43,7 +43,7 @@ with
             context_transforms_beta,
             net.host(context_page_url) as page_url_host,
             net.reg_domain(context_page_url) as registered_domain,
-            net.host(context_page_referrer) as referrer_host
+            replace(net.host(context_page_referrer), 'www', '') as referrer_host
         from source
     ),
 

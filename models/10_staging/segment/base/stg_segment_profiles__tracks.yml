@@ -207,3 +207,16 @@ models:
         config:
           meta: {}
           tags: []
+unit_tests:
+    - name: referrer_transformation_google_tracks
+      model: stg_segment_profiles__tracks
+      description: 'Unit test: www.google.com?search should be transformed to google.com in referrer_host.'
+      given:
+        - input: source("raw_segment_profiles", "tracks_view")
+          rows:
+            - context_page_referrer: www.google.com?search
+            - context_page_referrer: www.bing.com?search
+      expect:
+        rows:
+          - referrer_host: google.com
+          - referrer_host: bing.com

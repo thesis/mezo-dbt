@@ -45,7 +45,7 @@ with
             anonymous_id,
             context_actions_amplitude_session_id,
             net.host(context_page_url) as page_url_host,
-            net.host(referrer) as referrer_host,
+            replace(net.host(referrer), 'www', '') as referrer_host,
             net.reg_domain(context_page_url) as registered_domain
         from source
     ),

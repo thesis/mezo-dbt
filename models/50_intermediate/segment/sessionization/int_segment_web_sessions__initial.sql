@@ -70,9 +70,9 @@ with
 
     referrer_mapping as (
         select
-            lower(replace(host, 'www.', '')) as host_key,
             source as map_source,
-            medium as map_medium
+            medium as map_medium,
+            lower(replace(host, 'www.', '')) as host_key
         from {{ ref("referrer_mapping") }}
 
     ),
@@ -80,7 +80,6 @@ with
     agg as (
 
         select distinct
-
             source_name,
             session_id,
             anonymous_id,
@@ -99,7 +98,6 @@ with
                 last_value({{ key }}) over ({{ window_clause }}) as {{ value }}
                 {% if not loop.last %},{% endif %}
             {% endfor %}
-
         from pageviews_sessionized
 
     ),
@@ -107,9 +105,7 @@ with
     diffs as (
 
         select
-
             *,
-
             {{ dbt.datediff("session_start_tstamp", "session_end_tstamp", "second") }}
             as duration_in_s
 
@@ -158,13 +154,10 @@ with
                 then lower(rm.map_source)
                 when t.referrer is not null
                 then net.reg_domain(t.referrer)
-                else null
             end as referrer_source
 
-        from tiers t
-
-        left join referrer_mapping rm on net.reg_domain(t.referrer) = rm.host_key
-
+        from tiers as t
+        left join referrer_mapping as rm on net.reg_domain(t.referrer) = rm.host_key
     )
 
 select *

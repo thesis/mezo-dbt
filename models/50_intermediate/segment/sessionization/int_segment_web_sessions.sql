@@ -63,19 +63,19 @@ with
 
         select
 
-            *,
-
+            sessions.*,
             row_number() over (
-                partition by blended_user_id order by sessions.session_start_tstamp
+                partition by sessions.blended_user_id
+                order by sessions.session_start_tstamp
             )
             {% if is_incremental() %}
                 + coalesce(agg.starting_session_number, 0)
             {% endif %} as session_number
 
         from sessions
-
-        {% if is_incremental() %} left join agg using (blended_user_id) {% endif %}
-
+        {% if is_incremental() %}
+            left join agg on sessions.blended_user_id = agg.blended_user_id
+        {% endif %}
     )
 
 select *

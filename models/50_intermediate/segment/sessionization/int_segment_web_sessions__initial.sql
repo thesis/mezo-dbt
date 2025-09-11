@@ -1,5 +1,6 @@
 {{
     config(
+        full_refresh=true,
         materialized="incremental",
         unique_key="session_id",
         sort="session_start_tstamp",
@@ -67,7 +68,14 @@ with
 
     ),
 
-    referrer_mapping as (select * from {{ ref("referrer_mapping") }}),
+    referrer_mapping as (
+        select
+            lower(replace(host, 'www.', '')) as host_key,
+            source as map_source,
+            medium as map_medium
+        from {{ ref("referrer_mapping") }}
+
+    ),
 
     agg as (
 
@@ -130,18 +138,35 @@ with
 
     ),
 
-    mapped as (
+    channel_group as (
 
         select
-            tiers.*,
-            referrer_mapping.medium as referrer_medium,
-            referrer_mapping.source as referrer_source
+            t.*,
+            case
+                when
+                    t.utm_source is null and t.utm_medium is null and t.referrer is null
+                then 'direct'
+                when t.utm_medium is not null
+                then lower(t.utm_medium)
+                when rm.map_medium is not null and t.utm_medium is null
+                then lower(rm.map_medium)
+                when rm.map_medium is null and t.referrer like '%mezo.org%'
+                then 'session_continue'
+                else 'referral'
+            end as referrer_medium,
+            case
+                when rm.map_source is not null
+                then lower(rm.map_source)
+                when t.referrer is not null
+                then net.reg_domain(t.referrer)
+                else null
+            end as referrer_source
 
-        from tiers
+        from tiers t
 
-        left join referrer_mapping on tiers.referrer_host = referrer_mapping.host
+        left join referrer_mapping rm on net.reg_domain(t.referrer) = rm.host_key
 
     )
 
 select *
-from mapped
+from channel_group

@@ -139,7 +139,6 @@ with
     ),
 
     channel_group as (
-
         select
             t.*,
             case

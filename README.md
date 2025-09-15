@@ -16,10 +16,10 @@ Optional:
 ```
 
 3. **Install Dependencies**
-- Install [uv](https://docs.astral.sh/uv/getting-started/installation/#installing-uv)  
+- Install [uv](https://docs.astral.sh/uv/getting-started/installation/#installing-uv)
 - Install Python dependencies (with uv):
-```sh 
-   uv sync   
+```sh
+   uv sync
 ```
 
 4. **Configure dbt [profile.yml](https://docs.getdbt.com/docs/core/connect-data-platform/profiles.yml) locally**
@@ -53,15 +53,16 @@ Optional:
 ```
 
 6. **Install DBT Dependencies**
-```sh   
+```sh
    dbt deps
 ```
 
 7. **Test your setup**
-```sh   
+```sh
    dbt debug
 ```
-For other dbt commands check: [https://docs.getdbt.com/reference/dbt-commands](https://docs.getdbt.com/reference/dbt-commands)
+For other dbt commands check:
+[https://docs.getdbt.com/reference/dbt-commands](https://docs.getdbt.com/reference/dbt-commands)
 
 8. **Run checks manually:**
 ```sh

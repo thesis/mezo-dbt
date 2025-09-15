@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: dim1_users
+    description: "User dimension table with first-touch attribution, based on sessions."
+    columns:
+      - name: anonymous_id
+        description: Anonymous user identifier.
+      - name: canonical_segment_id_with_fallback
+        description: Canonical Segment ID, with fallback if mapping is missing.
+      - name: first_touch_time
+        description: Timestamp of the first session.
+      - name: first_touch_source
+        description: Source of the first touch (e.g. referrer source).
+      - name: first_touch_medium
+        description: Medium of the first touch (e.g. referrer medium).

@@ -61,12 +61,12 @@ jobs:
 
       - name: Run dbt build
         run: |
-            uv run dbt run-operation stage_external_sources
-            uv run dbt build --select state:modified+ --target ${{ env.TARGET }} --defer --state target-base
+          uv run dbt run-operation stage_external_sources
+          uv run dbt build --select state:modified+ --target ${{ env.TARGET }} --defer --state target-base
 
       - name: Generate dbt documentation
         run: |
-            dbt docs generate
+          uv run dbt docs generate
 
       - uses: stefanzweifel/git-auto-commit-action@v6
         with: 

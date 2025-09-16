@@ -58,7 +58,7 @@
    gcloud auth application_default_login
 ```
 
-### Test your setup**
+### Test your setup
 
 ```sh
    dbt debug
@@ -100,14 +100,6 @@ else
     echo '`pre-commit` not found.  Did you forget to activate your virtualenv?' 1>&2
     exit 1
 fi
-```
-
-### Commit & push changes
-
-```sh
-   git add.
-   git commit -m "fix: bla bla issue"
-   git push origin <your-branch>
 ```
 
 ## How to Set Up a Goldsky Table

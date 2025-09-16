@@ -64,6 +64,17 @@ jobs:
             uv run dbt run-operation stage_external_sources
             uv run dbt build --select state:modified+ --target ${{ env.TARGET }} --defer --state target-base
 
+      - name: Generate dbt documentation
+        run: |
+            dbt docs generate
+
+      - uses: stefanzweifel/git-auto-commit-action@v6
+        with: 
+            branch: gh-pages
+            commit_message: Update documentation
+            file_pattern: '/target'
+            push_options: '--force'
+
       - name: Upload manifest to GCS
         if: always()
         run: |

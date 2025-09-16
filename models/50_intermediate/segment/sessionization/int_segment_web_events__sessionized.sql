@@ -71,7 +71,7 @@ with
             *,
 
             lag(tstamp) over (
-                partition by, anonymous_id order by event_number
+                partition by source_name, anonymous_id order by event_number
             ) as previous_tstamp
 
         from numbered

@@ -267,11 +267,6 @@ models:
         config:
           meta: {}
           tags: []
-      - name: page_view_number
-        description: ''
-        config:
-          meta: {}
-          tags: []
       - name: session_id
         description: ''
         config:

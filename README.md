@@ -2,7 +2,7 @@
 
 ## Setup the dbt project locally
 
-### Prerequesites
+### Prerequisites
 
 - Install [gcloud](https://cloud.google.com/sdk/docs/install)
 - VSCode or any other code editor
@@ -73,10 +73,33 @@
 For other dbt commands check:
 [https://docs.getdbt.com/reference/dbt-commands](https://docs.getdbt.com/reference/dbt-commands)
 
-### Run checks manually
+### This projects uses [pre-commit](https://pre-commit.com/)
+
+To run checks locally use:
 
 ```sh
    pre-commit run --all-files --config .pre-commit-config_local.yaml
+```
+
+Use the following hook to run checks before commit:
+
+```bash
+INSTALL_PYTHON=/Users/benedikt/Documents/gitrepos/crfe-orc-cloud-composer/.venv/bin/python3
+ARGS=(hook-impl --config=.pre-commit-config_local.yaml --hook-type=pre-commit)
+
+# end templated
+
+HERE="$(cd "$(dirname "$0")" && pwd)"
+ARGS+=(--hook-dir "$HERE" -- "$@")
+
+if [ -x "$INSTALL_PYTHON" ]; then
+    exec "$INSTALL_PYTHON" -mpre_commit "${ARGS[@]}"
+elif command -v pre-commit > /dev/null; then
+    exec pre-commit "${ARGS[@]}"
+else
+    echo '`pre-commit` not found.  Did you forget to activate your virtualenv?' 1>&2
+    exit 1
+fi
 ```
 
 ### Commit & push changes
@@ -91,7 +114,7 @@ For other dbt commands check:
 
 To set up a new table using Goldsky data in BigQuery:
 
-### Contact Goldsky Support: Email [Goldsky](support@goldsky.com) to request the setup of a new table to be imported into the `mezo-prod-dp-dwh-lnd-goldsky-cs-0` Google Cloud Storage (GCS) bucket. As of this writing, the [Goldsky documentation](https://docs.goldsky.com/mirror/extensions/channels/aws-s3) is limited, and self-service setup is not available—you must contact support to establish the connection
+Contact Goldsky Support: Email [Goldsky](support@goldsky.com) to request the setup of a new table to be imported into the `mezo-prod-dp-dwh-lnd-goldsky-cs-0` Google Cloud Storage (GCS) bucket. As of this writing, the [Goldsky documentation](https://docs.goldsky.com/mirror/extensions/channels/aws-s3) is limited, and self-service setup is not available—you must contact support to establish the connection.
 
 ### Organize Data in GCS
 

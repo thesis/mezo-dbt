@@ -1,0 +1,52 @@
+version: 2
+models:
+  - name: fct_assets_locked
+    columns:
+      - name: id
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: fk_transaction_hash
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: fk_dim1__recipient
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: fk_token_adress
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: amount
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: token_usd_value
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: total_assets_locked_count
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: record_date
+        data_type: DATE
+        config:
+          meta: {}
+          tags: []
+        description: ''

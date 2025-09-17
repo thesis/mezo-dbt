@@ -20,6 +20,48 @@ models:
           meta: {}
           tags: []
         description: ''
+      - name: principal
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: interest
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: collateral
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: stake
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: previous_principal_value
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: previous_collateral_value
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: total_loans_count
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
       - name: record_date
         data_type: DATE
         config:

@@ -18,7 +18,9 @@ with
 
     first_touch_canonical as (
         select
-            fa.*,
+            -- fa.anonymous_id,
+            fa.canonical_segment_id_with_fallback as canonical_segment_id,
+            fa.first_touch_time,
             s.referrer_source as first_touch_source,
             s.referrer_medium as first_touch_medium
         from first_touch_anonymous as fa
@@ -29,4 +31,5 @@ with
     )
 
 select *
+-- count(distinct canonical_segment_id), count(distinct anonymous_id)
 from first_touch_canonical

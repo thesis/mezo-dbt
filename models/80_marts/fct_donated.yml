@@ -1,0 +1,52 @@
+version: 2
+models:
+  - name: fct_donated
+    columns:
+      - name: id
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: fk_dim1__donor
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: fk_dim1__users
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: amount
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: total_donations_count
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: record_date
+        data_type: DATE
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: recipient_brink_count
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: recipient_shefi_count
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: ''

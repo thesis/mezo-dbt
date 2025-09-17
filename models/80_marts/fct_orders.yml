@@ -1,0 +1,46 @@
+version: 2
+models:
+  - name: fct_orders
+    columns:
+      - name: id
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: fk_dim1__customer
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: fk_dim1__users
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: fk_dim1__products
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: price
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: total_orders_count
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: record_date
+        data_type: DATE
+        config:
+          meta: {}
+          tags: []
+        description: ''

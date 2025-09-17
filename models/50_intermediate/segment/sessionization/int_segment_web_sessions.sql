@@ -21,7 +21,7 @@ by 25x on 2 years of data (from 600 to 25 seconds), so even though the code is
 more complicated, the performance tradeoff is worth it.
 #}
 with
-    sessions as (
+    sessions_stitched as (
 
         select *
         from
@@ -63,16 +63,16 @@ with
 
         select
 
-            sessions.*,
+            *,
 
             row_number() over (
-                partition by blended_user_id order by sessions.session_start_tstamp
+                partition by blended_user_id order by session_start_tstamp
             )
             {% if is_incremental() %}
                 + coalesce(agg.starting_session_number, 0)
             {% endif %} as session_number
 
-        from sessions
+        from sessions_stitched
 
         {% if is_incremental() %} left join agg using (blended_user_id) {% endif %}
 

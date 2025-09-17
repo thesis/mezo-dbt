@@ -63,7 +63,7 @@ jobs:
         run: |
           uv run dbt run-operation stage_external_sources
           uv run dbt build --select state:modified+ --target ${{ env.TARGET }} --defer --state target-base
- 
+
       - name: Generate dbt documentation
         run: |
           uv run dbt docs generate

@@ -63,7 +63,7 @@ with
 
         select
 
-            *,
+            sessions.*,
 
             row_number() over (
                 partition by blended_user_id order by sessions.session_start_tstamp

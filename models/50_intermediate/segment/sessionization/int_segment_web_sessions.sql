@@ -63,10 +63,11 @@ with
 
         select
 
-            *,
+            sessions_stitched.*,
 
             row_number() over (
-                partition by blended_user_id order by session_start_tstamp
+                partition by sessions_stitched.blended_user_id
+                order by sessions_stitched.session_start_tstamp
             )
             {% if is_incremental() %}
                 + coalesce(agg.starting_session_number, 0)

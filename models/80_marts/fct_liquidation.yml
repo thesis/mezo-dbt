@@ -8,6 +8,12 @@ models:
           meta: {}
           tags: []
         description: ''
+      - name: fk_transaction_hash
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+        description: ''
       - name: fk_dim1__users
         data_type: STRING
         config:

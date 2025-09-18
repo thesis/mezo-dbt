@@ -8,6 +8,12 @@ models:
           meta: {}
           tags: []
         description: ''
+      - name: fk_dim1__users
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+        description: ''
       - name: fk_dim1__borrower
         data_type: STRING
         config:
@@ -20,43 +26,7 @@ models:
           meta: {}
           tags: []
         description: ''
-      - name: principal
-        data_type: FLOAT64
-        config:
-          meta: {}
-          tags: []
-        description: ''
-      - name: interest
-        data_type: FLOAT64
-        config:
-          meta: {}
-          tags: []
-        description: ''
-      - name: collateral
-        data_type: FLOAT64
-        config:
-          meta: {}
-          tags: []
-        description: ''
-      - name: stake
-        data_type: FLOAT64
-        config:
-          meta: {}
-          tags: []
-        description: ''
-      - name: previous_principal_value
-        data_type: FLOAT64
-        config:
-          meta: {}
-          tags: []
-        description: ''
-      - name: previous_collateral_value
-        data_type: FLOAT64
-        config:
-          meta: {}
-          tags: []
-        description: ''
-      - name: total_loans_count
+      - name: loan_count
         data_type: INT64
         config:
           meta: {}

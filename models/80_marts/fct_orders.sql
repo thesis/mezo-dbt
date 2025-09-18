@@ -3,13 +3,13 @@ with
 
     filtered_orders as (
         select
-            transaction_hash as id,  -- check --> or-- order_id as id,
-            customer as fk_dim1__customer,  -- check -->
-            -- customer or canonical_segment_id or both
+            order_id as id,
             canonical_segment_id as fk_dim1__users,
+            transaction_hash as fk_transaction_hash,  -- check --> transaction_hash or order_id as id
+            customer as fk_dim1__customer,  -- check --> customer or canonical_segment_id or both
             product_id as fk_dim1__products,
             price,
-            1 as total_orders_count,
+            1 as order_count,
             date(record_timestamp) as record_date
         from orders
     )

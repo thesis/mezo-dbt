@@ -1,14 +1,8 @@
 version: 2
 models:
-  - name: fct_donated
+  - name: fct_liquidation
     columns:
       - name: id
-        data_type: STRING
-        config:
-          meta: {}
-          tags: []
-        description: ''
-      - name: fk_dim1__donor
         data_type: STRING
         config:
           meta: {}
@@ -20,14 +14,38 @@ models:
           meta: {}
           tags: []
         description: ''
-      - name: amount
+      - name: coll_gas_compensation
         data_type: INT64
         config:
           meta: {}
           tags: []
         description: ''
-      - name: donation_count
+      - name: gas_compensation
         data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: liquidated_principal
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: liquidated_interest
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: liquidated_collateral
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: fk_dim1__borrower
+        data_type: STRING
         config:
           meta: {}
           tags: []
@@ -38,15 +56,10 @@ models:
           meta: {}
           tags: []
         description: ''
-      - name: recipient_brink_count
+      - name: liquidation_count
         data_type: INT64
         config:
           meta: {}
           tags: []
         description: ''
-      - name: recipient_shefi_count
-        data_type: INT64
-        config:
-          meta: {}
-          tags: []
-        description: ''
+  

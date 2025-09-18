@@ -1,18 +1,15 @@
 with
-    loans as (select * from {{ ref("int_goldsky_borrower_operations_mezo__loans") }}),
+    loans as (
+        select * from {{ ref("int_goldsky_borrower_operations_mezo__loans_graph") }}
+    ),
 
     filtered_loans as (
         select
             transaction_hash as id,
+            canonical_segment_id as fk_dim1__users,
             borrower as fk_dim1__borrower,
             collateral_usd_value,
-            principal,  -- check --> if we need it
-            interest,  -- check --> if we need it
-            collateral,  -- check --> if we need it
-            stake,  -- check --> if we need it
-            previous_principal_value,  -- check --> if we need it
-            previous_collateral_value,  -- check --> if we need it
-            1 as total_loans_count,
+            1 as loan_count,
             date(record_timestamp) as record_date,
             case when operation = 'new_loan' then 1 else 0 end as new_loan_count,
             case

@@ -8,6 +8,12 @@ models:
           meta: {}
           tags: []
         description: ''
+      - name: fk_dim1__users
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+        description: ''
       - name: fk_transaction_hash
         data_type: STRING
         config:
@@ -38,7 +44,7 @@ models:
           meta: {}
           tags: []
         description: ''
-      - name: total_assets_locked_count
+      - name: asset_locked_count
         data_type: INT64
         config:
           meta: {}

@@ -68,7 +68,7 @@ jobs:
 
       - name: pre-commit
         uses: pre-commit/action@v3.0.1
-      
+
       - name: Set full refresh flag
         id: set-full-refresh-flag
         run: |

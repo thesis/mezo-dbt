@@ -14,10 +14,7 @@ with
             context_library_version,
             context_locale,
             context_page_path as page_url_path,
-            context_page_referrer,
-            context_page_search,
             context_page_title,
-            context_page_url,
             context_protocols_source_id,
             context_timezone,
             context_user_agent as user_agent,
@@ -45,7 +42,7 @@ with
             anonymous_id,
             context_actions_amplitude_session_id,
             net.host(context_page_url) as page_url_host,
-            net.host(referrer) as referrer_host,
+            replace(net.host(context_page_referrer), 'www.', '') as referrer_host,
             net.reg_domain(context_page_url) as registered_domain
         from source
     ),

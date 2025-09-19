@@ -1,8 +1,14 @@
 version: 2
 models:
-  - name: fct_loans
+  - name: fct_liquidation
     columns:
       - name: id
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: fk_transaction_hash
         data_type: STRING
         config:
           meta: {}
@@ -14,20 +20,38 @@ models:
           meta: {}
           tags: []
         description: ''
-      - name: fk_dim1__borrower
-        data_type: STRING
+      - name: coll_gas_compensation
+        data_type: INT64
         config:
           meta: {}
           tags: []
         description: ''
-      - name: collateral_usd_value
+      - name: gas_compensation
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: liquidated_principal
         data_type: FLOAT64
         config:
           meta: {}
           tags: []
         description: ''
-      - name: loan_count
-        data_type: INT64
+      - name: liquidated_interest
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: liquidated_collateral
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: fk_dim1__borrower
+        data_type: STRING
         config:
           meta: {}
           tags: []
@@ -38,19 +62,7 @@ models:
           meta: {}
           tags: []
         description: ''
-      - name: new_loan_count
-        data_type: INT64
-        config:
-          meta: {}
-          tags: []
-        description: ''
-      - name: adjusted_loan_count
-        data_type: INT64
-        config:
-          meta: {}
-          tags: []
-        description: ''
-      - name: closed_loan_count
+      - name: liquidation_count
         data_type: INT64
         config:
           meta: {}

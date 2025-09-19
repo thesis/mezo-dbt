@@ -41,7 +41,7 @@ with
             coalesce(id_stitching.user_id, sessions.anonymous_id) as blended_user_id
 
         from sessions
-        left join id_stitching using (anonymous_id)
+        left join id_stitching on sessions.anonymous_id = id_stitching.anonymous_id
 
     )
 

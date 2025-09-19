@@ -49,7 +49,8 @@
         "LT02",
         "L036",
         "LT01",
-        "LT14"
+        "LT14",
+        "ST07"
     ],
     "sqlfluff.environmentVariables": [
     ],

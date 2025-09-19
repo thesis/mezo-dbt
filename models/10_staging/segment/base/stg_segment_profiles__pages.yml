@@ -62,22 +62,7 @@ models:
         config:
           meta: {}
           tags: []
-      - name: context_page_referrer
-        description: ''
-        config:
-          meta: {}
-          tags: []
-      - name: context_page_search
-        description: ''
-        config:
-          meta: {}
-          tags: []
       - name: context_page_title
-        description: ''
-        config:
-          meta: {}
-          tags: []
-      - name: context_page_url
         description: ''
         config:
           meta: {}

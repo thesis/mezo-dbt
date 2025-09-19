@@ -44,7 +44,18 @@ with
         left join
             most_recent_conversion
             on lookup_currency.token_id = most_recent_conversion.coin_id
+    ),
+
+    deduplicated as (
+        select *
+        from currency_conversion
+        qualify
+            row_number() over (
+                partition by transaction_hash, sequence_number, _gs_gid
+                order by currency_conversion_timestamp desc
+            )
+            = 1
     )
 
 select *
-from currency_conversion
+from deduplicated

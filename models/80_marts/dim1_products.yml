@@ -1,0 +1,15 @@
+version: 2
+models:
+  - name: dim1_products
+    columns:
+      - name: id
+        description: The ID of the product.
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING
+      - name: product_name
+        description: The name of the product.
+        config:
+          meta: {}
+          tags: []

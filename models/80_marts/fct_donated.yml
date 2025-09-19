@@ -1,8 +1,14 @@
 version: 2
 models:
-  - name: fct_loans
+  - name: fct_donated
     columns:
       - name: id
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: fk_dim1__donor
         data_type: STRING
         config:
           meta: {}
@@ -14,19 +20,13 @@ models:
           meta: {}
           tags: []
         description: ''
-      - name: fk_dim1__borrower
-        data_type: STRING
+      - name: amount
+        data_type: INT64
         config:
           meta: {}
           tags: []
         description: ''
-      - name: collateral_usd_value
-        data_type: FLOAT64
-        config:
-          meta: {}
-          tags: []
-        description: ''
-      - name: loan_count
+      - name: donation_count
         data_type: INT64
         config:
           meta: {}
@@ -38,19 +38,13 @@ models:
           meta: {}
           tags: []
         description: ''
-      - name: new_loan_count
+      - name: recipient_brink_count
         data_type: INT64
         config:
           meta: {}
           tags: []
         description: ''
-      - name: adjusted_loan_count
-        data_type: INT64
-        config:
-          meta: {}
-          tags: []
-        description: ''
-      - name: closed_loan_count
+      - name: recipient_shefi_count
         data_type: INT64
         config:
           meta: {}

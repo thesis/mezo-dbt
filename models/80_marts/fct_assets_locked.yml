@@ -1,6 +1,6 @@
 version: 2
 models:
-  - name: fct_loans
+  - name: fct_assets_locked
     columns:
       - name: id
         data_type: STRING
@@ -14,19 +14,37 @@ models:
           meta: {}
           tags: []
         description: ''
-      - name: fk_dim1__borrower
+      - name: fk_transaction_hash
         data_type: STRING
         config:
           meta: {}
           tags: []
         description: ''
-      - name: collateral_usd_value
+      - name: fk_dim1__recipient
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: fk_token_adress
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: amount
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: token_usd_value
         data_type: FLOAT64
         config:
           meta: {}
           tags: []
         description: ''
-      - name: loan_count
+      - name: asset_locked_count
         data_type: INT64
         config:
           meta: {}
@@ -34,24 +52,6 @@ models:
         description: ''
       - name: record_date
         data_type: DATE
-        config:
-          meta: {}
-          tags: []
-        description: ''
-      - name: new_loan_count
-        data_type: INT64
-        config:
-          meta: {}
-          tags: []
-        description: ''
-      - name: adjusted_loan_count
-        data_type: INT64
-        config:
-          meta: {}
-          tags: []
-        description: ''
-      - name: closed_loan_count
-        data_type: INT64
         config:
           meta: {}
           tags: []

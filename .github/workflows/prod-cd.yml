@@ -12,7 +12,7 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    types: 
+    types:
       - closed
   workflow_dispatch:
 

@@ -1,9 +1,4 @@
-{{
-    config(
-        materialized="incremental",
-        unique_key="canonical_segment_id_with_fallback",
-    )
-}}
+{{ config(materialized="incremental", unique_key="canonical_segment_id") }}
 
 with
     first_touch_anonymous as (
@@ -17,6 +12,7 @@ with
 
     first_touch_canonical as (
         select
+            fa.anonymous_id,
             fa.canonical_segment_id_with_fallback as canonical_segment_id,
             fa.first_touch_time,
             s.referrer_source as first_touch_source,
@@ -26,6 +22,12 @@ with
             {{ ref("int_segment__sessions") }} as s
             on fa.anonymous_id = s.anonymous_id
             and fa.first_touch_time = s.session_start_tstamp
+        qualify
+            row_number() over (
+                partition by fa.canonical_segment_id_with_fallback
+                order by fa.first_touch_time asc
+            )
+            = 1
     )
 
 select *

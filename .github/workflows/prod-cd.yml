@@ -23,8 +23,7 @@ permissions:
 jobs:
   dbt-build:
     runs-on: ubuntu-latest
-    outputs:
-      dbt_full_refresh: ${{ steps.set-full-refresh-flag.outputs.DBT_FULL_REFRESH }}
+    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
     env:
       DBT_PROJECT_DIR: .
     steps:
@@ -142,7 +141,7 @@ jobs:
           gcloud run jobs deploy $SERVICE_NAME \
             --image $IMAGE \
             --tasks 1 \
-            --set-env-vars SLEEP_MS=10000,FAIL_RATE=0.1,DBT_SERVICE_ACCOUNT=${{ secrets.DBT_SERVICE_ACCOUNT_EMAIL }},GCS_BUCKET=${{ secrets.GCP_GCS_BUCKET }},DBT_FULL_REFRESH=${{ needs.dbt-build.outputs.dbt_full_refresh }} \
+            --set-env-vars SLEEP_MS=10000,FAIL_RATE=0.1,DBT_SERVICE_ACCOUNT=${{ secrets.DBT_SERVICE_ACCOUNT_EMAIL }},GCS_BUCKET=${{ secrets.GCP_GCS_BUCKET }} \
             --max-retries 5 \
             --region $REGION \
             --project $PROJECT_ID \

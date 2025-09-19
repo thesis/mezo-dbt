@@ -68,12 +68,21 @@ jobs:
 
       - name: pre-commit
         uses: pre-commit/action@v3.0.1
+      
+      - name: Set full refresh flag
+        id: set-full-refresh-flag
+        run: |
+          if echo "${{ github.event.pull_request.body }}" | grep -q "#full-refresh"; then
+            echo "DBT_FULL_REFRESH=--full-refresh" >> $GITHUB_OUTPUT
+          else
+            echo "DBT_FULL_REFRESH=" >> $GITHUB_OUTPUT
+          fi
 
       - name: Run dbt build
         id: first_try
         run: |
             uv run dbt run-operation stage_external_sources
-            uv run dbt build --select state:modified+ --target ${{ env.TARGET }} --vars "schema_id: $SCHEMA_ID" --defer --state target-base
+            uv run dbt build --select state:modified+ --target ${{ env.TARGET }} --vars "schema_id: $SCHEMA_ID" --defer --state target-base ${{ steps.set-full-refresh-flag.outputs.DBT_FULL_REFRESH }}
 
       - name: Run dbt build another time to check incremental models
         id: incremental_try

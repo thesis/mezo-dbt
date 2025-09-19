@@ -1,12 +1,6 @@
 models:
   - name: int_segment__sessions_first_touch_point
     columns:
-      - name: anonymous_id
-        data_type: string
-        config:
-          meta: {}
-          tags: []
-        description: ''
       - name: first_touch_time
         data_type: timestamp
         config:
@@ -25,7 +19,7 @@ models:
           meta: {}
           tags: []
         description: ''
-      - name: canonical_segment_id_with_fallback
+      - name: canonical_segment_id
         data_type: string
         config:
           meta: {}

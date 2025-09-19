@@ -47,16 +47,15 @@ with
     ),
 
     deduplicated as (
-        select
-            *,
+        select *
+        from currency_conversion
+        qualify
             row_number() over (
                 partition by transaction_hash, sequence_number, _gs_gid
                 order by currency_conversion_timestamp desc
-            ) as rn
-        from currency_conversion
-    ),
-
-    filtered as (select * except (rn) from deduplicated where rn = 1)
+            )
+            = 1
+    )
 
 select *
-from filtered
+from deduplicated

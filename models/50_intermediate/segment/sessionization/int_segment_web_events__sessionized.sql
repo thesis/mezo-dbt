@@ -1,6 +1,5 @@
 {{
     config(
-        full_refresh=true,
         materialized="incremental",
         unique_key="id",
         sort="tstamp",

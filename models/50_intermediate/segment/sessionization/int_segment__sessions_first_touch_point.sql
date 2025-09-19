@@ -1,6 +1,5 @@
 {{
     config(
-        full_refresh=true,
         materialized="incremental",
         unique_key="canonical_segment_id_with_fallback",
     )
@@ -18,7 +17,6 @@ with
 
     first_touch_canonical as (
         select
-            -- fa.anonymous_id,
             fa.canonical_segment_id_with_fallback as canonical_segment_id,
             fa.first_touch_time,
             s.referrer_source as first_touch_source,
@@ -31,5 +29,4 @@ with
     )
 
 select *
--- count(distinct canonical_segment_id), count(distinct anonymous_id)
 from first_touch_canonical

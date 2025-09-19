@@ -1,6 +1,5 @@
 {{
     config(
-        full_refresh=true,
         materialized="incremental",
         unique_key="session_id",
         sort="session_start_tstamp",

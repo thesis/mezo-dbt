@@ -20,6 +20,30 @@ models:
           meta: {}
           tags: []
         description: ''
+      - name: principal
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: interest
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: collateral
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
+      - name: stake
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: ''
       - name: collateral_usd_value
         data_type: FLOAT64
         config:

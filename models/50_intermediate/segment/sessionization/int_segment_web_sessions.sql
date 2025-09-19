@@ -70,7 +70,6 @@ with
             {% if is_incremental() %}
                 + coalesce(agg.starting_session_number, 0)
             {% endif %} as session_number
-
         from sessions_stitched as ss
         {% if is_incremental() %}
             left join agg on ss.blended_user_id = agg.blended_user_id

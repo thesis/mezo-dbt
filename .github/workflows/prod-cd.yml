@@ -11,6 +11,9 @@ env:
 on:
   push:
     branches: [ main ]
+  pull_request:
+    types: 
+      - closed
   workflow_dispatch:
 
 permissions:
@@ -20,6 +23,8 @@ permissions:
 jobs:
   dbt-build:
     runs-on: ubuntu-latest
+    outputs:
+      dbt_full_refresh: ${{ steps.set-full-refresh-flag.outputs.DBT_FULL_REFRESH }}
     env:
       DBT_PROJECT_DIR: .
     steps:
@@ -59,10 +64,19 @@ jobs:
         run: |
           uv run dbt deps --target ${{ env.TARGET }}
 
+      - name: Set full refresh flag
+        id: set-full-refresh-flag
+        run: |
+          if echo "${{ github.event.pull_request.body }}" | grep -q "#full-refresh"; then
+            echo "DBT_FULL_REFRESH=--full-refresh" >> $GITHUB_OUTPUT
+          else
+            echo "DBT_FULL_REFRESH=" >> $GITHUB_OUTPUT
+          fi
+
       - name: Run dbt build
         run: |
           uv run dbt run-operation stage_external_sources
-          uv run dbt build --select state:modified+ --target ${{ env.TARGET }} --defer --state target-base
+          uv run dbt build --select state:modified+ --target ${{ env.TARGET }} --defer --state target-base ${{ steps.set-full-refresh-flag.outputs.DBT_FULL_REFRESH }}
 
       - name: Generate dbt documentation
         run: |
@@ -128,7 +142,7 @@ jobs:
           gcloud run jobs deploy $SERVICE_NAME \
             --image $IMAGE \
             --tasks 1 \
-            --set-env-vars SLEEP_MS=10000,FAIL_RATE=0.1,DBT_SERVICE_ACCOUNT=${{ secrets.DBT_SERVICE_ACCOUNT_EMAIL }},GCS_BUCKET=${{ secrets.GCP_GCS_BUCKET }} \
+            --set-env-vars SLEEP_MS=10000,FAIL_RATE=0.1,DBT_SERVICE_ACCOUNT=${{ secrets.DBT_SERVICE_ACCOUNT_EMAIL }},GCS_BUCKET=${{ secrets.GCP_GCS_BUCKET }},DBT_FULL_REFRESH=${{ needs.dbt-build.outputs.dbt_full_refresh }} \
             --max-retries 5 \
             --region $REGION \
             --project $PROJECT_ID \

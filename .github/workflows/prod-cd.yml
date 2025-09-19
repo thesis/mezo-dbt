@@ -76,7 +76,7 @@ jobs:
         with:
             branch: gh-pages
             commit_message: Update documentation
-            file_pattern: '*'
+            file_pattern: 'index.html manifest.json catalog.json'
             push_options: '--force'
 
       - name: Upload manifest to GCS

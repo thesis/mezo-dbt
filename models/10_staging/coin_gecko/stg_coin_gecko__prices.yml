@@ -1,4 +1,3 @@
-
 version: 2
 models:
   - name: stg_coin_gecko__prices

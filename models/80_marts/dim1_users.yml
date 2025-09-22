@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: dim1_users
-    description: "User dimension table with first-touch attribution, based on sessions."
+    description: User dimension table with first-touch attribution, based on sessions.
     columns:
       - name: canonical_segment_id
         description: Canonical Segment ID, with fallback if mapping is missing.

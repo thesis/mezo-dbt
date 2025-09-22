@@ -8,242 +8,217 @@ models:
           meta: {}
           tags: []
       - name: utm_source
-        description: ''
+        description: UTM source parameter
         config:
           meta: {}
           tags: []
       - name: utm_medium
-        description: ''
+        description: UTM medium parameter
         config:
           meta: {}
           tags: []
       - name: utm_campaign
-        description: ''
+        description: UTM campaign parameter
         config:
           meta: {}
           tags: []
       - name: utm_term
-        description: ''
+        description: UTM term parameter
         config:
           meta: {}
           tags: []
       - name: utm_content
-        description: ''
+        description: UTM content parameter
         config:
           meta: {}
           tags: []
       - name: ip
-        description: ''
+        description: IP address of the user
         config:
           meta: {}
           tags: []
       - name: library_name
-        description: ''
+        description: Name of the Segment library sending the event
         config:
           meta: {}
           tags: []
       - name: context_library_version
-        description: ''
+        description: Version of the Segment library
         config:
           meta: {}
           tags: []
       - name: context_locale
-        description: ''
+        description: User’s locale setting (e.g., en-US, de-DE)
         config:
           meta: {}
           tags: []
       - name: page_url_path
-        description: ''
+        description: Path of the page URL (excluding domain and query string)
         config:
           meta: {}
           tags: []
       - name: referrer
-        description: ''
+        description: Full referrer URL from which the user navigated
         config:
           meta: {}
           tags: []
       - name: page_url_query
-        description: ''
+        description: Query string from the page URL
         config:
           meta: {}
           tags: []
       - name: context_page_title
-        description: ''
+        description: Title of the page from the HTML document
         config:
           meta: {}
           tags: []
       - name: page_url
-        description: ''
+        description: Full page URL (protocol + domain + path + query)
         config:
           meta: {}
           tags: []
       - name: context_protocols_source_id
-        description: ''
+        description: Internal identifier from Segment protocols
         config:
           meta: {}
           tags: []
       - name: context_protocols_violations
-        description: ''
+        description: Protocol validation issues recorded by Segment
         config:
           meta: {}
           tags: []
       - name: context_timezone
-        description: ''
+        description: User’s timezone (e.g., Europe/Berlin)
         config:
           meta: {}
           tags: []
       - name: user_agent
-        description: ''
+        description: Raw User-Agent string from the browser
         config:
           meta: {}
           tags: []
       - name: context_user_agent_data_brands
-        description: ''
+        description: JSON metadata about the browser family/version
         config:
           meta: {}
           tags: []
       - name: context_user_agent_data_mobile
-        description: ''
+        description: Flag indicating whether the device is mobile
         config:
           meta: {}
           tags: []
       - name: context_user_agent_data_platform
-        description: ''
+        description: User-Agent platform (e.g., macOS, Linux, Windows)
         config:
           meta: {}
           tags: []
       - name: event_name
-        description: ''
+        description: Name of the tracked event (e.g., "button_clicked")
         config:
           meta: {}
           tags: []
       - name: event_source_id
-        description: ''
+        description: Internal identifier for the event source
         config:
           meta: {}
           tags: []
       - name: source_name
-        description: ''
+        description: Name of the event source
         config:
           meta: {}
           tags: []
       - name: event_source_slug
-        description: ''
+        description: Slugified version of the event source name
         config:
           meta: {}
           tags: []
       - name: event_text
-        description: ''
+        description: Text or description field associated with the event
         config:
           meta: {}
           tags: []
       - name: id
-        description: ''
+        description: Unique identifier for the track event
         config:
           meta: {}
           tags: []
       - name: loaded_at
-        description: ''
+        description: Timestamp when the row was loaded into the warehouse
         config:
           meta: {}
           tags: []
       - name: original_timestamp
-        description: ''
+        description: Original event timestamp from the client
         config:
           meta: {}
           tags: []
       - name: received_at_tstamp
-        description: ''
+        description: Timestamp when Segment received the event
         config:
           meta: {}
           tags: []
       - name: segment_id
-        description: ''
+        description: Unique Segment identifier for the event
         config:
           meta: {}
           tags: []
       - name: sent_at
-        description: ''
+        description: Timestamp when the event was sent by the client
         config:
           meta: {}
           tags: []
       - name: tstamp
-        description: ''
+        description: Timestamp recorded by the warehouse
         config:
           meta: {}
           tags: []
       - name: user_id
-        description: ''
+        description: Segment user_id (if logged in)
         config:
           meta: {}
           tags: []
       - name: uuid_ts
-        description: ''
+        description: Technical field combining UUID and timestamp
         config:
           meta: {}
           tags: []
       - name: anonymous_id
-        description: ''
+        description: Segment anonymous_id (cookie/device ID)
         config:
           meta: {}
           tags: []
       - name: context_event_transformed
-        description: ''
+        description: Transformation applied to the event (if any)
         config:
           meta: {}
           tags: []
       - name: context_transforms_beta
-        description: ''
+        description: Experimental transformations metadata from Segment
         config:
           meta: {}
           tags: []
       - name: page_url_host
-        description: ''
+        description: Host/domain of the page URL
         config:
           meta: {}
           tags: []
       - name: registered_domain
-        description: ''
+        description: Registered domain of the page URL (e.g., mezo.org)
         config:
           meta: {}
           tags: []
       - name: referrer_host
-        description: ''
+        description: Host/domain of the referrer URL
         config:
           meta: {}
           tags: []
       - name: utm_id
-        description: ''
-        config:
-          meta: {}
-          tags: []
-      - name: context_page_referrer
-        description: ''
-        config:
-          meta: {}
-          tags: []
-      - name: context_page_search
-        description: ''
-        config:
-          meta: {}
-          tags: []
-      - name: context_page_url
-        description: ''
-        config:
-          meta: {}
-          tags: []
-      - name: page_path
-        description: ''
-        config:
-          meta: {}
-          tags: []
-      - name: page_title
-        description: ''
+        description: UTM campaign ID
         config:
           meta: {}
           tags: []
       - name: context_actions_amplitude_session_id
-        description: ''
+        description: Amplitude session ID if available
         config:
           meta: {}
           tags: []

@@ -3,12 +3,12 @@ models:
   - name: int_segment_web_user_stitching
     columns:
       - name: anonymous_id
-        description: ''
+        description: Segment anonymous_id (cookie/device ID)
         config:
           meta: {}
           tags: []
       - name: user_id
-        description: ''
+        description: Segment user_id (if logged in)
         config:
           meta: {}
           tags: []

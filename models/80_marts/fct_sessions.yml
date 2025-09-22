@@ -45,12 +45,222 @@ models:
           meta: {}
           tags: []
         data_type: STRING
+      - name: button_clicks
+        description: ''
+        config:
+          meta: {}
+          tags: []
       - name: page_views
         description: The number of pages viewed during the session
         config:
           meta: {}
           tags: []
         data_type: INT64
+      - name: sign_ups
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: wallet_connections
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: asset_swaps
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: sign_ins
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: swap_assets_starts
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: sign_up_starts
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: funds_additions
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: pool_liquidity_additions
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: add_funds_starts
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: vault_assets_starts
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: username_updates
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: assets_vaulted
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: musd_borrow_starts
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: pool_liquidity_withdrawals
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: musd_donations
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: market_spend_starts
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: musd_borrows
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: items_purchased
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: repay_loan_starts
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: loans_repaid
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: loan_increase_reduce_ratio
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: increase_loan_starts
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: loans_increased
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: loan_collateral_deposits
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: market_spend_completions
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: loan_collateral_withdrawals
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: withdraw_loan_collateral_starts
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: deposit_loan_collateral_starts
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: borrow_more_balance_confirmations
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: assets_swaps
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: borrow_repay_starts
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: borrow_repays
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: market_donation_successes
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: borrow_collateral_deposit_starts
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: borrow_more_increase_coll
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: borrow_more_strategy_increase_coll
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: borrow_collateral_deposits
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: borrow_more_button_clicks
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: borrow_more_confirm_increase_coll
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: llm_shares
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: borrow_more_strategy_reduce_ratio
+        description: ''
+        config:
+          meta: {}
+          tags: []
       - name: session_duration_in_seconds
         description: The duration of the session in seconds
         config:

@@ -8,7 +8,7 @@ models:
           meta: {}
           tags: []
         description: ''
-      - name: fk_dim1__customer
+      - name: fk_dim1__users
         data_type: STRING
         config:
           meta: {}
@@ -20,24 +20,24 @@ models:
           meta: {}
           tags: []
         description: ''
-      - name: fk_dim1__users
+      - name: fk_dim1__customer
         data_type: STRING
         config:
           meta: {}
           tags: []
         description: ''
       - name: fk_dim1__products
-        data_type: INT64
+        data_type: STRING
         config:
           meta: {}
           tags: []
         description: ''
       - name: price
-        data_type: INT64
+        data_type: NUMERIC
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Price of the order (normalized currency)
       - name: order_count
         data_type: INT64
         config:

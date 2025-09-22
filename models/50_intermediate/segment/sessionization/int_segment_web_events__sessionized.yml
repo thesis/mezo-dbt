@@ -142,7 +142,6 @@ models:
         data_tests:
           - unique
           - not_null
-
         description: Unique identifier for the track event
         config:
           meta: {}
@@ -219,16 +218,6 @@ models:
           tags: []
       - name: utm_id
         description: UTM campaign ID
-        config:
-          meta: {}
-          tags: []
-      - name: page_path
-        description: Path portion of the page URL (may duplicate `page_url_path`)
-        config:
-          meta: {}
-          tags: []
-      - name: page_title
-        description: Title of the page (duplicate of `context_page_title`)
         config:
           meta: {}
           tags: []

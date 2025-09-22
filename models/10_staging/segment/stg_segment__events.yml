@@ -217,16 +217,6 @@ models:
         config:
           meta: {}
           tags: []
-      - name: page_path
-        description: Path portion of the page URL (may duplicate `page_url_path`)
-        config:
-          meta: {}
-          tags: []
-      - name: page_title
-        description: Title of the page (duplicate of `context_page_title`)
-        config:
-          meta: {}
-          tags: []
       - name: context_actions_amplitude_session_id
         description: Amplitude session ID if available
         config:

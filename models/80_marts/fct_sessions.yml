@@ -46,7 +46,7 @@ models:
           tags: []
         data_type: STRING
       - name: button_clicks
-        description: ''
+        description: Count of button click events in the session
         config:
           meta: {}
           tags: []
@@ -57,207 +57,207 @@ models:
           tags: []
         data_type: INT64
       - name: sign_ups
-        description: ''
+        description: Count of completed sign-up events
         config:
           meta: {}
           tags: []
       - name: wallet_connections
-        description: ''
+        description: Count of wallet connection events
         config:
           meta: {}
           tags: []
       - name: asset_swaps
-        description: ''
+        description: Count of asset swap events
         config:
           meta: {}
           tags: []
       - name: sign_ins
-        description: ''
+        description: Count of completed sign-in events
         config:
           meta: {}
           tags: []
       - name: swap_assets_starts
-        description: ''
+        description: Count of asset swap start events
         config:
           meta: {}
           tags: []
       - name: sign_up_starts
-        description: ''
+        description: Count of sign-up start events
         config:
           meta: {}
           tags: []
       - name: funds_additions
-        description: ''
+        description: Count of funds added events
         config:
           meta: {}
           tags: []
       - name: pool_liquidity_additions
-        description: ''
+        description: Count of liquidity pool additions
         config:
           meta: {}
           tags: []
       - name: add_funds_starts
-        description: ''
+        description: Count of add-funds start events
         config:
           meta: {}
           tags: []
       - name: vault_assets_starts
-        description: ''
+        description: Count of vault asset start events
         config:
           meta: {}
           tags: []
       - name: username_updates
-        description: ''
+        description: Count of username update events
         config:
           meta: {}
           tags: []
       - name: assets_vaulted
-        description: ''
+        description: Count of vaulted asset events
         config:
           meta: {}
           tags: []
       - name: musd_borrow_starts
-        description: ''
+        description: Count of mUSD borrow start events
         config:
           meta: {}
           tags: []
       - name: pool_liquidity_withdrawals
-        description: ''
+        description: Count of liquidity pool withdrawal events
         config:
           meta: {}
           tags: []
       - name: musd_donations
-        description: ''
+        description: Count of mUSD donation events
         config:
           meta: {}
           tags: []
       - name: market_spend_starts
-        description: ''
+        description: Count of market spend start events
         config:
           meta: {}
           tags: []
       - name: musd_borrows
-        description: ''
+        description: Count of mUSD borrow events
         config:
           meta: {}
           tags: []
       - name: items_purchased
-        description: ''
+        description: Count of purchase events
         config:
           meta: {}
           tags: []
       - name: repay_loan_starts
-        description: ''
+        description: Count of repay loan start events
         config:
           meta: {}
           tags: []
       - name: loans_repaid
-        description: ''
+        description: Count of loan repayment events
         config:
           meta: {}
           tags: []
       - name: loan_increase_reduce_ratio
-        description: ''
+        description: Ratio metric for loan increase/reduction
         config:
           meta: {}
           tags: []
       - name: increase_loan_starts
-        description: ''
+        description: Count of loan increase start events
         config:
           meta: {}
           tags: []
       - name: loans_increased
-        description: ''
+        description: Count of loan increase events
         config:
           meta: {}
           tags: []
       - name: loan_collateral_deposits
-        description: ''
+        description: Count of loan collateral deposit events
         config:
           meta: {}
           tags: []
       - name: market_spend_completions
-        description: ''
+        description: Count of completed market spend events
         config:
           meta: {}
           tags: []
       - name: loan_collateral_withdrawals
-        description: ''
+        description: Count of loan collateral withdrawal events
         config:
           meta: {}
           tags: []
       - name: withdraw_loan_collateral_starts
-        description: ''
+        description: Count of withdraw loan collateral start events
         config:
           meta: {}
           tags: []
       - name: deposit_loan_collateral_starts
-        description: ''
+        description: Count of deposit loan collateral start events
         config:
           meta: {}
           tags: []
       - name: borrow_more_balance_confirmations
-        description: ''
+        description: Count of borrow-more balance confirmation events
         config:
           meta: {}
           tags: []
       - name: assets_swaps
-        description: ''
+        description: Count of asset swap events (alternate metric)
         config:
           meta: {}
           tags: []
       - name: borrow_repay_starts
-        description: ''
+        description: Count of borrow repay start events
         config:
           meta: {}
           tags: []
       - name: borrow_repays
-        description: ''
+        description: Count of borrow repayment events
         config:
           meta: {}
           tags: []
       - name: market_donation_successes
-        description: ''
+        description: Count of successful market donations
         config:
           meta: {}
           tags: []
       - name: borrow_collateral_deposit_starts
-        description: ''
+        description: Count of borrow collateral deposit start events
         config:
           meta: {}
           tags: []
       - name: borrow_more_increase_coll
-        description: ''
+        description: Count of borrow-more increase collateral events
         config:
           meta: {}
           tags: []
       - name: borrow_more_strategy_increase_coll
-        description: ''
+        description: Count of borrow-more strategy increase collateral events
         config:
           meta: {}
           tags: []
       - name: borrow_collateral_deposits
-        description: ''
+        description: Count of borrow collateral deposit events
         config:
           meta: {}
           tags: []
       - name: borrow_more_button_clicks
-        description: ''
+        description: Count of borrow-more button click events
         config:
           meta: {}
           tags: []
       - name: borrow_more_confirm_increase_coll
-        description: ''
+        description: Count of borrow-more confirm increase collateral events
         config:
           meta: {}
           tags: []
       - name: llm_shares
-        description: ''
+        description: Count of LLM share events
         config:
           meta: {}
           tags: []
       - name: borrow_more_strategy_reduce_ratio
-        description: ''
+        description: Ratio metric for borrow-more strategy reduction
         config:
           meta: {}
           tags: []

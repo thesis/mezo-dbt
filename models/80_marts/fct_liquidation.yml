@@ -19,7 +19,7 @@ models:
         config:
           meta: {}
           tags: []
-        description: ''
+        description: 'Foreign Key to Users Table (Canonical Segment ID)'
       - name: fk_dim1__borrower
         data_type: STRING
         config:

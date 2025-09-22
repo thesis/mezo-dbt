@@ -19,17 +19,18 @@ models:
         config:
           meta: {}
           tags: []
-        description: 'The timestamp of the user’s very first recorded session or interaction.'
+        description: The timestamp of the user’s very first recorded session or interaction.
       - name: first_touch_source
         data_type: string
         config:
           meta: {}
           tags: []
-        description: 'The marketing source (e.g., google, newsletter) from which the user first arrived.'
+        description: The marketing source (e.g., google, newsletter) from which the user first 
+          arrived.
       - name: first_touch_medium
         data_type: string
         config:
           meta: {}
           tags: []
-        description: 'The marketing medium (e.g., cpc, email, referral) of the user’s first interaction.'
-
+        description: The marketing medium (e.g., cpc, email, referral) of the user’s first 
+          interaction.

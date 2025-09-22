@@ -13,7 +13,7 @@ models:
         config:
           meta: {}
           tags: []
-        description: ''
+        description: 'Foreign Key to Users Table (Canonical Segment ID)'
       - name: fk_transaction_hash
         data_type: STRING
         config:

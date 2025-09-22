@@ -8,7 +8,6 @@ with
             sequence_number as id,
             canonical_segment_id as fk_dim1__users,
             transaction_hash as fk_transaction_hash,
-            recipient as fk_dim1__recipient,
             token_adress as fk_token_adress,
             amount,
             token_usd_value,

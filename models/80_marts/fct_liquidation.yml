@@ -50,12 +50,6 @@ models:
           meta: {}
           tags: []
         description: ''
-      - name: fk_dim1__borrower
-        data_type: STRING
-        config:
-          meta: {}
-          tags: []
-        description: ''
       - name: record_date
         data_type: DATE
         config:

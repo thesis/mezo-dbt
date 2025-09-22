@@ -8,7 +8,6 @@ with
             id,
             transaction_hash as fk_transaction_hash,
             canonical_segment_id as fk_dim1__users,
-            borrower as fk_dim1__borrower,
             coll_gas_compensation,
             gas_compensation,
             liquidated_principal,

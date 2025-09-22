@@ -25,12 +25,12 @@ models:
         config:
           meta: {}
           tags: []
-        description: The marketing source (e.g., google, newsletter) from which the user first 
+        description: The marketing source (e.g., google, newsletter) from which the user first
           arrived.
       - name: first_touch_medium
         data_type: string
         config:
           meta: {}
           tags: []
-        description: The marketing medium (e.g., cpc, email, referral) of the user’s first 
+        description: The marketing medium (e.g., cpc, email, referral) of the user’s first
           interaction.

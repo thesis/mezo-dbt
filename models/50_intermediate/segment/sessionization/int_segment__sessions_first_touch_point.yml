@@ -12,22 +12,24 @@ models:
           meta: {}
           tags: []
         description: >-
-          The fully-merged Segment ID (the profile Segment now understands any events or identifiers to map to).
+          The fully-merged Segment ID (the profile Segment now understands any events or identifiers to
+          map to).
       - name: first_touch_time
         data_type: timestamp
         config:
           meta: {}
           tags: []
-        description: ''
+        description: 'The timestamp of the user’s very first recorded session or interaction.'
       - name: first_touch_source
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: 'The marketing source (e.g., google, newsletter) from which the user first arrived.'
       - name: first_touch_medium
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: 'The marketing medium (e.g., cpc, email, referral) of the user’s first interaction.'
+

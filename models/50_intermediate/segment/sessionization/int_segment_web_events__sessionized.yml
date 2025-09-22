@@ -228,27 +228,27 @@ models:
           meta: {}
           tags: []
       - name: gclid
-        description: ''
+        description: 'Google Click Identifier used for tracking Google Ads campaigns.'
         config:
           meta: {}
           tags: []
       - name: device
-        description: ''
+        description: 'Device type string reported by Segment (e.g., iPhone, MacBook, Pixel).'
         config:
           meta: {}
           tags: []
       - name: device_category
-        description: ''
+        description: 'Category of the device (e.g., mobile, desktop, tablet).'
         config:
           meta: {}
           tags: []
       - name: event_number
-        description: ''
+        description: 'Sequential number assigned to the event within the session.'
         config:
           meta: {}
           tags: []
       - name: session_id
-        description: ''
+        description: 'Unique identifier for the session in which the event occurred.'
         config:
           meta: {}
           tags: []

@@ -1,4 +1,121 @@
 version: 2
 models:
   - name: int_goldsky_borrower_operations_mezo__loans_graph
-    columns: []
+    columns:
+      - name: block
+        description: Block number in which this event occurred
+        config:
+          meta: {}
+          tags: []
+      - name: block_number
+        description: Block number as a high-precision numeric value
+        config:
+          meta: {}
+          tags: []
+      - name: transaction_hash
+        description: Hash of the transaction that emitted this event
+        config:
+          meta: {}
+          tags: []
+      - name: contract_id
+        description: Address of the contract that emitted the event
+        config:
+          meta: {}
+          tags: []
+      - name: borrower
+        description: Address of the borrower
+        config:
+          meta: {}
+          tags: []
+      - name: last_interest_update_time
+        description: Timestamp of the last interest update
+        config:
+          meta: {}
+          tags: []
+      - name: _gs_chain
+        description: Chain where the event originated, e.g., 'mezo'
+        config:
+          meta: {}
+          tags: []
+      - name: _gs_gid
+        description: Unique identifier from Goldsky for the event
+        config:
+          meta: {}
+          tags: []
+      - name: record_timestamp
+        description: Timestamp of the event formatted as a datetime
+        config:
+          meta: {}
+          tags: []
+      - name: operation
+        description: Type of operation performed on the trove
+        config:
+          meta: {}
+          tags: []
+      - name: principal
+        description: Principal debt amount (normalized currency)
+        config:
+          meta: {}
+          tags: []
+      - name: interest
+        description: Interest amount (normalized currency)
+        config:
+          meta: {}
+          tags: []
+      - name: collateral
+        description: Collateral amount (normalized currency)
+        config:
+          meta: {}
+          tags: []
+      - name: stake
+        description: Stake amount (normalized currency)
+        config:
+          meta: {}
+          tags: []
+      - name: currency_conversion_timestamp
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: collateral_usd_value
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: collateral_ratio
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: previous_principal_value
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: previous_collateral_value
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: adjustment_type_principal
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: adjustment_type_collateral
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: is_in_graph
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: canonical_segment_id
+        description: >-
+          The fully-merged Segment ID (the profile Segment now understands any events or identifiers to
+          map to).
+        config:
+          meta: {}
+          tags: []

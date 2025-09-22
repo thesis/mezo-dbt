@@ -3,17 +3,17 @@ models:
   - name: fct_assets_locked
     columns:
       - name: id
-        data_type: STRING
+        data_type: BIGNUMERIC
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Unique identifier for this price record
       - name: fk_dim1__users
         data_type: STRING
         config:
           meta: {}
           tags: []
-        description: ''
+        description: 'Foreign key to the user dimension'
       - name: fk_transaction_hash
         data_type: STRING
         config:
@@ -33,11 +33,11 @@ models:
           tags: []
         description: ''
       - name: amount
-        data_type: INT64
+        data_type: FLOAT64
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Amount of tokens locked (normalized based on token decimals)
       - name: token_usd_value
         data_type: FLOAT64
         config:

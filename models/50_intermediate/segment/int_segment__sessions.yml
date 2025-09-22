@@ -6,7 +6,7 @@ models:
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Name of the event source
       - name: session_id
         data_type: string
         config:
@@ -18,7 +18,7 @@ models:
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Segment anonymous_id (cookie/device ID)
       - name: session_start_tstamp
         data_type: timestamp
         config:
@@ -252,31 +252,31 @@ models:
         config:
           meta: {}
           tags: []
-        description: ''
+        description: UTM source parameter
       - name: utm_content
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: UTM content parameter
       - name: utm_medium
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: UTM medium parameter
       - name: utm_campaign
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: UTM campaign parameter
       - name: utm_term
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: UTM term parameter
       - name: gclid
         data_type: string
         config:
@@ -312,13 +312,13 @@ models:
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Full referrer URL from which the user navigated
       - name: referrer_host
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Host/domain of the referrer URL
       - name: device
         data_type: string
         config:

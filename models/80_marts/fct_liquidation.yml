@@ -7,7 +7,7 @@ models:
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Unique identifier for the liquidation event
       - name: fk_transaction_hash
         data_type: STRING
         config:
@@ -19,51 +19,51 @@ models:
         config:
           meta: {}
           tags: []
-        description: ''
-      - name: coll_gas_compensation
-        data_type: INT64
-        config:
-          meta: {}
-          tags: []
-        description: ''
-      - name: gas_compensation
-        data_type: INT64
-        config:
-          meta: {}
-          tags: []
-        description: ''
-      - name: liquidated_principal
-        data_type: FLOAT64
-        config:
-          meta: {}
-          tags: []
-        description: ''
-      - name: liquidated_interest
-        data_type: FLOAT64
-        config:
-          meta: {}
-          tags: []
-        description: ''
-      - name: liquidated_collateral
-        data_type: FLOAT64
-        config:
-          meta: {}
-          tags: []
-        description: ''
+        description: 'Foreign key to the user dimension'
       - name: fk_dim1__borrower
         data_type: STRING
         config:
           meta: {}
           tags: []
         description: ''
-      - name: record_date
-        data_type: DATE
+      - name: coll_gas_compensation
+        data_type: BIGNUMERIC
+        config:
+          meta: {}
+          tags: []
+        description: Gas compensation related to the collateral in the liquidation process
+      - name: gas_compensation
+        data_type: BIGNUMERIC
+        config:
+          meta: {}
+          tags: []
+        description: General gas compensation for the liquidation transaction
+      - name: liquidated_principal
+        data_type: NUMERIC
+        config:
+          meta: {}
+          tags: []
+        description: Amount of principal that was liquidated, formatted as currency
+      - name: liquidated_interest
+        data_type: NUMERIC
+        config:
+          meta: {}
+          tags: []
+        description: Amount of interest that was liquidated, formatted as currency
+      - name: liquidated_collateral
+        data_type: NUMERIC
+        config:
+          meta: {}
+          tags: []
+        description: Amount of collateral that was liquidated, formatted as currency
+      - name: liquidation_count
+        data_type: INT64
         config:
           meta: {}
           tags: []
         description: ''
-      - name: liquidation_count
-        data_type: INT64
+      - name: record_date
+        data_type: DATE
         config:
           meta: {}
           tags: []

@@ -3,7 +3,7 @@ models:
   - name: int_segment_web_sessions__stitched
     columns:
       - name: source_name
-        description: ''
+        description: Name of the event source
         config:
           meta: {}
           tags: []
@@ -13,7 +13,7 @@ models:
           meta: {}
           tags: []
       - name: anonymous_id
-        description: ''
+        description: Segment anonymous_id (cookie/device ID)
         config:
           meta: {}
           tags: []
@@ -243,27 +243,27 @@ models:
           meta: {}
           tags: []
       - name: utm_source
-        description: ''
+        description: UTM source parameter
         config:
           meta: {}
           tags: []
       - name: utm_content
-        description: ''
+        description: UTM content parameter
         config:
           meta: {}
           tags: []
       - name: utm_medium
-        description: ''
+        description: UTM medium parameter
         config:
           meta: {}
           tags: []
       - name: utm_campaign
-        description: ''
+        description: UTM campaign parameter
         config:
           meta: {}
           tags: []
       - name: utm_term
-        description: ''
+        description: UTM term parameter
         config:
           meta: {}
           tags: []
@@ -293,12 +293,12 @@ models:
           meta: {}
           tags: []
       - name: referrer
-        description: ''
+        description: Full referrer URL from which the user navigated
         config:
           meta: {}
           tags: []
       - name: referrer_host
-        description: ''
+        description: Host/domain of the referrer URL
         config:
           meta: {}
           tags: []

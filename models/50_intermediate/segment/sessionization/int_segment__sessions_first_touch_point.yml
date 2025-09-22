@@ -1,6 +1,14 @@
 models:
   - name: int_segment__sessions_first_touch_point
     columns:
+      - name: canonical_segment_id
+        data_type: string
+        config:
+          meta: {}
+          tags: []
+        description: >-
+          The fully-merged Segment ID (the profile Segment now understands any events or identifiers to
+          map to).
       - name: first_touch_time
         data_type: timestamp
         config:
@@ -14,12 +22,6 @@ models:
           tags: []
         description: ''
       - name: first_touch_medium
-        data_type: string
-        config:
-          meta: {}
-          tags: []
-        description: ''
-      - name: canonical_segment_id
         data_type: string
         config:
           meta: {}

@@ -7,34 +7,35 @@ models:
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Unique identifier of the coin in CoinGecko.
       - name: symbol
         data_type: STRING
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Ticker symbol of the coin.
       - name: name
         data_type: STRING
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Full name of the coin.
       - name: _dlt_load_id
         data_type: STRING
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Identifier for the data load batch from the DLT pipeline.
       - name: _dlt_id
         data_type: STRING
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Unique row identifier assigned by the DLT pipeline.
       - name: platforms
         data_type: JSON
         config:
           meta: {}
           tags: []
-        description: ''
+        description: >-
+          JSON object containing platform-specific contract addresses (e.g., Ethereum, BNB Chain).

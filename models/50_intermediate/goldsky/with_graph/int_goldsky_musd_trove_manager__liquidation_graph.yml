@@ -1,4 +1,98 @@
 version: 2
 models:
   - name: int_goldsky_musd_trove_manager__liquidation_graph
-    columns: []
+    columns:
+      - name: vid
+        description: Unique version identifier for the record
+        config:
+          meta: {}
+          tags: []
+      - name: block
+        description: Block data associated with the liquidation transaction
+        config:
+          meta: {}
+          tags: []
+      - name: id
+        description: Unique identifier for the liquidation event
+        config:
+          meta: {}
+          tags: []
+      - name: block_number
+        description: The blockchain block number where the liquidation occurred
+        config:
+          meta: {}
+          tags: []
+      - name: transaction_hash
+        description: Hash of the blockchain transaction containing the liquidation event
+        config:
+          meta: {}
+          tags: []
+      - name: contract_id
+        description: Identifier of the smart contract where the liquidation was executed
+        config:
+          meta: {}
+          tags: []
+      - name: coll_gas_compensation
+        description: Gas compensation related to the collateral in the liquidation process
+        config:
+          meta: {}
+          tags: []
+      - name: gas_compensation
+        description: General gas compensation for the liquidation transaction
+        config:
+          meta: {}
+          tags: []
+      - name: _gs_chain
+        description: Goldsky-specific field indicating the blockchain network
+        config:
+          meta: {}
+          tags: []
+      - name: _gs_gid
+        description: Goldsky-specific global identifier
+        config:
+          meta: {}
+          tags: []
+      - name: record_timestamp
+        description: >-
+          Timestamp of when the liquidation event occurred, converted from milliseconds to a readable
+          timestamp format
+        config:
+          meta: {}
+          tags: []
+      - name: liquidated_principal
+        description: Amount of principal that was liquidated, formatted as currency
+        config:
+          meta: {}
+          tags: []
+      - name: liquidated_interest
+        description: Amount of interest that was liquidated, formatted as currency
+        config:
+          meta: {}
+          tags: []
+      - name: liquidated_collateral
+        description: Amount of collateral that was liquidated, formatted as currency
+        config:
+          meta: {}
+          tags: []
+      - name: borrower
+        description: Blockchain address of the borrower whose trove was liquidated
+        config:
+          meta: {}
+          tags: []
+      - name: operation
+        description: Type of operation performed during the trove liquidation event
+        config:
+          meta: {}
+          tags: []
+      - name: is_in_graph
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: canonical_segment_id
+        description: >-
+          The fully-merged Segment ID (the profile Segment now understands any events or identifiers to
+          map to).
+        config:
+          meta: {}
+          tags: []

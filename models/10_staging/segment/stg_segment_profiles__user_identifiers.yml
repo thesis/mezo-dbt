@@ -33,7 +33,7 @@ models:
         data_type: TIMESTAMP
         description: ''
       - name: received_at
-        description: The timestamp when the Segment API receives the payload from the client or
+        description: The timestamp when the Segment API receives the payload from the client or 
           server.
         config:
           meta: {}

@@ -8,24 +8,24 @@ models:
           meta: {}
           tags: []
         description: ''
+      - name: fk_dim1__users
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+        description: 'Foreign key to the user dimension'
       - name: fk_dim1__donor
         data_type: STRING
         config:
           meta: {}
           tags: []
         description: ''
-      - name: fk_dim1__users
-        data_type: STRING
-        config:
-          meta: {}
-          tags: []
-        description: ''
       - name: amount
-        data_type: INT64
+        data_type: NUMERIC
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Amount that was donated (normalized currency)
       - name: donation_count
         data_type: INT64
         config:

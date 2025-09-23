@@ -12,12 +12,17 @@ models:
           meta: {}
           tags: []
         data_type: STRING
-      - name: fk__dim1_user
-        description: Foreign key to the user dimension
+      - name: fk_dim1__users
+        data_type: STRING
+        tests:
+          - not_null
+          - relationships:
+              field: canonical_segment_id
+              to: ref('dim1_users')
         config:
           meta: {}
           tags: []
-        data_type: STRING
+        description: Foreign key to Users dimension (Canonical Segment ID). Links the order to a unified user profile.
       - name: fk__dim1_date
         config:
           meta: {}

@@ -4,7 +4,7 @@ with
     facts as (
         select
             session_id as id,
-            canonical_segment_id_with_fallback as fk__dim1_user,
+            canonical_segment_id_with_fallback as fk_dim1__users,
             session_start_date as fk__dim1_date,
             campaign_id as fk_campaign,
             landing_page_url_without_query_string as fk_landingpage__dim1_page,

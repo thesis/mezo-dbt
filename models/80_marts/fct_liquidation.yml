@@ -5,6 +5,9 @@ models:
     columns:
       - name: id
         data_type: STRING
+        tests:
+          - not_null
+          - unique
         config:
           meta: {}
           tags: []
@@ -17,6 +20,11 @@ models:
         description: Hash of the transaction that executed the liquidation.
       - name: fk_dim1__users
         data_type: STRING
+        tests:
+          - not_null
+          - relationships:
+              field: canonical_segment_id
+              to: ref('dim1_users')
         config:
           meta: {}
           tags: []

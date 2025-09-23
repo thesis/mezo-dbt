@@ -149,7 +149,9 @@ with
                 else 'referral'
             end as referrer_medium,
             case
-                when rm.map_source is not null
+                when t.utm_source is not null
+                then lower(t.utm_source)
+                when rm.map_source is not null and t.utm_source is null
                 then lower(rm.map_source)
                 when t.referrer is not null
                 then net.reg_domain(t.referrer)

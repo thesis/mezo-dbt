@@ -38,7 +38,7 @@ models:
         config:
           meta: {}
           tags: []
-      - name: token_adress
+      - name: token_address
         description: Address of the token
         data_type: STRING
         config:

@@ -17,7 +17,7 @@ with
             contract_id,
             sequence_number,
             recipient,
-            token as token_adress,
+            token as token_address,
             amount,
             _gs_chain,
             _gs_gid,

@@ -1,6 +1,7 @@
 version: 2
 models:
   - name: fct_assets_locked
+    description: Fact table for assets locked events.
     columns:
       - name: id
         data_type: BIGNUMERIC
@@ -13,25 +14,19 @@ models:
         config:
           meta: {}
           tags: []
-        description: 'Foreign Key to Users Table (Canonical Segment ID)'
+        description: Foreign key to Users dimension (Canonical Segment ID). Links this record to the unified user profile.
       - name: fk_transaction_hash
         data_type: STRING
         config:
           meta: {}
           tags: []
-        description: ''
-      - name: fk_dim1__recipient
-        data_type: STRING
-        config:
-          meta: {}
-          tags: []
-        description: ''
+        description: Hash of the transaction that emitted this event.
       - name: fk_token_adress
         data_type: STRING
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Foreign key to Token dimension. Identifies the token that was locked
       - name: amount
         data_type: FLOAT64
         config:
@@ -43,16 +38,16 @@ models:
         config:
           meta: {}
           tags: []
-        description: ''
+        description: USD value of the locked tokens at the time of the event.
       - name: asset_locked_count
         data_type: INT64
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Count of asset lock events included in this record.
       - name: record_date
         data_type: DATE
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Date of the record, used for time-based analysis.

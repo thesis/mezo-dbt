@@ -7,7 +7,6 @@ with
         select
             transaction_hash as id,
             canonical_segment_id as fk_dim1__users,
-            borrower as fk_dim1__borrower,
             collateral_usd_value,
             1 as loan_count,
             date(record_timestamp) as record_date,

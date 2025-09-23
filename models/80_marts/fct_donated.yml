@@ -1,52 +1,47 @@
 version: 2
 models:
   - name: fct_donated
+    description: Fact table for donations.
     columns:
       - name: id
         data_type: STRING
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Unique identifier for this donation record.
       - name: fk_dim1__users
         data_type: STRING
         config:
           meta: {}
           tags: []
-        description: 'Foreign Key to Users Table (Canonical Segment ID)'
-      - name: fk_dim1__donor
-        data_type: STRING
-        config:
-          meta: {}
-          tags: []
-        description: ''
+        description: Foreign key to Users dimension (Canonical Segment ID). Links the donation to the unified user profile.
       - name: amount
         data_type: NUMERIC
         config:
           meta: {}
           tags: []
-        description: Amount that was donated (normalized currency)
+        description: Amount that was donated (normalized currency).
       - name: donation_count
         data_type: INT64
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Count of donation events included in this record.
       - name: record_date
         data_type: DATE
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Date of the donation record, used for time-based analysis.
       - name: recipient_brink_count
         data_type: INT64
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Count of donations where the recipient was categorized as "Brink".
       - name: recipient_shefi_count
         data_type: INT64
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Count of donations where the recipient was categorized as "Shefi".

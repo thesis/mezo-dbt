@@ -5,7 +5,6 @@ with
         select
             transaction_hash as id,
             canonical_segment_id as fk_dim1__users,
-            donor as fk_dim1__donor,
             amount,
             1 as donation_count,
             date(record_timestamp) as record_date,

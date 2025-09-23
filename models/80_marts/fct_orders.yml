@@ -1,52 +1,47 @@
 version: 2
 models:
   - name: fct_orders
+    description: Fact table for orders.
     columns:
       - name: id
         data_type: STRING
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Unique identifier for the order record.
       - name: fk_dim1__users
         data_type: STRING
         config:
           meta: {}
           tags: []
-        description: 'Foreign Key to Users Table (Canonical Segment ID)'
+        description: Foreign key to Users dimension (Canonical Segment ID). Links the order to a unified user profile.
       - name: fk_transaction_hash
         data_type: STRING
         config:
           meta: {}
           tags: []
-        description: ''
-      - name: fk_dim1__customer
-        data_type: STRING
-        config:
-          meta: {}
-          tags: []
-        description: ''
+        description: Hash of the transaction in which the order was placed.
       - name: fk_dim1__products
         data_type: STRING
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Foreign key to Products dimension. Identifies the product associated with the order.
       - name: price
         data_type: NUMERIC
         config:
           meta: {}
           tags: []
-        description: Price of the order (normalized currency)
+        description: Price of the order, expressed in normalized currency.
       - name: order_count
         data_type: INT64
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Number of orders represented in this record.
       - name: record_date
         data_type: DATE
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Date of the record, used for time-based analysis.

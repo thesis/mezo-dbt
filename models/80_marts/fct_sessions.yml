@@ -1,6 +1,7 @@
 version: 2
 models:
   - name: fct_sessions
+    description: Fact table for sessions.
     columns:
       - name: id
         description: The unique identifier for the session

@@ -20,7 +20,7 @@ models:
           meta: {}
           tags: []
         description: ''
-      - name: fk_token_adress
+      - name: fk_token_id
         data_type: STRING
         config:
           meta: {}

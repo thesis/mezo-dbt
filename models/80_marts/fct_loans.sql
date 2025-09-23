@@ -3,7 +3,7 @@ with
         select * from {{ ref("int_goldsky_borrower_operations_mezo__loans_graph") }}
     ),
 
-    filtered_loans as (
+    filtered_loan as (
         select
             transaction_hash as id,
             canonical_segment_id as fk_dim1__users,
@@ -23,4 +23,4 @@ with
     )
 
 select *
-from filtered_loans
+from filtered_loan

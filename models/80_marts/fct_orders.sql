@@ -1,7 +1,7 @@
 with
     orders as (select * from {{ ref("int_goldsky_market_mezo__order_placed_graph") }}),
 
-    filtered_orders as (
+    filtered_order as (
         select
             order_id as id,
             canonical_segment_id as fk_dim1__users,
@@ -14,4 +14,4 @@ with
     )
 
 select *
-from filtered_orders
+from filtered_order

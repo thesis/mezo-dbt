@@ -6,33 +6,33 @@ models:
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Name of the event source
       - name: session_id
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Unique identifier for the session
       - name: anonymous_id
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Segment anonymous_id (cookie/device ID)
       - name: session_start_tstamp
         data_type: timestamp
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Start timestamp of the session
       - name: session_end_tstamp
         data_type: timestamp
         config:
           meta: {}
           tags: []
-        description: ''
+        description: End timestamp of the session
       - name: button_clicks
-        description: ''
+        description: Count of button click events in the session
         config:
           meta: {}
           tags: []
@@ -41,209 +41,209 @@ models:
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Count of page view events in the session
       - name: sign_ups
-        description: ''
+        description: Count of completed sign-up events
         config:
           meta: {}
           tags: []
       - name: wallet_connections
-        description: ''
+        description: Count of wallet connection events
         config:
           meta: {}
           tags: []
       - name: asset_swaps
-        description: ''
+        description: Count of asset swap events
         config:
           meta: {}
           tags: []
       - name: sign_ins
-        description: ''
+        description: Count of completed sign-in events
         config:
           meta: {}
           tags: []
       - name: swap_assets_starts
-        description: ''
+        description: Count of asset swap start events
         config:
           meta: {}
           tags: []
       - name: sign_up_starts
-        description: ''
+        description: Count of sign-up start events
         config:
           meta: {}
           tags: []
       - name: funds_additions
-        description: ''
+        description: Count of funds added events
         config:
           meta: {}
           tags: []
       - name: pool_liquidity_additions
-        description: ''
+        description: Count of liquidity pool additions
         config:
           meta: {}
           tags: []
       - name: add_funds_starts
-        description: ''
+        description: Count of add-funds start events
         config:
           meta: {}
           tags: []
       - name: vault_assets_starts
-        description: ''
+        description: Count of vault asset start events
         config:
           meta: {}
           tags: []
       - name: username_updates
-        description: ''
+        description: Count of username update events
         config:
           meta: {}
           tags: []
       - name: assets_vaulted
-        description: ''
+        description: Count of vaulted asset events
         config:
           meta: {}
           tags: []
       - name: musd_borrow_starts
-        description: ''
+        description: Count of mUSD borrow start events
         config:
           meta: {}
           tags: []
       - name: pool_liquidity_withdrawals
-        description: ''
+        description: Count of liquidity pool withdrawal events
         config:
           meta: {}
           tags: []
       - name: musd_donations
-        description: ''
+        description: Count of mUSD donation events
         config:
           meta: {}
           tags: []
       - name: market_spend_starts
-        description: ''
+        description: Count of market spend start events
         config:
           meta: {}
           tags: []
       - name: musd_borrows
-        description: ''
+        description: Count of mUSD borrow events
         config:
           meta: {}
           tags: []
       - name: items_purchased
-        description: ''
+        description: Count of purchase events
         config:
           meta: {}
           tags: []
       - name: repay_loan_starts
-        description: ''
+        description: Count of repay loan start events
         config:
           meta: {}
           tags: []
       - name: loans_repaid
-        description: ''
+        description: Count of loan repayment events
         config:
           meta: {}
           tags: []
       - name: loan_increase_reduce_ratio
-        description: ''
+        description: Ratio metric for loan increase/reduction
         config:
           meta: {}
           tags: []
       - name: increase_loan_starts
-        description: ''
+        description: Count of loan increase start events
         config:
           meta: {}
           tags: []
       - name: loans_increased
-        description: ''
+        description: Count of loan increase events
         config:
           meta: {}
           tags: []
       - name: loan_collateral_deposits
-        description: ''
+        description: Count of loan collateral deposit events
         config:
           meta: {}
           tags: []
       - name: market_spend_completions
-        description: ''
+        description: Count of completed market spend events
         config:
           meta: {}
           tags: []
       - name: loan_collateral_withdrawals
-        description: ''
+        description: Count of loan collateral withdrawal events
         config:
           meta: {}
           tags: []
       - name: withdraw_loan_collateral_starts
-        description: ''
+        description: Count of withdraw loan collateral start events
         config:
           meta: {}
           tags: []
       - name: deposit_loan_collateral_starts
-        description: ''
+        description: Count of deposit loan collateral start events
         config:
           meta: {}
           tags: []
       - name: borrow_more_balance_confirmations
-        description: ''
+        description: Count of borrow-more balance confirmation events
         config:
           meta: {}
           tags: []
       - name: assets_swaps
-        description: ''
+        description: Count of asset swap events (alternate metric)
         config:
           meta: {}
           tags: []
       - name: borrow_repay_starts
-        description: ''
+        description: Count of borrow repay start events
         config:
           meta: {}
           tags: []
       - name: borrow_repays
-        description: ''
+        description: Count of borrow repayment events
         config:
           meta: {}
           tags: []
       - name: market_donation_successes
-        description: ''
+        description: Count of successful market donations
         config:
           meta: {}
           tags: []
       - name: borrow_collateral_deposit_starts
-        description: ''
+        description: Count of borrow collateral deposit start events
         config:
           meta: {}
           tags: []
       - name: borrow_more_increase_coll
-        description: ''
+        description: Count of borrow-more increase collateral events
         config:
           meta: {}
           tags: []
       - name: borrow_more_strategy_increase_coll
-        description: ''
+        description: Count of borrow-more strategy increase collateral events
         config:
           meta: {}
           tags: []
       - name: borrow_collateral_deposits
-        description: ''
+        description: Count of borrow collateral deposit events
         config:
           meta: {}
           tags: []
       - name: borrow_more_button_clicks
-        description: ''
+        description: Count of borrow-more button click events
         config:
           meta: {}
           tags: []
       - name: borrow_more_confirm_increase_coll
-        description: ''
+        description: Count of borrow-more confirm increase collateral events
         config:
           meta: {}
           tags: []
       - name: llm_shares
-        description: ''
+        description: Count of LLM share events
         config:
           meta: {}
           tags: []
       - name: borrow_more_strategy_reduce_ratio
-        description: ''
+        description: Ratio metric for borrow-more strategy reduction
         config:
           meta: {}
           tags: []
@@ -252,139 +252,139 @@ models:
         config:
           meta: {}
           tags: []
-        description: ''
+        description: UTM source parameter
       - name: utm_content
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: UTM content parameter
       - name: utm_medium
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: UTM medium parameter
       - name: utm_campaign
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: UTM campaign parameter
       - name: utm_term
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: UTM term parameter
       - name: gclid
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Google Ads click identifier
       - name: first_page_url
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Full URL of the first page in the session
       - name: first_page_url_host
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Host/domain of the first page in the session
       - name: first_page_url_path
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Path portion of the first page URL
       - name: first_page_url_query
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Query string of the first page URL
       - name: referrer
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Full referrer URL from which the user navigated
       - name: referrer_host
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Host/domain of the referrer URL
       - name: device
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Device name/type (if available)
       - name: device_category
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Category of the device (e.g., desktop, mobile, tablet)
       - name: last_page_url
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Full URL of the last page in the session
       - name: last_page_url_host
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Host/domain of the last page in the session
       - name: last_page_url_path
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Path portion of the last page URL
       - name: last_page_url_query
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Query string of the last page URL
       - name: duration_in_s
         data_type: int64
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Total session duration in seconds
       - name: duration_in_s_tier
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Tiered session duration category
       - name: referrer_medium
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Medium extracted from referrer (e.g., organic, paid)
       - name: referrer_source
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Source extracted from referrer (e.g., google, facebook)
       - name: blended_user_id
         data_type: string
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Stitched user identifier across sessions (anonymous + logged in)
       - name: session_number
         data_type: int64
         config:

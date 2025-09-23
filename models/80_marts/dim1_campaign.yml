@@ -1,15 +1,20 @@
 version: 2
 models:
-  - name: dim1_paid_campaign
+  - name: dim1_campaign
+    description: Dimension table for paid campaigns.
     columns:
       - name: id
         description: The ID of the campaign.
+        tests:
+          - not_null
+          - unique
         config:
           meta: {}
           tags: []
-        data_type: STRING
+          data_type: STRING
       - name: campaign_name
         description: The name of the campaign.
         config:
           meta: {}
           tags: []
+          data_type: STRING

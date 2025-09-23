@@ -1,52 +1,61 @@
 version: 2
 models:
   - name: fct_assets_locked
+    description: Fact table for assets locked events.
     columns:
       - name: id
-        data_type: STRING
+        data_type: BIGNUMERIC
+        tests:
+          - not_null
+          - unique
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Unique identifier for this price record
       - name: fk_dim1__users
         data_type: STRING
+        tests:
+          - not_null
+          - relationships:
+              field: canonical_segment_id
+              to: ref('dim1_users')
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Foreign key to Users dimension (Canonical Segment ID). Links this record to the unified user profile.
       - name: fk_transaction_hash
         data_type: STRING
         config:
           meta: {}
           tags: []
-        description: ''
-      - name: fk_token_id
+        description: Hash of the transaction that emitted this event.
+      - name: fk_token_adress
         data_type: STRING
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Foreign key to Token dimension. Identifies the token that was locked
       - name: amount
-        data_type: INT64
+        data_type: FLOAT64
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Amount of tokens locked (normalized based on token decimals)
       - name: token_usd_value
         data_type: FLOAT64
         config:
           meta: {}
           tags: []
-        description: ''
+        description: USD value of the locked tokens at the time of the event.
       - name: asset_locked_count
         data_type: INT64
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Count of asset lock events included in this record.
       - name: record_date
         data_type: DATE
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Date of the record, used for time-based analysis.

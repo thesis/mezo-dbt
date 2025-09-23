@@ -1,76 +1,61 @@
 version: 2
 models:
   - name: fct_loans
+    description: Fact table for loans.
     columns:
       - name: id
         data_type: STRING
+        tests:
+          - not_null
+          - unique
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Transaction hash as unique identifier for the loan record.
       - name: fk_dim1__users
         data_type: STRING
+        tests:
+          - not_null
+          - relationships:
+              field: canonical_segment_id
+              to: ref('dim1_users')
         config:
           meta: {}
           tags: []
-        description: ''
-      - name: principal
-        data_type: FLOAT64
-        config:
-          meta: {}
-          tags: []
-        description: ''
-      - name: interest
-        data_type: FLOAT64
-        config:
-          meta: {}
-          tags: []
-        description: ''
-      - name: collateral
-        data_type: FLOAT64
-        config:
-          meta: {}
-          tags: []
-        description: ''
-      - name: stake
-        data_type: FLOAT64
-        config:
-          meta: {}
-          tags: []
-        description: ''
+        description: Foreign key to Users dimension (Canonical Segment ID). Links this loan record to the unified user profile.
       - name: collateral_usd_value
         data_type: FLOAT64
         config:
           meta: {}
           tags: []
-        description: ''
+        description: USD value of the collateral backing the loan.
       - name: loan_count
         data_type: INT64
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Total number of loans represented in this record.
       - name: record_date
         data_type: DATE
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Date of the record, used for time-based analysis.
       - name: new_loan_count
         data_type: INT64
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Count of newly opened loans on the given record date.
       - name: adjusted_loan_count
         data_type: INT64
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Count of existing loans that were adjusted (e.g., collateral or terms changed).
       - name: closed_loan_count
         data_type: INT64
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Count of loans that were fully closed or repaid on the given record date.

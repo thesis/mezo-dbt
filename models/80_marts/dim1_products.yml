@@ -1,9 +1,13 @@
 version: 2
 models:
   - name: dim1_products
+    description: Dimension table for products.
     columns:
       - name: id
         description: The ID of the product.
+        tests:
+          - not_null
+          - unique
         config:
           meta: {}
           tags: []
@@ -13,3 +17,4 @@ models:
         config:
           meta: {}
           tags: []
+        data_type: STRING

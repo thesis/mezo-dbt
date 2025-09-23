@@ -1,64 +1,73 @@
 version: 2
 models:
   - name: fct_liquidation
+    description: Fact table for liquidations.
     columns:
       - name: id
         data_type: STRING
+        tests:
+          - not_null
+          - unique
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Unique identifier for the liquidation event.
       - name: fk_transaction_hash
         data_type: STRING
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Hash of the transaction that executed the liquidation.
       - name: fk_dim1__users
         data_type: STRING
+        tests:
+          - not_null
+          - relationships:
+              field: canonical_segment_id
+              to: ref('dim1_users')
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Foreign key to Users dimension (Canonical Segment ID). Links this liquidation event to the unified user profile.
       - name: coll_gas_compensation
-        data_type: INT64
+        data_type: BIGNUMERIC
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Gas compensation related specifically to the collateral in the liquidation process.
       - name: gas_compensation
-        data_type: INT64
+        data_type: BIGNUMERIC
         config:
           meta: {}
           tags: []
-        description: ''
+        description: General gas compensation awarded for executing the liquidation transaction.
       - name: liquidated_principal
-        data_type: FLOAT64
+        data_type: NUMERIC
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Amount of principal debt that was liquidated (normalized currency).
       - name: liquidated_interest
-        data_type: FLOAT64
+        data_type: NUMERIC
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Amount of interest that was liquidated (normalized currency).
       - name: liquidated_collateral
-        data_type: FLOAT64
+        data_type: NUMERIC
         config:
           meta: {}
           tags: []
-        description: ''
-      - name: record_date
-        data_type: DATE
-        config:
-          meta: {}
-          tags: []
-        description: ''
+        description: Amount of collateral that was liquidated (normalized currency).
       - name: liquidation_count
         data_type: INT64
         config:
           meta: {}
           tags: []
-        description: ''
+        description: Count of liquidation events represented in this record.
+      - name: record_date
+        data_type: DATE
+        config:
+          meta: {}
+          tags: []
+        description: Date of the liquidation event, used for time-based analysis.

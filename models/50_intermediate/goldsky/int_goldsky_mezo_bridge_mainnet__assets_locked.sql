@@ -30,7 +30,7 @@ with
         from assets_locked
         left join
             currency_lookup
-            on assets_locked.token_adress = currency_lookup.ethereum_address
+            on assets_locked.token_address = currency_lookup.ethereum_address
     ),
 
     currency_conversion as (

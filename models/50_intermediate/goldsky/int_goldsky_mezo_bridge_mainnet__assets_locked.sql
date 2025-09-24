@@ -4,8 +4,17 @@ with
     ),
 
     currency_lookup as (
-        select *, json_value(platforms, '$.ethereum') as ethereum_address
+        select
+            * except (_dlt_load_id, _dlt_id),
+            json_value(platforms, '$.ethereum') as ethereum_address
         from {{ ref("stg_coin_gecko__coins") }}
+        union all
+        select
+            'swell' as id,
+            'swbtc' as token_symbol,
+            'Swell Restaked BTC' as names,
+            null as platforms,
+            '0x8db2350d78abc13f5673a411d4700bcf87864dde' as ethereum_address
     ),
 
     currency_conversion_values as (
@@ -31,7 +40,6 @@ with
         left join
             currency_lookup
             on assets_locked.token_address = currency_lookup.ethereum_address
-        where currency_lookup.id is not null
     ),
 
     currency_conversion as (

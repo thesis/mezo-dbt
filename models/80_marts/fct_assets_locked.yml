@@ -29,8 +29,13 @@ models:
           meta: {}
           tags: []
         description: Hash of the transaction that emitted this event.
-      - name: fk_token_adress
+      - name: fk_token_id
         data_type: STRING
+        tests:
+          - not_null
+          - relationships:
+              field: id
+              to: ref('dim1_token')
         config:
           meta: {}
           tags: []

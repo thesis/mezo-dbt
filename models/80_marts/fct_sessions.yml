@@ -61,7 +61,7 @@ models:
         config:
           meta: {}
           tags: []
-        data_type: STRING  
+        data_type: STRING
       - name: button_clicks
         description: Count of button click events in the session
         config:
@@ -284,4 +284,3 @@ models:
           meta: {}
           tags: []
         data_type: INT64
-

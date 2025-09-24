@@ -51,6 +51,17 @@ models:
           meta: {}
           tags: []
         data_type: STRING
+      - name: fk__dim1_attribution
+        description: Foreign key to the attribution dimension
+        tests:
+          - not_null
+          - relationships:
+              field: id
+              to: ref('fk__dim1_attribution')
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING  
       - name: button_clicks
         description: Count of button click events in the session
         config:
@@ -273,3 +284,4 @@ models:
           meta: {}
           tags: []
         data_type: INT64
+

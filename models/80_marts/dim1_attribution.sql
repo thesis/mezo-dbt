@@ -1,5 +1,5 @@
 with
-    base as (select * from {{ ref("int_segment_web_sessions__initial") }}),
+    base as (select * from {{ ref("int_segment__sessions") }}),
 
     with_keys as (
 

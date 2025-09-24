@@ -12,6 +12,9 @@ models:
         config:
           meta: {}
           tags: []
+        data_tests:
+          - unique
+          - not_null
         description: Unique identifier for the session
       - name: anonymous_id
         data_type: string
@@ -421,3 +424,11 @@ models:
         config:
           meta: {}
           tags: []
+      - name: referrer_id
+        description: Surrogate key for the channel grouping, generated from referrer source + medium.
+        config:
+          meta: {}
+          tags: []
+          data_type: STRING
+        data_tests:
+          - not_null

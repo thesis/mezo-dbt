@@ -37,7 +37,18 @@ with
             on sessions_user_enriched.utm_campaign = twitter_campaigns.campaign_name
             and sessions_user_enriched.utm_source = 'twitter'
             and sessions_user_enriched.utm_medium = 'paid_social'
+    ),
+
+    add_reffer_surrogate_key as (
+        select
+            *,
+            {{
+                dbt_utils.generate_surrogate_key(
+                    ["referrer_medium", "referrer_source"]
+                )
+            }} as referrer_id
+        from add_campaign_id_twitter
     )
 
 select *
-from add_campaign_id_twitter
+from add_reffer_surrogate_key

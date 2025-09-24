@@ -31,6 +31,7 @@ with
         left join
             currency_lookup
             on assets_locked.token_address = currency_lookup.ethereum_address
+        where currency_lookup.id is not null
     ),
 
     currency_conversion as (

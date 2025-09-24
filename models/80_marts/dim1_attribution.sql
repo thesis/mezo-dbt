@@ -13,7 +13,7 @@ with
                 dbt_utils.generate_surrogate_key(
                     ["referrer_source", "referrer_medium"]
                 )
-            }} as channel_id, referrer_source, referrer_medium
+            }} as id, referrer_source, referrer_medium
         from base
 
     )

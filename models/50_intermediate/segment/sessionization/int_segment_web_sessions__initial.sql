@@ -133,7 +133,7 @@ with
 
     ),
 
-    channel_grouping as (
+    channel_group as (
         select
             t.*,
             case
@@ -165,4 +165,4 @@ with
     )
 
 select *
-from channel_grouping
+from channel_group

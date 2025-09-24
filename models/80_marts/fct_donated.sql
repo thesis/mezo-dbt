@@ -4,7 +4,7 @@ with
     filtered_donated as (
         select
             transaction_hash as id,
-            canonical_segment_id as fk_dim1__users,
+            canonical_segment_id as fk__dim1_users,
             amount,
             1 as donation_count,
             date(record_timestamp) as record_date,

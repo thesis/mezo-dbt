@@ -149,6 +149,9 @@ with
                 else 'referral'
             end as referrer_medium,
             case
+                when
+                    t.utm_source is null and t.utm_medium is null and t.referrer is null
+                then 'direct'
                 when t.utm_source is not null
                 then lower(t.utm_source)
                 when rm.map_source is not null and t.utm_source is null
@@ -159,7 +162,28 @@ with
 
         from tiers as t
         left join referrer_mapping as rm on net.reg_domain(t.referrer) = rm.host_key
+    ),
+
+    base as (select distinct referrer_source, referrer_medium from channel_group),
+
+    attribution as (
+        select
+            {{
+                dbt_utils.generate_surrogate_key(
+                    ["referrer_medium", "referrer_source"]
+                )
+            }} as referrer_id, referrer_source, referrer_medium
+        from base
+    ),
+
+    final as (
+        select channel_group.*, attribution.referrer_id
+        from channel_group
+        left join
+            attribution
+            on channel_group.referrer_source = attribution.referrer_source
+            and channel_group.referrer_medium = attribution.referrer_medium
     )
 
 select *
-from channel_group
+from final

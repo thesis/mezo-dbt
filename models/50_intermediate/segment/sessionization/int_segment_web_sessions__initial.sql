@@ -149,6 +149,9 @@ with
                 else 'referral'
             end as referrer_medium,
             case
+                when
+                    t.utm_source is null and t.utm_medium is null and t.referrer is null
+                then 'direct'
                 when t.utm_source is not null
                 then lower(t.utm_source)
                 when rm.map_source is not null and t.utm_source is null

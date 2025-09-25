@@ -12,7 +12,7 @@ models:
           meta: {}
           tags: []
         description: Unique identifier for the order record.
-      - name: fk_dim1__users
+      - name: fk__dim1_users
         data_type: STRING
         tests:
           - not_null
@@ -29,7 +29,7 @@ models:
           meta: {}
           tags: []
         description: Hash of the transaction in which the order was placed.
-      - name: fk_dim1__products
+      - name: fk__dim1_products
         data_type: STRING
         tests:
           - not_null

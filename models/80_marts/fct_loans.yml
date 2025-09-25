@@ -12,7 +12,7 @@ models:
           meta: {}
           tags: []
         description: Transaction hash as unique identifier for the loan record.
-      - name: fk_dim1__users
+      - name: fk__dim1_users
         data_type: STRING
         tests:
           - not_null

@@ -6,7 +6,7 @@ with
     filtered_loan as (
         select
             transaction_hash as id,
-            canonical_segment_id as fk_dim1__users,
+            canonical_segment_id as fk__dim1_users,
             collateral_usd_value,
             principal,
             interest,

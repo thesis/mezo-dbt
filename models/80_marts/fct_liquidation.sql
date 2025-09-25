@@ -7,7 +7,7 @@ with
         select
             id,
             transaction_hash as fk_transaction_hash,
-            canonical_segment_id as fk_dim1__users,
+            canonical_segment_id as fk__dim1_users,
             coll_gas_compensation,
             gas_compensation,
             liquidated_principal,

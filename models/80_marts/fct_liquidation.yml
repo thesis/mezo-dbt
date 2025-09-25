@@ -18,7 +18,7 @@ models:
           meta: {}
           tags: []
         description: Hash of the transaction that executed the liquidation.
-      - name: fk_dim1__users
+      - name: fk__dim1_users
         data_type: STRING
         tests:
           - not_null

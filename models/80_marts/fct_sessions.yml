@@ -12,7 +12,7 @@ models:
           meta: {}
           tags: []
         data_type: STRING
-      - name: fk_dim1__users
+      - name: fk__dim1_users
         data_type: STRING
         tests:
           - not_null
@@ -29,7 +29,7 @@ models:
           tags: []
         data_type: DATE
         description: Foreign key to the DATE dimension
-      - name: fk_campaign
+      - name: fk__dim1_campaign
         description: Foreign key to the campaign dimension
         data_tests:
           - relationships:
@@ -47,6 +47,17 @@ models:
         data_type: STRING
       - name: fk_exitpage__dim1_page
         description: Foreign key to the exit page dimension
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING
+      - name: fk__dim1_attribution
+        description: Foreign key to the attribution dimension
+        tests:
+          - not_null
+          - relationships:
+              field: id
+              to: ref('dim1_attribution')
         config:
           meta: {}
           tags: []

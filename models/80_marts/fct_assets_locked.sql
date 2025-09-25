@@ -6,9 +6,9 @@ with
     filtered_assets_locked as (
         select
             sequence_number as id,
-            canonical_segment_id as fk_dim1__users,
+            canonical_segment_id as fk__dim1_users,
             transaction_hash as fk_transaction_hash,
-            token_id as fk_token_id,
+            token_id as fk__dim1_token,
             amount,
             token_usd_value,
             1 as asset_locked_count,

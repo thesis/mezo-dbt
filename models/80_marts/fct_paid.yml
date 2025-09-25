@@ -11,7 +11,7 @@ models:
           meta: {}
           tags: []
         data_type: STRING
-      - name: fk_campaign
+      - name: fk__dim1_campaign
         description: The foreign key identifier for the campaign
         tests:
           - not_null

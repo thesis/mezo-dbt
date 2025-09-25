@@ -46,7 +46,12 @@ with
                 dbt_utils.generate_surrogate_key(
                     ["referrer_medium", "referrer_source"]
                 )
-            }} as referrer_id
+            }} as referrer_id,
+            {{
+                dbt_utils.generate_surrogate_key(
+                    ["campaign_id", "referrer_medium", "referrer_source"]
+                )
+            }} as paid_id
         from add_campaign_id_twitter
     )
 

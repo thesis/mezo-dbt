@@ -4,6 +4,7 @@ with
     facts as (
         select
             session_id as id,
+            paid_id as fk__fct_paid,
             canonical_segment_id_with_fallback as fk__dim1_users,
             session_start_date as fk__dim1_date,
             campaign_id as fk__dim1_campaign,

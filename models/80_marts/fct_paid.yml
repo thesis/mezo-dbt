@@ -6,22 +6,16 @@ models:
         description: The unique identifier for the record
         tests:
           - not_null
-          - unique
         config:
           meta: {}
           tags: []
         data_type: STRING
-      - name: fk__dim1_campaign
-        description: The foreign key identifier for the campaign
-        tests:
-          - not_null
-          - relationships:
-              field: id
-              to: ref('dim1_campaign')
+      - name: record_date
+        description: The date of the performance.
         config:
           meta: {}
           tags: []
-        data_type: STRING
+        data_type: DATE
       - name: spend
         description: The amount spent on the campaign
         tests:

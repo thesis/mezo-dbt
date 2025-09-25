@@ -432,3 +432,11 @@ models:
           data_type: STRING
         data_tests:
           - not_null
+      - name: paid_id
+        description: Surrogate key for the campaign, generated from referrer source + medium + campaign id.
+        config:
+          meta: {}
+          tags: []
+          data_type: STRING
+        data_tests:
+          - not_null

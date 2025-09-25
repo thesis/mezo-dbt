@@ -1,5 +1,5 @@
 with
-    all_paid as (select * from {{ ref("int_paid__all_paid") }}),
+    all_paid as (select * from {{ ref("int_paid__twitter") }}),
 
     fact as (
         select campaign_id as id, campaign_name

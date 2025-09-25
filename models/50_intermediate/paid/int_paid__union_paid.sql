@@ -1,0 +1,18 @@
+{{
+    dbt_utils.union_relations(
+        relations=[
+            ref("stg_paid__raw_other_marketing_costs"),
+            ref("int_paid__twitter"),
+        ],
+        include=[
+            "date_day",
+            "clicks",
+            "impressions",
+            "spend",
+            "campaign_id",
+            "referrer_source",
+            "referrer_medium",
+        ],
+        source_column_name="source_relation",
+    )
+}}

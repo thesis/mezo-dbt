@@ -1,13 +1,16 @@
 with
-    twitter as (select * from {{ ref("twitter_ads", "twitter_ads__campaign_report") }}),
+    union_paid as (select * from {{ ref("int_paid__union_paid") }}),
 
-    add_unique_id as (
+    sur_key as (
         select
-            * except (campaign_id),
-            concat('twitter_', campaign_id, date_day) as id,
-            concat('twitter_', campaign_id) as campaign_id
-        from twitter
+            *,
+            {{
+                dbt_utils.generate_surrogate_key(
+                    ["campaign_id", "referrer_medium", "referrer_source"]
+                )
+            }} as paid_id
+        from union_paid
     )
 
 select *
-from add_unique_id
+from sur_key

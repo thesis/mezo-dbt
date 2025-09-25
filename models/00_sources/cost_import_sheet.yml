@@ -7,7 +7,7 @@ sources:
         description: Other marketing costs imported from Google Sheets
         external:
           options:
-            format: 'GOOGLE_SHEETS' 
+            format: 'GOOGLE_SHEETS'
             uris: ['https://docs.google.com/spreadsheets/d/1ayInoMFB6jwTUhExq9XmQDuzw6GzYmE88O39kLgjyU8/edit?usp=sharing']
             sheet_range: 'Sheet1!A1:H1000'
             skip_leading_rows: 1

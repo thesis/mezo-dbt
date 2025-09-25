@@ -219,7 +219,7 @@ models:
           tags: []
         data_type: STRING
       - name: paid_id
-        description: Surrogate key for the campaign, generated from referrer source + medium + campaign id. 
+        description: Surrogate key for the campaign, generated from referrer source + medium + campaign id.
         config:
           meta: {}
           tags: []

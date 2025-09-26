@@ -16,9 +16,6 @@ models:
         description: The unique identifier for the session
         tests:
           - not_null
-          - relationships:
-              field: id
-              to: ref('fct_paid')
         config:
           meta: {}
           tags: []

@@ -1,9 +1,0 @@
-target/
-target-base/
-dbt_modules/
-dbt_packages/
-macros/
-tests/
-.dbt-env/
-.venv/
-dbt_internal_packages/

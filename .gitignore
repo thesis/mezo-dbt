@@ -1,7 +1,6 @@
+*
 
-target/
-dbt_packages/
-logs/
-.venv/
-dbt_internal_packages/
-.DS_Store
+!catalog.json
+!manifest.json
+!index.html
+!.gitignore

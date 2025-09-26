@@ -1,0 +1,40 @@
+models:
+  - name: stg_paid__raw_other_marketing_costs
+    description: Staging table for raw other marketing costs imported from Google Sheets.
+    columns:
+      - name: date_day
+        description: The date the record was created
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+      - name: referrer_source
+        description: The source of the referral
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+      - name: referrer_medium
+        description: The medium of the referral
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+      - name: spend
+        description: The amount spent on the campaign
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+      - name: impressions
+        description: The number of impressions served
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+      - name: clicks
+        description: The number of clicks received
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []

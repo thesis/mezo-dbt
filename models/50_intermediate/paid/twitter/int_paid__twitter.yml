@@ -1,6 +1,6 @@
 version: 2
 models:
-  - name: int_paid__all_paid
+  - name: int_paid__twitter
     columns:
       - name: source_relation
         description: >-
@@ -214,12 +214,6 @@ models:
         data_type: STRING
       - name: referrer_medium
         description: The medium of the referral
-        config:
-          meta: {}
-          tags: []
-        data_type: STRING
-      - name: paid_id
-        description: Surrogate key for the campaign, generated from referrer source + medium + campaign id.
         config:
           meta: {}
           tags: []

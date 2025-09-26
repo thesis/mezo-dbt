@@ -12,6 +12,14 @@ models:
           meta: {}
           tags: []
         data_type: STRING
+      - name: fk__fct_paid
+        description: The unique identifier for the session
+        tests:
+          - not_null
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING
       - name: fk__dim1_users
         data_type: STRING
         tests:

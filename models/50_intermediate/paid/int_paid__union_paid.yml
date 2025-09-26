@@ -1,0 +1,58 @@
+version: 2
+models:
+  - name: int_paid__union_paid
+    columns:
+      - name: source_relation
+        description: >-
+          The source of the record if the unioning functionality is being used.
+          If not this field will be empty.
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING
+      - name: date_day
+        description: The date of the performance.
+        config:
+          meta: {}
+          tags: []
+        data_type: DATE
+      - name: clicks
+        description: >-
+          The number of clicks on that date. Includes clicks on the URL (shortened or regular links),
+          profile pic, screen name, username, detail, hashtags, and likes.
+        config:
+          meta: {}
+          tags: []
+        data_type: INT64
+      - name: impressions
+        description: >-
+          The number of impressions on that date.  This is the number of users who see a Promoted Ad either
+          in their home timeline or search results.
+        config:
+          meta: {}
+          tags: []
+        data_type: INT64
+      - name: spend
+        description: The amount of spend on that date.
+        config:
+          meta: {}
+          tags: []
+        data_type: FLOAT64
+      - name: referrer_source
+        description: The source of the referral
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING
+      - name: referrer_medium
+        description: The medium of the referral
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING
+      - name: campaign_id
+        description: The ID of the campaign.
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING

@@ -1,5 +1,5 @@
 with
-    assets_locked as (
+    asset_locked as (
         select * from {{ ref("int_goldsky_mezo_bridge_mainnet__assets_locked_graph") }}
     ),
 
@@ -14,7 +14,7 @@ with
             1 as asset_locked_count,
             date(record_timestamp) as record_date
 
-        from assets_locked
+        from asset_locked
     )
 
 select *

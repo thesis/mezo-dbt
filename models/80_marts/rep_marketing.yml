@@ -1,0 +1,527 @@
+version: 2
+models:
+  - name: rep_marketing
+    description: Union all fact tables.
+    columns:
+      - name: id
+        data_type: BIGNUMERIC
+        config:
+          meta: {}
+          tags: []
+        description: Unique identifier.
+      - name: fk__dim1_users
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+        description: Foreign key to Users dimension (Canonical Segment ID). Links this record to the unified user profile.
+      - name: fk_transaction_hash
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+        description: Hash of the transaction that emitted this event.
+      - name: fk__dim1_token
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+        description: Foreign key to Token dimension. Identifies the token that was locked
+      - name: amount
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: Amount of tokens locked (normalized based on token decimals)
+      - name: token_usd_value
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: USD value of the locked tokens at the time of the event.
+      - name: asset_locked_count
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: Count of asset lock events included in this record.
+      - name: record_date
+        data_type: DATE
+        config:
+          meta: {}
+          tags: []
+        description: Date of the record, used for time-based analysis.
+      - name: donation_count
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: Count of donation events included in this record.
+      - name: recipient_brink_count
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: Count of donations where the recipient was categorized as "Brink".
+      - name: recipient_shefi_count
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: Count of donations where the recipient was categorized as "Shefi".
+      - name: coll_gas_compensation
+        data_type: BIGNUMERIC
+        config:
+          meta: {}
+          tags: []
+        description: Gas compensation related specifically to the collateral in the liquidation process.
+      - name: gas_compensation
+        data_type: BIGNUMERIC
+        config:
+          meta: {}
+          tags: []
+        description: General gas compensation awarded for executing the liquidation transaction.
+      - name: liquidated_principal
+        data_type: NUMERIC
+        config:
+          meta: {}
+          tags: []
+        description: Amount of principal debt that was liquidated (normalized currency).
+      - name: liquidated_interest
+        data_type: NUMERIC
+        config:
+          meta: {}
+          tags: []
+        description: Amount of interest that was liquidated (normalized currency).
+      - name: liquidated_collateral
+        data_type: NUMERIC
+        config:
+          meta: {}
+          tags: []
+        description: Amount of collateral that was liquidated (normalized currency).
+      - name: liquidation_count
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: Count of liquidation events represented in this record.
+      - name: collateral_usd_value
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: USD value of the collateral backing the loan.
+      - name: principal
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: Debt principal after the operation.
+      - name: interest
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: Accrued interest after the operation.
+      - name: collateral
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: Collateral locked after the operation.
+      - name: stake
+        data_type: FLOAT64
+        config:
+          meta: {}
+          tags: []
+        description: Borrower stake after the operation.
+      - name: loan_count
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: Total number of loans represented in this record.
+      - name: new_loan_count
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: Count of newly opened loans on the given record date.
+      - name: adjusted_loan_count
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: Count of existing loans that were adjusted (e.g., collateral or terms changed).
+      - name: closed_loan_count
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: Count of loans that were fully closed or repaid on the given record date.
+      - name: fk__dim1_products
+        data_type: STRING
+        config:
+          meta: {}
+          tags: []
+        description: Foreign key to Products dimension. Identifies the product associated with the order.
+      - name: price
+        data_type: NUMERIC
+        config:
+          meta: {}
+          tags: []
+        description: Price of the order, expressed in normalized currency.
+      - name: order_count
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: Number of orders represented in this record.
+      - name: spend
+        description: The amount spent on the campaign
+        config:
+          meta: {}
+          tags: []
+        data_type: FLOAT64
+      - name: impressions
+        description: The number of impressions for the campaign
+        config:
+          meta: {}
+          tags: []
+        data_type: INT64
+      - name: clicks
+        description: The number of clicks for the campaign
+        config:
+          meta: {}
+          tags: []
+        data_type: INT64
+      - name: fk__fct_paid
+        description: The unique identifier for the session
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING
+      - name: fk__dim1_date
+        config:
+          meta: {}
+          tags: []
+        data_type: DATE
+        description: Foreign key to the DATE dimension
+      - name: fk__dim1_campaign
+        description: Foreign key to the campaign dimension
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING
+      - name: fk_landingpage__dim1_page
+        description: Foreign key to the landing page dimension
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING
+      - name: fk_exitpage__dim1_page
+        description: Foreign key to the exit page dimension
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING
+      - name: fk__dim1_attribution
+        description: Foreign key to the attribution dimension
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING
+      - name: button_clicks
+        description: Count of button click events in the session
+        config:
+          meta: {}
+          tags: []
+      - name: page_views
+        description: The number of pages viewed during the session
+        config:
+          meta: {}
+          tags: []
+        data_type: INT64
+      - name: sign_ups
+        description: Count of completed sign-up events
+        config:
+          meta: {}
+          tags: []
+      - name: wallet_connections
+        description: Count of wallet connection events
+        config:
+          meta: {}
+          tags: []
+      - name: asset_swaps
+        description: Count of asset swap events
+        config:
+          meta: {}
+          tags: []
+      - name: sign_ins
+        description: Count of completed sign-in events
+        config:
+          meta: {}
+          tags: []
+      - name: swap_assets_starts
+        description: Count of asset swap start events
+        config:
+          meta: {}
+          tags: []
+      - name: sign_up_starts
+        description: Count of sign-up start events
+        config:
+          meta: {}
+          tags: []
+      - name: funds_additions
+        description: Count of funds added events
+        config:
+          meta: {}
+          tags: []
+      - name: pool_liquidity_additions
+        description: Count of liquidity pool additions
+        config:
+          meta: {}
+          tags: []
+      - name: add_funds_starts
+        description: Count of add-funds start events
+        config:
+          meta: {}
+          tags: []
+      - name: vault_assets_starts
+        description: Count of vault asset start events
+        config:
+          meta: {}
+          tags: []
+      - name: username_updates
+        description: Count of username update events
+        config:
+          meta: {}
+          tags: []
+      - name: assets_vaulted
+        description: Count of vaulted asset events
+        config:
+          meta: {}
+          tags: []
+      - name: musd_borrow_starts
+        description: Count of mUSD borrow start events
+        config:
+          meta: {}
+          tags: []
+      - name: pool_liquidity_withdrawals
+        description: Count of liquidity pool withdrawal events
+        config:
+          meta: {}
+          tags: []
+      - name: musd_donations
+        description: Count of mUSD donation events
+        config:
+          meta: {}
+          tags: []
+      - name: market_spend_starts
+        description: Count of market spend start events
+        config:
+          meta: {}
+          tags: []
+      - name: musd_borrows
+        description: Count of mUSD borrow events
+        config:
+          meta: {}
+          tags: []
+      - name: items_purchased
+        description: Count of purchase events
+        config:
+          meta: {}
+          tags: []
+      - name: repay_loan_starts
+        description: Count of repay loan start events
+        config:
+          meta: {}
+          tags: []
+      - name: loans_repaid
+        description: Count of loan repayment events
+        config:
+          meta: {}
+          tags: []
+      - name: loan_increase_reduce_ratio
+        description: Ratio metric for loan increase/reduction
+        config:
+          meta: {}
+          tags: []
+      - name: increase_loan_starts
+        description: Count of loan increase start events
+        config:
+          meta: {}
+          tags: []
+      - name: loans_increased
+        description: Count of loan increase events
+        config:
+          meta: {}
+          tags: []
+      - name: loan_collateral_deposits
+        description: Count of loan collateral deposit events
+        config:
+          meta: {}
+          tags: []
+      - name: market_spend_completions
+        description: Count of completed market spend events
+        config:
+          meta: {}
+          tags: []
+      - name: loan_collateral_withdrawals
+        description: Count of loan collateral withdrawal events
+        config:
+          meta: {}
+          tags: []
+      - name: withdraw_loan_collateral_starts
+        description: Count of withdraw loan collateral start events
+        config:
+          meta: {}
+          tags: []
+      - name: deposit_loan_collateral_starts
+        description: Count of deposit loan collateral start events
+        config:
+          meta: {}
+          tags: []
+      - name: borrow_more_balance_confirmations
+        description: Count of borrow-more balance confirmation events
+        config:
+          meta: {}
+          tags: []
+      - name: assets_swaps
+        description: Count of asset swap events (alternate metric)
+        config:
+          meta: {}
+          tags: []
+      - name: borrow_repay_starts
+        description: Count of borrow repay start events
+        config:
+          meta: {}
+          tags: []
+      - name: borrow_repays
+        description: Count of borrow repayment events
+        config:
+          meta: {}
+          tags: []
+      - name: market_donation_successes
+        description: Count of successful market donations
+        config:
+          meta: {}
+          tags: []
+      - name: borrow_collateral_deposit_starts
+        description: Count of borrow collateral deposit start events
+        config:
+          meta: {}
+          tags: []
+      - name: borrow_more_increase_coll
+        description: Count of borrow-more increase collateral events
+        config:
+          meta: {}
+          tags: []
+      - name: borrow_more_strategy_increase_coll
+        description: Count of borrow-more strategy increase collateral events
+        config:
+          meta: {}
+          tags: []
+      - name: borrow_collateral_deposits
+        description: Count of borrow collateral deposit events
+        config:
+          meta: {}
+          tags: []
+      - name: borrow_more_button_clicks
+        description: Count of borrow-more button click events
+        config:
+          meta: {}
+          tags: []
+      - name: borrow_more_confirm_increase_coll
+        description: Count of borrow-more confirm increase collateral events
+        config:
+          meta: {}
+          tags: []
+      - name: llm_shares
+        description: Count of LLM share events
+        config:
+          meta: {}
+          tags: []
+      - name: borrow_more_strategy_reduce_ratio
+        description: Ratio metric for borrow-more strategy reduction
+        config:
+          meta: {}
+          tags: []
+      - name: session_duration_in_seconds
+        description: The duration of the session in seconds
+        config:
+          meta: {}
+          tags: []
+        data_type: INT64
+      - name: referrer_source_paid
+        description: Paid-channel original referrer source (e.g., google, facebook, newsletter).
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING
+      - name: referrer_medium_paid
+        description: Paid-channel original referrer medium (e.g., cpc, email, referral, social).
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING
+      - name: referrer_source
+        description: Original referrer source (e.g., google, facebook, newsletter).
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING
+      - name: referrer_medium
+        description: Original referrer medium (e.g., cpc, email, referral, social).
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING
+      - name: campaign_name
+        description: The name of the campaign.
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING
+      - name: product_name
+        description: The name of the product.
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING
+      - name: token_symbol
+        description: The symbol for the token
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING
+      - name: token_address
+        description: The address identifier for the token
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING
+      - name: token_name
+        description: The name of the token
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING
+      - name: first_touch_time
+        description: Timestamp of the first session.
+        config:
+          meta: {}
+          tags: []
+        data_type: TIMESTAMP
+      - name: first_touch_source
+        description: Source of the first touch (e.g. referrer source).
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING
+      - name: first_touch_medium
+        description: Medium of the first touch (e.g. referrer medium).
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING

@@ -10,21 +10,18 @@ models:
           meta: {}
           tags: []
         data_type: STRING
-
       - name: token_symbol
         description: The symbol for the token
         config:
           meta: {}
           tags: []
         data_type: STRING
-
       - name: token_address
         description: The address identifier for the token
         config:
           meta: {}
           tags: []
         data_type: STRING
-
       - name: token_name
         description: The name of the token
         config:

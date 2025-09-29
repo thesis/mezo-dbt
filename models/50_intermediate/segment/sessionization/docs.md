@@ -1,3 +1,8 @@
+---
+title: Sessionization Docs
+render_with_liquid: false
+---
+
 ### segment_web_user_stitching
 
 

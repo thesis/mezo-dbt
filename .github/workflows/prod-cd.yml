@@ -75,7 +75,7 @@ jobs:
       - name: Run dbt build
         run: |
           uv run dbt run-operation stage_external_sources
-          uv run dbt build --select state:modified+ --target ${{ env.TARGET }} --defer --state target-base ${{ steps.set-full-refresh-flag.outputs.DBT_FULL_REFRESH }} --indirect-selection cautious
+          uv run dbt build --select state:modified+ --target ${{ env.TARGET }} --defer --state target-base --indirect-selection cautious ${{ steps.set-full-refresh-flag.outputs.DBT_FULL_REFRESH }}
 
       - name: Generate dbt documentation
         run: |

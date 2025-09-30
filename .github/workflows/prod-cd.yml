@@ -81,16 +81,21 @@ jobs:
         run: |
           uv run dbt docs generate
 
-      - name: Checkout repository
+      - name: Move dbt docs to a temporary location
+        run: |
+            mv target /tmp/
+
+      - name: Checkout gh-pages branch
         uses: actions/checkout@v4
         with:
           ref: 'gh-pages'
-
+          
       - name: Copy dbt docs into repo
         run: |
-          cp -r target/* ./
+          cp -r /tmp/target/* ./
 
-      - uses: stefanzweifel/git-auto-commit-action@v6
+      - name: Commit and push updated documentation
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
             branch: gh-pages
             commit_message: Update documentation

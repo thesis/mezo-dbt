@@ -38,7 +38,7 @@ models:
           tags: []
         description: Date of the record, used for time-based analysis.
       - name: fk__dim1_campaign
-        description: Foreign key to the campaign dimension
+        description: Foreign key to the campaign dimension.
         data_tests:
           - relationships:
               field: id

@@ -81,6 +81,11 @@ jobs:
         run: |
           uv run dbt docs generate
 
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: 'gh-pages'
+
       - name: Copy dbt docs into repo
         run: |
           cp -r target/* ./

@@ -44,7 +44,7 @@ with
         group by 1
     ),
 
-    filtered_donations as (
+    filtered_donation as (
         select
             canonical_segment_id,
             min(record_timestamp) as first_touch_time,
@@ -75,7 +75,7 @@ with
         from filtered_loans
         union distinct
         select *
-        from filtered_donations
+        from filtered_donation
         union distinct
         select *
         from filtered_orders

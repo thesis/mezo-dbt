@@ -213,12 +213,6 @@ models:
           meta: {}
           tags: []
         data_type: STRING
-      - name: fk__dim1_date
-        config:
-          meta: {}
-          tags: []
-        data_type: DATE
-        description: Foreign key to the DATE dimension
       - name: fk__dim1_campaign
         description: Foreign key to the campaign dimension
         data_tests:

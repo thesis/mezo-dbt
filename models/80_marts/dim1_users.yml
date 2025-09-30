@@ -14,7 +14,7 @@ models:
           tags: []
         data_type: STRING
       - name: first_touch_time
-        description: Timestamp of the first session.
+        description: Timestamp of the first session
         config:
           meta: {}
           tags: []

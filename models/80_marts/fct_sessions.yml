@@ -31,12 +31,12 @@ models:
           meta: {}
           tags: []
         description: Foreign key to Users dimension (Canonical Segment ID). Links the order to a unified user profile.
-      - name: fk__dim1_date
+      - name: record_date
+        data_type: DATE
         config:
           meta: {}
           tags: []
-        data_type: DATE
-        description: Foreign key to the DATE dimension
+        description: Date of the record, used for time-based analysis.
       - name: fk__dim1_campaign
         description: Foreign key to the campaign dimension
         data_tests:

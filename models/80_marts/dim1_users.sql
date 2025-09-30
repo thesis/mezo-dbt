@@ -34,7 +34,7 @@ with
         group by 1
     ),
 
-    filtered_loans as (
+    filtered_loan as (
         select
             canonical_segment_id,
             min(record_timestamp) as first_touch_time,
@@ -44,7 +44,7 @@ with
         group by 1
     ),
 
-    filtered_donations as (
+    filtered_donation as (
         select
             canonical_segment_id,
             min(record_timestamp) as first_touch_time,
@@ -72,10 +72,10 @@ with
         from filtered_assets_locked
         union distinct
         select *
-        from filtered_loans
+        from filtered_loan
         union distinct
         select *
-        from filtered_donations
+        from filtered_donation
         union distinct
         select *
         from filtered_orders

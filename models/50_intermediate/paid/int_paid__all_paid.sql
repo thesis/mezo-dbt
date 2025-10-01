@@ -6,7 +6,12 @@ with
             *,
             {{
                 dbt_utils.generate_surrogate_key(
-                    ["campaign_id", "referrer_medium", "referrer_source"]
+                    ["referrer_medium", "referrer_source"]
+                )
+            }} as referrer_id,
+            {{
+                dbt_utils.generate_surrogate_key(
+                    ["campaign_id", "date_day", "referrer_medium", "referrer_source"]
                 )
             }} as paid_id
         from union_paid

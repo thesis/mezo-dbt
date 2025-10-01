@@ -201,12 +201,6 @@ models:
           meta: {}
           tags: []
         data_type: STRING
-      - name: fk__dim1_date
-        config:
-          meta: {}
-          tags: []
-        data_type: DATE
-        description: Foreign key to the DATE dimension
       - name: fk__dim1_campaign
         description: Foreign key to the campaign dimension
         config:
@@ -453,18 +447,6 @@ models:
           meta: {}
           tags: []
         data_type: INT64
-      - name: referrer_source_paid
-        description: Paid-channel original referrer source (e.g., google, facebook, newsletter).
-        config:
-          meta: {}
-          tags: []
-        data_type: STRING
-      - name: referrer_medium_paid
-        description: Paid-channel original referrer medium (e.g., cpc, email, referral, social).
-        config:
-          meta: {}
-          tags: []
-        data_type: STRING
       - name: referrer_source
         description: Original referrer source (e.g., google, facebook, newsletter).
         config:
@@ -503,24 +485,6 @@ models:
         data_type: STRING
       - name: token_name
         description: The name of the token
-        config:
-          meta: {}
-          tags: []
-        data_type: STRING
-      - name: first_touch_time
-        description: Timestamp of the first session.
-        config:
-          meta: {}
-          tags: []
-        data_type: TIMESTAMP
-      - name: first_touch_source
-        description: Source of the first touch (e.g. referrer source).
-        config:
-          meta: {}
-          tags: []
-        data_type: STRING
-      - name: first_touch_medium
-        description: Medium of the first touch (e.g. referrer medium).
         config:
           meta: {}
           tags: []

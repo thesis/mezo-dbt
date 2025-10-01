@@ -4,12 +4,11 @@ with
     fact as (
         select
             paid_id as id,
+            referrer_id as fk__dim1_attribution,
             date_day as record_date,
             spend,
             impressions,
-            clicks,
-            referrer_source,
-            referrer_medium
+            clicks
         from all_paid
     )
 

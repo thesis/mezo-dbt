@@ -1,12 +1,15 @@
 with
     loans as (
-        select * from {{ ref("int_goldsky_borrower_operations_mezo__loans_graph") }}
+        select *
+        from
+            {{ ref("int_goldsky_borrower_operations_mezo__loans_graph_with_referrer") }}
     ),
 
     filtered_loan as (
         select
             transaction_hash as id,
             canonical_segment_id as fk__dim1_users,
+            referrer_id as fk__dim1_attribution,
             collateral_usd_value,
             principal,
             interest,

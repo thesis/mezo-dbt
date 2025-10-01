@@ -4,64 +4,61 @@ with
     ),
 
     assets_locked as (
-        select * from {{ ref("int_goldsky_mezo_bridge_mainnet__assets_locked_graph") }}
+        select *
+        from
+            {{
+                ref(
+                    "int_goldsky_mezo_bridge_mainnet__assets_locked_graph_with_referrer"
+                )
+            }}
     ),
 
     loans as (
-        select * from {{ ref("int_goldsky_borrower_operations_mezo__loans_graph") }}
+        select *
+        from
+            {{ ref("int_goldsky_borrower_operations_mezo__loans_graph_with_referrer") }}
     ),
 
-    donations as (select * from {{ ref("int_goldsky_market_mezo__donated_graph") }}),
+    donations as (
+        select * from {{ ref("int_goldsky_market_mezo__donated_graph_with_referrer") }}
+    ),
 
-    orders as (select * from {{ ref("int_goldsky_market_mezo__order_placed_graph") }}),
+    orders as (
+        select *
+        from {{ ref("int_goldsky_market_mezo__order_placed_graph_with_referrer") }}
+    ),
 
     filtered_first_touch_point as (
-        select
-            canonical_segment_id,
-            first_touch_time,
-            first_touch_source,
-            first_touch_medium
+        select canonical_segment_id, record_timestamp, referrer_id
         from first_touch_point
     ),
 
     filtered_assets_locked as (
         select
-            canonical_segment_id,
-            min(record_timestamp) as first_touch_time,
-            'unknown' as first_touch_source,
-            'unknown' as first_touch_medium
+            canonical_segment_id, min(record_timestamp) as record_timestamp, referrer_id
         from assets_locked
-        group by 1
+        group by 1, 3
     ),
 
     filtered_loans as (
         select
-            canonical_segment_id,
-            min(record_timestamp) as first_touch_time,
-            'unknown' as first_touch_source,
-            'unknown' as first_touch_medium
+            canonical_segment_id, min(record_timestamp) as record_timestamp, referrer_id
         from loans
-        group by 1
+        group by 1, 3
     ),
 
     filtered_donations as (
         select
-            canonical_segment_id,
-            min(record_timestamp) as first_touch_time,
-            'unknown' as first_touch_source,
-            'unknown' as first_touch_medium
+            canonical_segment_id, min(record_timestamp) as record_timestamp, referrer_id
         from donations
-        group by 1
+        group by 1, 3
     ),
 
     filtered_orders as (
         select
-            canonical_segment_id,
-            min(record_timestamp) as first_touch_time,
-            'unknown' as first_touch_source,
-            'unknown' as first_touch_medium
+            canonical_segment_id, min(record_timestamp) as record_timestamp, referrer_id
         from orders
-        group by 1
+        group by 1, 3
     ),
 
     combined as (
@@ -82,11 +79,11 @@ with
     ),
 
     deduplicated as (
-        select *
+        select * except (record_timestamp), date(record_timestamp) as record_date
         from combined
         qualify
             row_number() over (
-                partition by canonical_segment_id order by first_touch_time
+                partition by canonical_segment_id order by record_timestamp
             )
             = 1
     )

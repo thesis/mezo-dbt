@@ -3,9 +3,10 @@ models:
   - name: fct_paid
     columns:
       - name: id
-        description: The unique identifier for the record
+        description: The unique identifier for the paid
         tests:
           - not_null
+          - unique
         config:
           meta: {}
           tags: []

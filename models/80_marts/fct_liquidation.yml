@@ -29,6 +29,14 @@ models:
           meta: {}
           tags: []
         description: Foreign key to Users dimension (Canonical Segment ID). Links this liquidation event to the unified user profile.
+      - name: fk__dim1_attribution
+        description: Foreign key to attribution dimension for the channel grouping, generated from referrer source + medium.
+        config:
+          meta: {}
+          tags: []
+          data_type: STRING
+        data_tests:
+          - not_null
       - name: coll_gas_compensation
         data_type: BIGNUMERIC
         config:

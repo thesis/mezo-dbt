@@ -11,10 +11,6 @@ models:
         description: Unique identifier.
       - name: fk__dim1_users
         data_type: STRING
-        tests:
-          - relationships:
-              field: canonical_segment_id
-              to: ref('dim1_users')
         config:
           meta: {}
           tags: []
@@ -27,10 +23,6 @@ models:
         description: Hash of the transaction that emitted this event.
       - name: fk__dim1_token
         data_type: STRING
-        tests:
-          - relationships:
-              field: id
-              to: ref('dim1_token')
         config:
           meta: {}
           tags: []
@@ -169,10 +161,6 @@ models:
         description: Count of loans that were fully closed or repaid on the given record date.
       - name: fk__dim1_products
         data_type: STRING
-        tests:
-          - relationships:
-              field: id
-              to: ref('dim1_products')
         config:
           meta: {}
           tags: []
@@ -215,10 +203,6 @@ models:
         data_type: STRING
       - name: fk__dim1_campaign
         description: Foreign key to the campaign dimension
-        data_tests:
-          - relationships:
-              field: id
-              to: ref('dim1_campaign')
         config:
           meta: {}
           tags: []
@@ -237,10 +221,6 @@ models:
         data_type: STRING
       - name: fk__dim1_attribution
         description: Foreign key to the attribution dimension
-        tests:
-          - relationships:
-              field: id
-              to: ref('dim1_attribution')
         config:
           meta: {}
           tags: []

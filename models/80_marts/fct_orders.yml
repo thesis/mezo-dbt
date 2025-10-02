@@ -40,6 +40,14 @@ models:
           meta: {}
           tags: []
         description: Foreign key to Products dimension. Identifies the product associated with the order.
+      - name: fk__dim1_attribution
+        description: Foreign key to attribution dimension for the channel grouping, generated from referrer source + medium.
+        config:
+          meta: {}
+          tags: []
+          data_type: STRING
+        data_tests:
+          - not_null
       - name: price
         data_type: NUMERIC
         config:

@@ -1,0 +1,98 @@
+version: 2
+models:
+  - name: int_goldsky_market_mezo__order_placed_graph_with_referrer
+    columns:
+      - name: block
+        description: Block number in which this event occurred
+        config:
+          meta: {}
+          tags: []
+      - name: block_number
+        description: Block number as a high-precision numeric value
+        config:
+          meta: {}
+          tags: []
+      - name: transaction_hash
+        description: Hash of the transaction that emitted this event
+        config:
+          meta: {}
+          tags: []
+      - name: contract_id
+        description: Address of the contract that emitted the event
+        config:
+          meta: {}
+          tags: []
+      - name: order_id
+        description: Unique identifier for the order
+        config:
+          meta: {}
+          tags: []
+      - name: customer
+        description: Address of the customer who placed the order
+        config:
+          meta: {}
+          tags: []
+      - name: _gs_chain
+        description: Chain where the event originated, e.g., 'mezo'
+        config:
+          meta: {}
+          tags: []
+      - name: _gs_gid
+        description: Unique identifier from Goldsky for the event
+        config:
+          meta: {}
+          tags: []
+      - name: product_id
+        description: Product identifier
+        config:
+          meta: {}
+          tags: []
+      - name: record_timestamp
+        description: Timestamp of the event formatted as a datetime
+        config:
+          meta: {}
+          tags: []
+      - name: price
+        description: Price of the order (normalized currency)
+        config:
+          meta: {}
+          tags: []
+      - name: product_name
+        description: Name of the product that was ordered.
+        config:
+          meta: {}
+          tags: []
+      - name: is_in_graph
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: canonical_segment_id
+        description: >-
+          The fully-merged Segment ID (the profile Segment now understands any events or identifiers to
+          map to).
+        config:
+          meta: {}
+          tags: []
+      - name: referrer_id
+        description: Surrogate key for the channel grouping, generated from referrer source + medium.
+        config:
+          meta: {}
+          tags: []
+          data_type: STRING
+        data_tests:
+          - not_null
+      - name: referrer_source
+        data_type: string
+        config:
+          meta: {}
+          tags: []
+        description: The marketing source (e.g., google, newsletter) from which the user first
+          arrived.
+      - name: referrer_medium
+        data_type: string
+        config:
+          meta: {}
+          tags: []
+        description: The marketing medium (e.g., cpc, email, referral) of the user’s first
+          interaction.

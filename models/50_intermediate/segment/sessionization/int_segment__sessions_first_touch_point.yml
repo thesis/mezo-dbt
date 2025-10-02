@@ -2,7 +2,7 @@ models:
   - name: int_segment__sessions_first_touch_point
     columns:
       - name: anonymous_id
-        description: Segment anonymous_id (cookie/device ID)
+        description: Segment anonymous_id (cookie/device ID).
         config:
           meta: {}
           tags: []

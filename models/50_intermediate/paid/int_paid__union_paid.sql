@@ -1,7 +1,7 @@
 {{
     dbt_utils.union_relations(
         relations=[
-            ref("stg_paid__raw_other_marketing_costs"),
+            ref("int_paid__manual_cost_import"),
             ref("int_paid__twitter"),
         ],
         include=[

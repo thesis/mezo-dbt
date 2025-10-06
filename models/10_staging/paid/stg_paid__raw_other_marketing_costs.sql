@@ -5,7 +5,8 @@ with
 
     renamed as (
         select
-            cast(record_date as date) as date_day,
+            cast(date_start as date) as date_start,
+            cast(date_end as date) as date_end,
             cast(referrer_source as string) as referrer_source,
             cast(referrer_medium as string) as referrer_medium,
             cast(spend as float64) as spend,

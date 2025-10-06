@@ -62,6 +62,12 @@ models:
           meta: {}
           tags: []
         data_type: STRING
+      - name: sessions_count
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+        description: Number of sessions represented in this record.
       - name: button_clicks
         description: Count of button click events in the session
         config:

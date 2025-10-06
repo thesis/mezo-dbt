@@ -55,7 +55,7 @@
 - Authenticate with gcloud (creates local credentials JSON automatically):
 
 ```sh
-   gcloud auth application_default_login
+   gcloud auth login --enable-gdrive-access --update-adc
 ```
 
 ### Test your setup

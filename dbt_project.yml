@@ -24,6 +24,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   mezo:
+    +persist_docs:
+      relation: true
+      columns: true
     +dbt-osmosis: "{model}.yml"
     submission_method: bigframes
     notebook_template_id: 6574243905263370240

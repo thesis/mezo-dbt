@@ -22,27 +22,44 @@ models:
         config:
           meta: {}
           tags: []
-        description: Foreign key to Users dimension (Canonical Segment ID). Links the donation to the unified user profile.
-      - name: fk__dim1_attribution
-        description: Foreign key to attribution dimension for the channel grouping, generated from referrer source + medium.
+        description: >-
+          Foreign key to Users dimension (Canonical Segment ID). Links the donation to the unified user
+          profile.
+      - name: fk__dim1_products
+        description: ''
         config:
           meta: {}
           tags: []
-          data_type: STRING
+      - name: fk__dim1_attribution
+        description: >-
+          Foreign key to attribution dimension for the channel grouping, generated from referrer source
+          + medium.
+        config:
+          meta: {}
+          tags: []
         data_tests:
           - not_null
-      - name: amount
-        data_type: NUMERIC
+      - name: donated_amount
+        description: ''
         config:
           meta: {}
           tags: []
-        description: Amount that was donated (normalized currency).
+      - name: market_spend_amount
+        description: ''
+        config:
+          meta: {}
+          tags: []
       - name: donation_count
         data_type: INT64
         config:
           meta: {}
           tags: []
         description: Count of donation events included in this record.
+      - name: market_transaction_count
+        description: ''
+        config:
+          meta: {}
+          tags: []
       - name: record_date
         data_type: DATE
         config:

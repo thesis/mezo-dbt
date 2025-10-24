@@ -11,8 +11,10 @@ with
             transaction_hash as fk_transaction_hash,
             product_id as fk__dim1_products,
             referrer_id as fk__dim1_attribution,
-            price,
+            price as order_amount,
+            price as market_spend_amount,
             1 as order_count,
+            1 as market_transaction_count,
             date(record_timestamp) as record_date
         from orders
     )

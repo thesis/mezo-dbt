@@ -425,18 +425,18 @@ models:
           meta: {}
           tags: []
       - name: referrer_id
-        description: Surrogate key for the channel grouping, generated from referrer source + medium.
+        description: Surrogate key for the channel grouping, generated from referrer source +
+          medium.
         config:
           meta: {}
           tags: []
-          data_type: STRING
         data_tests:
           - not_null
       - name: paid_id
-        description: Surrogate key for the campaign, generated from referrer source + medium + campaign id + date.
+        description: >-
+          Surrogate key for the campaign, generated from referrer source + medium + campaign id + date.
         config:
           meta: {}
           tags: []
-          data_type: STRING
         data_tests:
           - not_null

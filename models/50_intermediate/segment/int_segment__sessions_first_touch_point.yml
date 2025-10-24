@@ -1,11 +1,6 @@
 models:
   - name: int_segment__sessions_first_touch_point
     columns:
-      - name: anonymous_id
-        description: Segment anonymous_id (cookie/device ID)
-        config:
-          meta: {}
-          tags: []
       - name: canonical_segment_id
         data_type: string
         config:
@@ -14,20 +9,11 @@ models:
         description: >-
           The fully-merged Segment ID (the profile Segment now understands any events or identifiers to
           map to).
-      - name: record_timestamp
-        data_type: timestamp
+      - name: anonymous_id
+        description: Segment anonymous_id (cookie/device ID)
         config:
           meta: {}
           tags: []
-        description: The timestamp of the user’s very first recorded session or interaction.
-      - name: referrer_id
-        description: Surrogate key for the channel grouping, generated from referrer source + medium.
-        config:
-          meta: {}
-          tags: []
-          data_type: STRING
-        data_tests:
-          - not_null
       - name: referrer_source
         data_type: string
         config:
@@ -42,3 +28,17 @@ models:
           tags: []
         description: The marketing medium (e.g., cpc, email, referral) of the user’s first
           interaction.
+      - name: referrer_id
+        description: Surrogate key for the channel grouping, generated from referrer source +
+          medium.
+        config:
+          meta: {}
+          tags: []
+        data_tests:
+          - not_null
+      - name: record_timestamp
+        data_type: timestamp
+        config:
+          meta: {}
+          tags: []
+        description: The timestamp of the user’s very first recorded session or interaction.

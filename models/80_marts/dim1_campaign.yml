@@ -11,10 +11,8 @@ models:
         config:
           meta: {}
           tags: []
-          data_type: STRING
       - name: campaign_name
         description: The name of the campaign.
         config:
           meta: {}
           tags: []
-          data_type: STRING

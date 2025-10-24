@@ -11,6 +11,11 @@ models:
           meta: {}
           tags: []
         data_type: STRING
+      - name: fk__dim1_attribution
+        description: ''
+        config:
+          meta: {}
+          tags: []
       - name: record_date
         description: The date of the performance.
         config:
@@ -32,7 +37,7 @@ models:
         config:
           meta: {}
           tags: []
-        data_type: INT64
+        data_type: FLOAT64
       - name: clicks
         description: The number of clicks for the campaign
         tests:
@@ -40,4 +45,4 @@ models:
         config:
           meta: {}
           tags: []
-        data_type: INT64
+        data_type: FLOAT64

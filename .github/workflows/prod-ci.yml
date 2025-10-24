@@ -87,4 +87,4 @@ jobs:
       - name: Run dbt build another time to check incremental models
         id: incremental_try
         run: |
-          uv run dbt build --select config.materialized:incremental --target ${{ env.TARGET }} --vars "schema_id: $SCHEMA_ID" --defer --state target-base --indirect-selection cautious
+          uv run dbt build --select state:modified+,config.materialized:incremental --target ${{ env.TARGET }} --vars "schema_id: $SCHEMA_ID" --defer --state target-base --indirect-selection cautious

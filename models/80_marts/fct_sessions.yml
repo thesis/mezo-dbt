@@ -22,7 +22,19 @@ models:
         config:
           meta: {}
           tags: []
-        description: Foreign key to Users dimension (Canonical Segment ID). Links the order to a unified user profile.
+        description: >-
+          Foreign key to Users dimension (Canonical Segment ID). Links the order to a unified user profile.
+      - name: fk__dim1_attribution
+        description: Foreign key to the attribution dimension
+        tests:
+          - not_null
+          - relationships:
+              field: id
+              to: ref('dim1_attribution')
+        config:
+          meta: {}
+          tags: []
+        data_type: STRING
       - name: record_date
         data_type: DATE
         config:
@@ -47,17 +59,6 @@ models:
         data_type: STRING
       - name: fk_exitpage__dim1_page
         description: Foreign key to the exit page dimension
-        config:
-          meta: {}
-          tags: []
-        data_type: STRING
-      - name: fk__dim1_attribution
-        description: Foreign key to the attribution dimension
-        tests:
-          - not_null
-          - relationships:
-              field: id
-              to: ref('dim1_attribution')
         config:
           meta: {}
           tags: []

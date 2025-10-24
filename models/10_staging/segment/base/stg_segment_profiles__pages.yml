@@ -135,6 +135,11 @@ models:
         config:
           meta: {}
           tags: []
+      - name: page_path
+        description: ''
+        config:
+          meta: {}
+          tags: []
       - name: received_at_tstamp
         description: Timestamp when Segment received the event
         config:
@@ -162,6 +167,11 @@ models:
           tags: []
       - name: tstamp
         description: Timestamp recorded by the warehouse
+        config:
+          meta: {}
+          tags: []
+      - name: page_title
+        description: ''
         config:
           meta: {}
           tags: []

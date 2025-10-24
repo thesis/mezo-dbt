@@ -1,12 +1,6 @@
 models:
   - name: int_paid__manual_cost_import
     columns:
-      - name: date_day
-        description: The date the record was created
-        data_type: STRING
-        config:
-          meta: {}
-          tags: []
       - name: referrer_source
         description: The source of the referral
         data_type: STRING
@@ -19,21 +13,30 @@ models:
         config:
           meta: {}
           tags: []
+      - name: date_day
+        description: The date the record was created
+        data_type: DATE
+        config:
+          meta: {}
+          tags: []
       - name: spend
-        description: The calculated average daily advertising spend, distributed evenly from the original period.
+        description: >-
+          The calculated average daily advertising spend, distributed evenly from the original period.
         data_type: FLOAT64
         config:
           meta: {}
           tags: []
       - name: impressions
-        description: The calculated average daily number of impressions, distributed evenly from the original period.
-        data_type: INT64
+        description: >-
+          The calculated average daily number of impressions, distributed evenly from the original period.
+        data_type: FLOAT64
         config:
           meta: {}
           tags: []
       - name: clicks
-        description: The calculated average daily number of clicks, distributed evenly from the original period.
-        data_type: INT64
+        description: >-
+          The calculated average daily number of clicks, distributed evenly from the original period.
+        data_type: FLOAT64
         config:
           meta: {}
           tags: []

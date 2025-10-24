@@ -217,6 +217,16 @@ models:
         config:
           meta: {}
           tags: []
+      - name: page_path
+        description: ''
+        config:
+          meta: {}
+          tags: []
+      - name: page_title
+        description: ''
+        config:
+          meta: {}
+          tags: []
       - name: context_actions_amplitude_session_id
         description: Amplitude session ID if available
         config:

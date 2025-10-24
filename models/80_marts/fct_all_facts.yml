@@ -14,7 +14,9 @@ models:
         config:
           meta: {}
           tags: []
-        description: Foreign key to Users dimension (Canonical Segment ID). Links this record to the unified user profile.
+        description: >-
+          Foreign key to Users dimension (Canonical Segment ID). Links this record to the unified user
+          profile.
       - name: fk_transaction_hash
         data_type: STRING
         config:
@@ -74,7 +76,8 @@ models:
         config:
           meta: {}
           tags: []
-        description: Gas compensation related specifically to the collateral in the liquidation process.
+        description: Gas compensation related specifically to the collateral in the liquidation
+          process.
       - name: gas_compensation
         data_type: BIGNUMERIC
         config:
@@ -164,7 +167,8 @@ models:
         config:
           meta: {}
           tags: []
-        description: Foreign key to Products dimension. Identifies the product associated with the order.
+        description: >-
+          Foreign key to Products dimension. Identifies the product associated with the order.
       - name: price
         data_type: NUMERIC
         config:

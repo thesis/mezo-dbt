@@ -4,8 +4,8 @@ models:
       Standardized view of MUSD market mappings used for market identification and reference data.
     columns:
       - name: market_id
-        description: >-
-          The unique identifier for the market (either a blockchain address or a numeric ID)
+        description: The unique identifier for the market (either a blockchain address or a numeric
+          ID)
         data_tests:
           - not_null
           - unique

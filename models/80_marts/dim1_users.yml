@@ -14,11 +14,11 @@ models:
           tags: []
         data_type: STRING
       - name: referrer_id
-        description: Surrogate key for the channel grouping, generated from referrer source + medium.
+        description: Surrogate key for the channel grouping, generated from referrer source +
+          medium.
         config:
           meta: {}
           tags: []
-          data_type: STRING
         data_tests:
           - not_null
       - name: record_date

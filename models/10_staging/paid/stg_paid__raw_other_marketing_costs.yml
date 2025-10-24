@@ -4,13 +4,13 @@ models:
     columns:
       - name: date_start
         description: The date the record was created
-        data_type: STRING
+        data_type: DATE
         config:
           meta: {}
           tags: []
       - name: date_end
         description: The date the record was ended
-        data_type: STRING
+        data_type: DATE
         config:
           meta: {}
           tags: []

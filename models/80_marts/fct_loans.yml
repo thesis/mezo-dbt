@@ -22,13 +22,16 @@ models:
         config:
           meta: {}
           tags: []
-        description: Foreign key to Users dimension (Canonical Segment ID). Links this loan record to the unified user profile.
+        description: >-
+          Foreign key to Users dimension (Canonical Segment ID). Links this loan record to the unified
+          user profile.
       - name: fk__dim1_attribution
-        description: Foreign key to attribution dimension for the channel grouping, generated from referrer source + medium.
+        description: >-
+          Foreign key to attribution dimension for the channel grouping, generated from referrer source
+          + medium.
         config:
           meta: {}
           tags: []
-          data_type: STRING
         data_tests:
           - not_null
       - name: collateral_usd_value
@@ -38,25 +41,25 @@ models:
           tags: []
         description: USD value of the collateral backing the loan.
       - name: principal
-        data_type: FLOAT64
+        data_type: NUMERIC
         config:
           meta: {}
           tags: []
         description: Debt principal after the operation.
       - name: interest
-        data_type: FLOAT64
+        data_type: NUMERIC
         config:
           meta: {}
           tags: []
         description: Accrued interest after the operation.
       - name: collateral
-        data_type: FLOAT64
+        data_type: NUMERIC
         config:
           meta: {}
           tags: []
         description: Collateral locked after the operation.
       - name: stake
-        data_type: FLOAT64
+        data_type: NUMERIC
         config:
           meta: {}
           tags: []

@@ -4,50 +4,12 @@ models:
     columns:
       - name: source_relation
         description: >-
-          The source of the record if the unioning functionality is being used.
-          If not this field will be empty.
+          The source of the record if the unioning functionality is being used. If not this field will
+          be empty.
         config:
           meta: {}
           tags: []
         data_type: STRING
-      - name: paid_id
-        data_tests:
-          - unique
-          - not_null
-        description: >-
-          Unique identifier. Surrogate key for the paid, generated from campaign id,
-          date, referrer_medium and referrer_source.
-        config:
-          meta: {}
-          tags: []
-      - name: date_day
-        description: The date of the performance.
-        config:
-          meta: {}
-          tags: []
-        data_type: DATE
-      - name: clicks
-        description: >-
-          The number of clicks on that date. Includes clicks on the URL (shortened or regular links),
-          profile pic, screen name, username, detail, hashtags, and likes.
-        config:
-          meta: {}
-          tags: []
-        data_type: INT64
-      - name: impressions
-        description: >-
-          The number of impressions on that date.  This is the number of users who see a Promoted Ad either
-          in their home timeline or search results.
-        config:
-          meta: {}
-          tags: []
-        data_type: INT64
-      - name: spend
-        description: The amount of spend on that date.
-        config:
-          meta: {}
-          tags: []
-        data_type: FLOAT64
       - name: referrer_source
         description: The source of the referral
         config:
@@ -60,6 +22,34 @@ models:
           meta: {}
           tags: []
         data_type: STRING
+      - name: date_day
+        description: The date of the performance.
+        config:
+          meta: {}
+          tags: []
+        data_type: DATE
+      - name: spend
+        description: The amount of spend on that date.
+        config:
+          meta: {}
+          tags: []
+        data_type: FLOAT64
+      - name: impressions
+        description: >-
+          The number of impressions on that date.  This is the number of users who see a Promoted Ad either
+          in their home timeline or search results.
+        config:
+          meta: {}
+          tags: []
+        data_type: FLOAT64
+      - name: clicks
+        description: >-
+          The number of clicks on that date. Includes clicks on the URL (shortened or regular links),
+          profile pic, screen name, username, detail, hashtags, and likes.
+        config:
+          meta: {}
+          tags: []
+        data_type: FLOAT64
       - name: campaign_id
         description: The ID of the campaign.
         config:
@@ -67,10 +57,20 @@ models:
           tags: []
         data_type: STRING
       - name: referrer_id
-        description: Surrogate key for the channel grouping, generated from referrer source + medium.
+        description: Surrogate key for the channel grouping, generated from referrer source +
+          medium.
         config:
           meta: {}
           tags: []
-          data_type: STRING
         data_tests:
           - not_null
+      - name: paid_id
+        data_tests:
+          - unique
+          - not_null
+        description: >-
+          Unique identifier. Surrogate key for the paid, generated from campaign id, date, referrer_medium
+          and referrer_source.
+        config:
+          meta: {}
+          tags: []

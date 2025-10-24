@@ -82,9 +82,9 @@ jobs:
         id: first_try
         run: |
             uv run dbt run-operation stage_external_sources
-            uv run dbt build --select state:modified+ --target ${{ env.TARGET }} --vars "schema_id: $SCHEMA_ID" --defer --state target-base ${{ steps.set-full-refresh-flag.outputs.DBT_FULL_REFRESH }} --indirect-selection cautious
+            uv run dbt build --select state:modified+ --target ${{ env.TARGET }} --vars "schema_id: $SCHEMA_ID" --defer --state target-base --indirect-selection cautious ${{ steps.set-full-refresh-flag.outputs.DBT_FULL_REFRESH }}
 
       - name: Run dbt build another time to check incremental models
         id: incremental_try
         run: |
-          uv run dbt build --select config.materialized:incremental --target ${{ env.TARGET }} --vars "schema_id: $SCHEMA_ID" --defer --state target-base
+          uv run dbt build --select config.materialized:incremental --target ${{ env.TARGET }} --vars "schema_id: $SCHEMA_ID" --defer --state target-base --indirect-selection cautious

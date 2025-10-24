@@ -7,9 +7,12 @@ with
         select
             transaction_hash as id,
             canonical_segment_id as fk__dim1_users,
+            recipient as fk__dim1_products,
             referrer_id as fk__dim1_attribution,
-            amount,
+            amount as donated_amount,
+            amount as market_spend_amount,
             1 as donation_count,
+            1 as market_transaction_count,
             date(record_timestamp) as record_date,
             case when recipient = 'Brink' then 1 else 0 end as recipient_brink_count,
             case when recipient = 'SheFi' then 1 else 0 end as recipient_shefi_count

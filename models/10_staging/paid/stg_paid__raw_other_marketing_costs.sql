@@ -9,9 +9,9 @@ with
             cast(date_end as date) as date_end,
             cast(referrer_source as string) as referrer_source,
             cast(referrer_medium as string) as referrer_medium,
-            cast(spend as float64) as spend,
-            cast(impressions as int64) as impressions,
-            cast(clicks as int64) as clicks
+            coalesce(cast(spend as float64), 0.00) as spend,
+            coalesce(cast(impressions as int64), 0) as impressions,
+            coalesce(cast(clicks as int64), 0) as clicks
         from source
     )
 
